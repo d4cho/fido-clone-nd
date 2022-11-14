@@ -1,18 +1,20 @@
 import './ChoiceCard.css';
 
-function ChoiceCard() {
+function ChoiceCard({ mainTitle, subTitle, priceContent, content, Link, price, width, matches }) {
     return (
-        <div className='card-container-outline'>
-            <div />
+        <div
+            style={{ width: matches ? width : null, margin: !matches ? '20px' : null }}
+            className='card-container-outline'
+        >
+            {/* this will be the star icon top */}
+            <div className='banner' />
             <div className='inner-card-container'>
-                <p>ALREADY HAVE A PHONE?</p>
-                <p>PLAN ONLY</p>
-                <p>Talk & Text plans starting at $ 27 .00 /mo.</p>
-                <p>
-                    We’ve also got you covered with value-packed plans that give you all the data,
-                    talk and text you need!
-                </p>
-                <button>View Plans</button>
+                <p className='main-title'>{mainTitle}</p>
+                <p className='sub-title'>{subTitle}</p>
+                <p className='price-content'>{priceContent}</p>
+                <p className='price'>{price}</p>
+                <p className='content'>{content}</p>
+                {Link}
             </div>
         </div>
     );
