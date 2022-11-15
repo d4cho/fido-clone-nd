@@ -6,14 +6,13 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useState, useEffect } from 'react';
 
 function ChoiceCardContent() {
+    const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
 
-     const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
-
-     useEffect(() => {
-         window
-             .matchMedia('(min-width: 1020px)')
-             .addEventListener('change', (e) => setMatches(e.matches));
-     }, []);
+    useEffect(() => {
+        window
+            .matchMedia('(min-width: 1020px)')
+            .addEventListener('change', (e) => setMatches(e.matches));
+    }, []);
     return (
         <>
             <Title
@@ -28,9 +27,12 @@ function ChoiceCardContent() {
                     mainTitle='ALREADY HAVE A PHONE?'
                     subTitle='PLAN ONLY'
                     priceContent='Talk & Text plans starting at'
-                    price='$27.00/mo'
+                    price='20'
+                    priceSign='$'
+                    zero='.00'
+                    month='/mo.'
                     content='We’ve also got you covered with value-packed plans that give you all the data, talk and text you need!'
-                    Link={<Link href='/' title='View Plans' icon={<ChevronRightIcon />} />}
+                    Link={<Link href='/Phones' title='View Plans' icon={<ChevronRightIcon />} />}
                     width=' 330px'
                     matches={matches}
                 />
@@ -38,9 +40,18 @@ function ChoiceCardContent() {
                     mainTitle='NEED A NEW PHONE?'
                     subTitle='PLAN + PHONE'
                     priceContent='Phones starting at'
-                    price='$0.00/down.'
+                    price='0'
+                    priceSign='$'
+                    zero='.00'
+                    month='/down.'
                     content='Finance a new phone with Fido Payment Program4 then choose one of our plan options to match!'
-                    Link={<Link href='/' title='View Phones' icon={<ChevronRightIcon />} />}
+                    Link={
+                        <Link
+                            href='/Build-A-Plan'
+                            title='View Phones'
+                            icon={<ChevronRightIcon />}
+                        />
+                    }
                     width=' 330px'
                     matches={matches}
                 />
