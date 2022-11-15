@@ -1,18 +1,40 @@
 import './ChoiceCard.css';
+import StarIcon from '@mui/icons-material/Star';
 
-function ChoiceCard() {
+function ChoiceCard({
+    mainTitle,
+    subTitle,
+    priceContent,
+    content,
+    Link,
+    width,
+    matches,
+    price,
+    priceSign,
+    zero,
+    month,
+}) {
     return (
-        <div className='card-container-outline'>
-            <div />
+        <div
+            style={{ width: matches ? width : null, margin: !matches ? '20px' : null }}
+            className='card-container-outline'
+        >
+            <div className='banner' />
+            <StarIcon
+                style={{ position: 'absolute', top: '-2px', right: '-1px', color: 'white' }}
+            />
             <div className='inner-card-container'>
-                <p>ALREADY HAVE A PHONE?</p>
-                <p>PLAN ONLY</p>
-                <p>Talk & Text plans starting at $ 27 .00 /mo.</p>
-                <p>
-                    We’ve also got you covered with value-packed plans that give you all the data,
-                    talk and text you need!
-                </p>
-                <button>View Plans</button>
+                <h1 className='main-title'>{mainTitle}</h1>
+                <h1 className='sub-title'>{subTitle}</h1>
+                <p className='price-content'>{priceContent}</p>
+                <div className='price-container'>
+                    <p>{priceSign}</p>
+                    <h1 style={{ fontSize: '2.2rem', fontWeight: '700' }}>{price}</h1>
+                    <h1 className=' '>{zero}</h1>
+                    <p className=' '>{month}</p>
+                </div>
+                <p className='content'>{content}</p>
+                {Link}
             </div>
         </div>
     );
