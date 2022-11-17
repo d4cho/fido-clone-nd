@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './NavBarDropDown.css';
 import { MainContext } from '../../../Context/MainContext';
-function NavBarDropdownContent() {
+function NavBarDropdown() {
     const { menuTitle, open} = useContext(MainContext);
     return (
         <>
@@ -18,4 +18,4 @@ function NavBarDropdownContent() {
     );
 }
 
-export default NavBarDropdownContent;
+export default NavBarDropdown

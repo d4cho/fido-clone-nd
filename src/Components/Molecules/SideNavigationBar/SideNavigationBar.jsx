@@ -4,7 +4,7 @@ import Link from '../../Atoms/Link/Link';
 import SocialButton from '../../Atoms/SocialLink/SocialLink';
 import { navInfo } from '../../../Data/NavbarLabel';
 
-function SideNavigationBar() {
+function SideNavigationBar({ socialLink, link }) {
     const [clicked, setClicked] = useState('0');
 
     const handleToggle = (index) => {
@@ -99,20 +99,8 @@ function SideNavigationBar() {
                     </ul>
                 </nav>
                 <div className='blocker-content'>
-                    <div className='block-content-join-now'>
-                        <Link
-                            width='11.25rem'
-                            paddingTop='13px'
-                            paddingBottom='13px'
-                            Label='Join now'
-                            href='/'
-                        />
-                    </div>
-
-                    <div className='blocker-content-apple-google-buttons'>
-                        <SocialButton img='https://www.eqbank.ca/images/default-source/svgs/download_on_the_app_store_badge.svg?sfvrsn=fe69bfd3_14' />
-                        <SocialButton img='https://www.eqbank.ca/images/default-source/svgs/get_it_on_google_play.svg?sfvrsn=fb69bfd3_30' />
-                    </div>
+                   {!link?link: null}
+                  {!socialLink?socialLink: null}
                 </div>
             </div>
         </>

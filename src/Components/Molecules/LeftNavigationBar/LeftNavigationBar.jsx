@@ -2,8 +2,9 @@ import React,{useContext} from 'react';
 import './LeftNavigationBar.css';
 import { leftNavbarLabels } from '../../../Data/NavbarLabel';
 import { MainContext } from '../../../Context/MainContext';
+import SearchIcon from '../../Atoms/SearchIcon/SearchIcon';
 
-function LeftNavigationBar({ leftNavBarSwitchLabel, menuTitle, open, marginLeft }) {
+function LeftNavigationBar({ leftNavBarSwitchLabel, menuTitle, open, marginLeft, color }) {
     const { handleShow } = useContext(MainContext);
     return (
         <>
@@ -16,7 +17,7 @@ function LeftNavigationBar({ leftNavBarSwitchLabel, menuTitle, open, marginLeft 
                                     <span
                                         style={
                                             menuTitle === leftNavItem && open
-                                                ? { color: '#c33991' }
+                                                ? { color: color }
                                                 : null
                                         }
                                         className='align-name-title'
@@ -39,7 +40,7 @@ function LeftNavigationBar({ leftNavBarSwitchLabel, menuTitle, open, marginLeft 
 
                                     <div
                                         className={
-                                            menuTitle === leftNavItem && open ? 'active' : null
+                                            menuTitle === !leftNavItem && open ? 'active' : null
                                         }
                                     />
                                 </li>
@@ -50,10 +51,7 @@ function LeftNavigationBar({ leftNavBarSwitchLabel, menuTitle, open, marginLeft 
                             className='search-button'
                             style={{ marginLeft: marginLeft? marginLeft: null}}
                         >
-                            {' '}
-                            <span className='search-link'>
-                                <span className='search-icon'></span>
-                            </span>
+                            <SearchIcon/>
                         </li>
                     </ul>
                 </nav>

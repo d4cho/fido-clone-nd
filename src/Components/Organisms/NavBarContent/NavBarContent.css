@@ -88,27 +88,5 @@
     transform: translateX(0);
 }
 
-.Go-button {
-    background: #c33991;
-    border: none;
-    color: #fff;
-    font-family: din-2014, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.5rem;
-    line-height: 65px;
-    padding: 0 20px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-.Go-button:hover {
-    background-color: rgb(42, 41, 41);
-}
 
-.search-close-button {
-    cursor: pointer;
-    margin-top: 30px;
-    margin-right: 15px;
-}
+

@@ -4,12 +4,10 @@ export const MainContext = createContext();
 
 function MainContextProvider(props) {
     const [open, setOpen] = useState(false);
-    const [menuTitle, setMenuTitle] = useState('');
+    const [menuTitle, setMenuTitle] = useState('SHOP');
     const [openCloseMenu, setOpenCloseMenu] = useState(false);
     const [show, setShow] = useState(false);
     const [toggle, setToggle] = useState(false);
-    const [activeStep, setActiveStep] = useState(0);
-    const [subMenuTitle, setSubMenuTitle] = useState('Everyday Banking');
     const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
 
     useEffect(() => {
@@ -17,12 +15,6 @@ function MainContextProvider(props) {
             .matchMedia('(min-width: 1020px)')
             .addEventListener('change', (e) => setMatches(e.matches));
     }, []);
-
-    const nextStep = () => {
-        if (activeStep < 2) {
-            setActiveStep((currentStep) => currentStep + 1);
-        }
-    };
 
     const sideBarToggle = () => {
         setToggle(!toggle);
@@ -53,10 +45,6 @@ function MainContextProvider(props) {
                 toggle,
                 sideBarToggle,
                 setToggle,
-                activeStep,
-                nextStep,
-                subMenuTitle,
-                setSubMenuTitle,
                 matches,
             }}
         >
