@@ -16,22 +16,12 @@
 .menu-items {
     display: grid;
     grid-template-columns: repeat(5, auto);
-    grid-gap: 15px;
+    grid-gap: 40px;
     list-style: none;
     padding-top: 10px;
     padding-bottom: 10px;
 }
-li {
-    font-family: din-2014, sans-serif;
-    font-weight: 700;
-}
 
-.align-name-title:hover {
-    color: #c33991;
-}
-.align-name-title-no-arrow:hover {
-    color: #c33991;
-}
 
 a {
     text-decoration: none;
@@ -73,26 +63,14 @@ a {
     height: 2rem;
 }
 
-.align-name-title-no-arrow {
-    border: none;
-    border-bottom: 3px solid #fff;
-    box-sizing: border-box;
-    display: inline-block;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    cursor: pointer;
-}
-
 .align-name-title {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     cursor: pointer;
+    font-weight: 600;
 }
 .arrow-down {
     width: 1rem;

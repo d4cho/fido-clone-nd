@@ -7,7 +7,6 @@
     z-index: 50000;
 }
 
-
 .join-now-container {
     float: right;
     margin-top: 10px;
@@ -56,11 +55,11 @@
 
 @media screen and (min-width: 1020px) {
     .inner-container {
-        padding: 0 20px;
+        padding: 0 30px;
+        padding-top: 10px;
         display: flex;
         flex-direction: row-reverse;
-        justify-content: space-around;
-        height: 70px;
+        height: 80px;
         margin: 0 auto;
         max-width: 100rem;
     }
@@ -72,31 +71,22 @@
     }
 }
 
-@media screen and (min-width: 1020px) {
-    .nav-container {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: center;
-        gap: 90px;
-    }
+.search-bar-wrapper {
+    height: 60px;
+    padding-bottom: 20px;
+    width: 1500px;
+    z-index: 6000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    padding-top: 2px;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-out;
 }
-    .search-bar-wrapper {
-        height: 60px;
-        padding-bottom: 20px;
-        width: 1500px;
-        z-index: 6000;
-        position: absolute;
-        top: 0;
-        right: 0;
-        background-color: white;
-        padding-top: 2px;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-out;
-    }
-    .search-bar-wrapper.open {
-        transform: translateX(0);
-    }
+.search-bar-wrapper.open {
+    transform: translateX(0);
+}
 
 .Go-button {
     background: #c33991;

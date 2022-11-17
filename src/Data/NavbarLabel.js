@@ -1,6 +1,6 @@
 export const dropdownNavbarLabels = ['Everyday Banking', 'Investments', 'Payments', 'Borrowing'];
 
-export const leftNavbarLabels = ['Personal Banking', 'About us', 'Education Centre', 'Help'];
+export const leftNavbarLabels = ['SHOP', 'MY ACCOUNT', 'SUPPORT'];
 
 export const navInfo = [
     {

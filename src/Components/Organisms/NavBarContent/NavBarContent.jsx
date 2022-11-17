@@ -11,16 +11,24 @@ function NavBarContent({
     SideBarDrawer,
     Logo,
     SlideIn,
-    link
+    link,
+    backgroundColor,
+    alignItems,
 }) {
     const { toggle, sideBarToggle } = useContext(MainContext);
-  
+
     return (
         <>
-            <div className='parent-container'>
-                <div className='inner-container'>
+            <div className='parent-container' style={{ backgroundColor: backgroundColor }}>
+                <div
+                    className='inner-container'
+                    style={{
+                        justifyContent: alignItems ? alignItems : 'space-evenly',
+                        gap: alignItems ? '120px' : '',
+                    }}
+                >
                     <div className='join-now-container'>
-                       {link}
+                        {link}
                         <span
                             onClick={sideBarToggle}
                             className={toggle ? 'x-button' : 'menu-button'}
@@ -36,17 +44,17 @@ function NavBarContent({
                             gap: '80px',
                         }}
                     >
-                       {RightNavigationBar}
+                        {RightNavigationBar}
                         {LeftNavigationBar}
                     </div>
 
-                  {Logo}
+                    {Logo}
                 </div>
-               {SlideIn}
+                {SlideIn}
             </div>
             {NavBarDropdownContent}
             {MiniCardsContent}
-           {SideBarDrawer}
+            {SideBarDrawer}
         </>
     );
 }
