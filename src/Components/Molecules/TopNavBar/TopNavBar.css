@@ -1,0 +1,24 @@
+.top-nav-bar {
+    display: flex;
+    flex-direction: row;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1200px;
+    padding-right: 145px;
+    justify-content: flex-end;
+    gap: 50px;
+    padding-top: 20px;
+    margin-top: 0px;
+    list-style: none;
+}
+
+.top-nav-bar-item {
+    font-size: 0.85rem;
+    line-height: 1;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.top-nav-bar-item:hover {
+    text-decoration: underline;
+}

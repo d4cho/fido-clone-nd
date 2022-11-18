@@ -1,5 +1,3 @@
-export const dropdownNavbarLabels = ['Everyday Banking', 'Investments', 'Payments', 'Borrowing'];
-
 export const leftNavbarLabels = ['SHOP', 'MY ACCOUNT', 'SUPPORT'];
 
 export const navInfo = [
@@ -69,5 +67,22 @@ export const navInfo = [
 
     {
         mainLabel: { mainLabelName: 'Français' },
+    },
+];
+
+export const topNavBarData = [
+    {
+        title: 'ON',
+
+        isOpen: false,
+    },
+    {
+        title: 'FR',
+    },
+    {
+        title: 'FIND A STORE',
+    },
+    {
+        title: 'SIGN IN ',
     },
 ];

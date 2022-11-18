@@ -14,17 +14,27 @@ function NavBarContent({
     link,
     backgroundColor,
     alignItems,
+    borderBottom,
+    topNavBar,
+    paddingTop,
+    paddingBottom
 }) {
-    const { toggle, sideBarToggle } = useContext(MainContext);
+    const { toggle, sideBarToggle, matches } = useContext(MainContext);
 
     return (
         <>
-            <div className='parent-container' style={{ backgroundColor: backgroundColor }}>
+            <div
+                className='parent-container'
+                style={{ backgroundColor: backgroundColor, borderBottom: borderBottom }}
+            >
+                {matches? topNavBar:null}
                 <div
                     className='inner-container'
                     style={{
                         justifyContent: alignItems ? alignItems : 'space-evenly',
                         gap: alignItems ? '120px' : '',
+                        paddingTop: matches ? paddingTop : null,
+                        paddingBottom: matches? paddingBottom: null
                     }}
                 >
                     <div className='join-now-container'>

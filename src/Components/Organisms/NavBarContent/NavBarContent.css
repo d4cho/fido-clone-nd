@@ -1,7 +1,6 @@
 .parent-container {
     background: #fff;
     width: 100%;
-    padding-top: 10px;
     position: sticky;
     top: 0;
     z-index: 50000;
@@ -24,6 +23,7 @@
         position: relative;
         top: 5px;
         cursor: pointer;
+        color: black;
     }
 
     .x-button {
@@ -38,12 +38,6 @@
         top: 5px;
         cursor: pointer;
     }
-    .Go-button {
-        display: none;
-    }
-    .search-close-button {
-        display: none;
-    }
 }
 
 @media screen and (max-width: 1020px) {
@@ -56,10 +50,9 @@
 @media screen and (min-width: 1020px) {
     .inner-container {
         padding: 0 30px;
-        padding-top: 10px;
         display: flex;
         flex-direction: row-reverse;
-        height: 80px;
+        height: 70px;
         margin: 0 auto;
         max-width: 100rem;
     }
@@ -87,6 +80,3 @@
 .search-bar-wrapper.open {
     transform: translateX(0);
 }
-
-
-

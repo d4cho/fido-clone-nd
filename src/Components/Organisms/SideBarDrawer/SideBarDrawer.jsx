@@ -7,7 +7,6 @@ import Backdrop from "../Backdrop/Backdrop";
 import SocialLink from "../../Atoms/SocialLink/SocialLink";
 import Link from "../../Atoms/Link/Link";
 
-
 function SideBarDrawer() {
   const { toggle, setToggle } = useContext(MainContext);
   
@@ -44,7 +43,7 @@ function SideBarDrawer() {
                       </div>
                   }
               />
-              {backDrop}
+              {!backDrop}
           </div>
       </>
   );
