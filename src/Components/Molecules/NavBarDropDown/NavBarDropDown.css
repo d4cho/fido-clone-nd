@@ -1,0 +1,45 @@
+.link-drop-down {
+    position: relative;
+    top: 100%;
+    left: 400px;
+    list-style: none;
+    margin: 0;
+    background: #fff;
+    border-bottom: 2px solid #ccc;
+    min-width: 100%;
+    max-height: calc(100vh - 174px);
+    padding: 10px 0;
+}
+.explore-products-title {
+    text-align: center;
+    position: relative;
+    left: -280px;
+}
+
+@media screen and (max-width: 1020px) {
+    .explore-products-title {
+        display: none;
+    }
+    .link-drop-down {
+        display: none;
+    }
+}
+
+.main-content {
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    left: -200px;
+    list-style: none;
+    gap: 30px;
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+
+.check-div {
+    height: 3px;
+    background-color: #c33991;
+    margin-top: 10px;
+}
