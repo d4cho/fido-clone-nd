@@ -12,35 +12,41 @@ import SideBarDrawer from './Components/Organisms/SideBarDrawer/SideBarDrawer';
 import Logo from './Components/Atoms/Logo/Logo';
 import { MainContext } from './Context/MainContext';
 import TopNavBarContent from './Components/Organisms/TopNavBarContent/TopNavBarContent';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
+import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
 
 function App() {
     const { matches } = useContext(MainContext);
-    const { menuTitle, setMenuTitle, open, setOpen } = useContext(MainContext);
+    const { menuTitle, open } = useContext(MainContext);
     const { handleShow } = useContext(MainContext);
 
-    const leftNavBarSwitchLabel = (menuTitle) => {
-        switch (menuTitle) {
-            case 'SHOP':
-                setMenuTitle('SHOP');
-                setOpen(!open);
-                break;
-            case 'MY ACCOUNT':
-                setMenuTitle('MY ACCOUNT');
-                break;
-            case 'SUPPORT':
-                setMenuTitle('SUPPORT');
-                break;
-            default:
-                setMenuTitle('SHOP');
-        }
-    };
+    const topNavBarData = [
+        {
+            arrowDown: <KeyboardArrowDownOutlinedIcon />,
+            title: 'ON',
+            arrowUp: <KeyboardArrowUpOutlinedIcon />,
+        },
+        {
+            title: 'FR',
+        },
+        {
+            title: 'FIND A STORE',
+            icon: <LocationOnOutlinedIcon />,
+        },
+        {
+            title: 'SIGN IN ',
+            icon: <Person2OutlinedIcon />,
+        },
+    ];
+
     return (
         <>
             <NavBarContent
                 openIconColor='black'
                 LeftNavigationBar={
                     <LeftNavigationBar
-                        leftNavBarSwitchLabel={leftNavBarSwitchLabel}
                         menuTitle={menuTitle}
                         handleShow={handleShow}
                         open={open}
@@ -71,7 +77,7 @@ function App() {
                 backgroundColor='#fff'
                 alignItems='center'
                 borderBottom='2px solid #ccc'
-                topNavBar={<TopNavBarContent />}
+                topNavBar={<TopNavBarContent data={topNavBarData} />}
                 paddingTop='20px'
                 paddingBottom='10px'
             />

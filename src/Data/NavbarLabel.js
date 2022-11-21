@@ -1,4 +1,8 @@
-export const leftNavbarLabels = ['SHOP', 'MY ACCOUNT', 'SUPPORT'];
+export const leftNavbarLabels = [
+    { title: 'SHOP' },
+    { title: 'MY ACCOUNT', href: '/Plans' },
+    { title: 'SUPPORT', href: '/Plans' },
+];
 
 export const navInfo = [
     {
@@ -67,22 +71,5 @@ export const navInfo = [
 
     {
         mainLabel: { mainLabelName: 'Français' },
-    },
-];
-
-export const topNavBarData = [
-    {
-        title: 'ON',
-
-        isOpen: false,
-    },
-    {
-        title: 'FR',
-    },
-    {
-        title: 'FIND A STORE',
-    },
-    {
-        title: 'SIGN IN ',
     },
 ];

@@ -21,10 +21,7 @@
     height: 100%;
     background-position: center;
 }
-.search-link:hover {
-    background-color: lightgrey;
-    border-radius: 2px;
-}
+
 .search-link {
     display: flex;
     justify-content: center;

@@ -1,11 +1,21 @@
-import React,{useContext} from 'react';
+import React, { useContext } from 'react';
 import './LeftNavigationBar.css';
 import { leftNavbarLabels } from '../../../Data/NavbarLabel';
 import { MainContext } from '../../../Context/MainContext';
 import SearchIcon from '../../Atoms/SearchIcon/SearchIcon';
 
-function LeftNavigationBar({ leftNavBarSwitchLabel, menuTitle, open, marginLeft, color }) {
-    const { handleShow } = useContext(MainContext);
+function LeftNavigationBar({ menuTitle, open, marginLeft, color }) {
+    const {
+        handleShow,
+        handleMouseEnter,
+        handleMouseLeave,
+        isHover,
+        navItemLabelHover,
+        handleNavItemMouseEnter,
+        handleNavItemMouseLeave,
+        navItems,
+        leftNavBarSwitchLabel,
+    } = useContext(MainContext);
     return (
         <>
             <div className='left-navbar-container'>
@@ -13,24 +23,27 @@ function LeftNavigationBar({ leftNavBarSwitchLabel, menuTitle, open, marginLeft,
                     <ul className='menu-items'>
                         {leftNavbarLabels.map((leftNavItem, idx) => (
                             <div key={idx}>
-                                <li onClick={() => leftNavBarSwitchLabel(leftNavItem)} >
+                                <li onClick={() => leftNavBarSwitchLabel(leftNavItem.title)}>
                                     <span
                                         style={
-                                            menuTitle === leftNavItem && open
+                                            menuTitle === leftNavItem.title && open
                                                 ? { color: color }
                                                 : null
                                         }
                                         className='align-name-title'
                                     >
-                                        {leftNavItem !== 'SHOP' ? (
-                                            <a href='/Plans'>{leftNavItem}</a>
-                                        ) : (
-                                            <>{leftNavItem}</>
-                                        )}
-                                        {leftNavItem === 'SHOP' && (
+                                        <a
+                                            onMouseEnter={() => handleNavItemMouseEnter(leftNavItem.title)}
+                                            onMouseLeave={() =>handleNavItemMouseLeave(leftNavItem.title)}
+                                            href={leftNavItem.href}
+                                        >
+                                            {leftNavItem.title}
+                                        </a>
+
+                                        {leftNavItem.title === 'SHOP' && (
                                             <span
                                                 className={
-                                                    open && menuTitle === leftNavItem
+                                                    open && menuTitle === leftNavItem.title
                                                         ? 'arrow-up'
                                                         : 'arrow-down'
                                                 }
@@ -40,7 +53,9 @@ function LeftNavigationBar({ leftNavBarSwitchLabel, menuTitle, open, marginLeft,
 
                                     <div
                                         className={
-                                            menuTitle === !leftNavItem && open ? 'active' : null
+                                            navItemLabelHover && navItems=== leftNavItem.title
+                                                ? 'active'
+                                                : null
                                         }
                                     />
                                 </li>
@@ -49,9 +64,16 @@ function LeftNavigationBar({ leftNavBarSwitchLabel, menuTitle, open, marginLeft,
                         <li
                             onClick={handleShow}
                             className='search-button'
-                            style={{ marginLeft: marginLeft? marginLeft: null}}
+                            style={{ marginLeft: marginLeft ? marginLeft : null }}
                         >
-                            <SearchIcon/>
+                            <SearchIcon
+                                handleMouseEnter={handleMouseEnter}
+                                handleMouseLeave={handleMouseLeave}
+                                isHover={isHover}
+                                backGroundColor='#ffe600'
+                                borderRadius='50%'
+                                border='1px solid black'
+                            />
                         </li>
                     </ul>
                 </nav>
