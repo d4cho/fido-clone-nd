@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import './NavBarDropDown.css';
 import { MainContext } from '../../../Context/MainContext';
-function NavBarDropdown() {
+function NavBarDropdown({title}) {
     const { menuTitle, open} = useContext(MainContext);
     return (
         <>
-            {open && menuTitle === 'SHOP' ? (
+            {open && menuTitle === title ? (
                 <>
                     <div className='link-drop-down'>
                         <ul className='main-content'>

@@ -33,8 +33,12 @@ function LeftNavigationBar({ menuTitle, open, marginLeft, color }) {
                                         className='align-name-title'
                                     >
                                         <a
-                                            onMouseEnter={() => handleNavItemMouseEnter(leftNavItem.title)}
-                                            onMouseLeave={() =>handleNavItemMouseLeave(leftNavItem.title)}
+                                            onMouseEnter={() =>
+                                                handleNavItemMouseEnter(leftNavItem.title)
+                                            }
+                                            onMouseLeave={() =>
+                                                handleNavItemMouseLeave(leftNavItem.title)
+                                            }
                                             href={leftNavItem.href}
                                         >
                                             {leftNavItem.title}
@@ -53,7 +57,7 @@ function LeftNavigationBar({ menuTitle, open, marginLeft, color }) {
 
                                     <div
                                         className={
-                                            navItemLabelHover && navItems=== leftNavItem.title
+                                            navItemLabelHover && navItems === leftNavItem.title
                                                 ? 'active'
                                                 : null
                                         }
@@ -72,7 +76,7 @@ function LeftNavigationBar({ menuTitle, open, marginLeft, color }) {
                                 isHover={isHover}
                                 backGroundColor='#ffe600'
                                 borderRadius='50%'
-                                border='1px solid black'
+                                boxShadow='0px 0px 0px 1px rgba(0,0,0,0.9'
                             />
                         </li>
                     </ul>

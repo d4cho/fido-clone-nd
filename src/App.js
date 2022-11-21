@@ -54,7 +54,7 @@ function App() {
                         color='black'
                     />
                 }
-                NavBarDropdownContent={<NavBarDropdown />}
+                NavBarDropdownContent={<NavBarDropdown title='SHOP' />}
                 SideBarDrawer={<SideBarDrawer />}
                 Logo={
                     matches ? (
