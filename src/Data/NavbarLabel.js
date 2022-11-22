@@ -73,3 +73,18 @@ export const navInfo = [
         mainLabel: { mainLabelName: 'Français' },
     },
 ];
+
+export const shopDropdownLabels = [
+    { title: 'Phones', href: '/Phones' },
+    { title: 'Plans', href: '/Plans' },
+    { title: 'Promotions' },
+    { title: 'Home Internet' },
+    { title: 'Add-ons' },
+    { title: 'Travel' },
+    { title: 'Network' },
+    { title: 'Prepaid' },
+    { title: 'Tablets' },
+    { title: 'Home Phone' },
+    { title: 'LTE Hotspots' },
+    { title: 'Fido Mastercard' },
+];

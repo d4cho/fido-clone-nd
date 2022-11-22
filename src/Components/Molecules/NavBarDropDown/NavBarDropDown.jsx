@@ -1,15 +1,25 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './NavBarDropDown.css';
-import { MainContext } from '../../../Context/MainContext';
-function NavBarDropdown({title}) {
-    const { menuTitle, open} = useContext(MainContext);
+
+function NavBarDropdown({ title, backgroundColor, dataLabelItems, open, bottom, left }) {
     return (
         <>
-            {open && menuTitle === title ? (
+            {open && title ? (
                 <>
-                    <div className='link-drop-down'>
+                    <div
+                        style={{ backgroundColor: backgroundColor, bottom: bottom, left: left }}
+                        className='link-drop-down'
+                    >
                         <ul className='main-content'>
-                          <li>welcome</li>
+                            {dataLabelItems.map((navDropItem, idx) => (
+                                <div key={idx}>
+                                    <li>
+                                        <a className='nav-drop-item' href={navDropItem.href}>
+                                            {navDropItem.title}
+                                        </a>
+                                    </li>
+                                </div>
+                            ))}
                         </ul>
                     </div>
                 </>
@@ -18,4 +28,4 @@ function NavBarDropdown({title}) {
     );
 }
 
-export default NavBarDropdown
+export default NavBarDropdown;

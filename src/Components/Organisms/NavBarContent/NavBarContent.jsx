@@ -62,7 +62,6 @@ function NavBarContent({
                 </div>
                 {SlideIn}
             </div>
-            {NavBarDropdownContent}
             {MiniCardsContent}
             {SideBarDrawer}
         </>

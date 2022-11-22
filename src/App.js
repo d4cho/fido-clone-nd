@@ -16,11 +16,11 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
+import { shopDropdownLabels } from './Data/NavbarLabel';
+import { provincesDropdownLabels } from './Data/Provinces';
 
 function App() {
-    const { matches } = useContext(MainContext);
-    const { menuTitle, open } = useContext(MainContext);
-    const { handleShow } = useContext(MainContext);
+    const { menuTitle, open, handleShow, iconOpen, matches } = useContext(MainContext);
 
     const topNavBarData = [
         {
@@ -52,9 +52,17 @@ function App() {
                         open={open}
                         marginLeft='120px'
                         color='black'
+                        NavBarDropdownContent={
+                            <NavBarDropdown
+                                title='SHOP'
+                                backgroundColor='white'
+                                dataLabelItems={shopDropdownLabels}
+                                open={open}
+                                bottom='-468px'
+                            />
+                        }
                     />
                 }
-                NavBarDropdownContent={<NavBarDropdown title='SHOP' />}
                 SideBarDrawer={<SideBarDrawer />}
                 Logo={
                     matches ? (
@@ -77,7 +85,21 @@ function App() {
                 backgroundColor='#fff'
                 alignItems='center'
                 borderBottom='2px solid #ccc'
-                topNavBar={<TopNavBarContent data={topNavBarData} />}
+                topNavBar={
+                    <TopNavBarContent
+                        data={topNavBarData}
+                        dropNav={
+                            <NavBarDropdown
+                                backgroundColor='rgb(255, 230, 0)'
+                                dataLabelItems={provincesDropdownLabels}
+                                title='ON'
+                                open={iconOpen}
+                                bottom='-405px'
+                                left='800px'
+                            />
+                        }
+                    />
+                }
                 paddingTop='20px'
                 paddingBottom='10px'
             />

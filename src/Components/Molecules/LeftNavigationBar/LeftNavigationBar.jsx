@@ -4,7 +4,7 @@ import { leftNavbarLabels } from '../../../Data/NavbarLabel';
 import { MainContext } from '../../../Context/MainContext';
 import SearchIcon from '../../Atoms/SearchIcon/SearchIcon';
 
-function LeftNavigationBar({ menuTitle, open, marginLeft, color }) {
+function LeftNavigationBar({ menuTitle, open, marginLeft, color, NavBarDropdownContent }) {
     const {
         handleShow,
         handleMouseEnter,
@@ -33,6 +33,7 @@ function LeftNavigationBar({ menuTitle, open, marginLeft, color }) {
                                         className='align-name-title'
                                     >
                                         <a
+                                            style={{ position: 'relative' }}
                                             onMouseEnter={() =>
                                                 handleNavItemMouseEnter(leftNavItem.title)
                                             }
@@ -80,6 +81,7 @@ function LeftNavigationBar({ menuTitle, open, marginLeft, color }) {
                             />
                         </li>
                     </ul>
+                    {NavBarDropdownContent}
                 </nav>
             </div>
         </>
