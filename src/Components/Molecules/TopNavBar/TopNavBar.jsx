@@ -12,10 +12,16 @@ function TopNavBar({ data, height, backgroundColor, dropNavContent }) {
                             <span className='arrow-icon' onClick={() => iconOpenToggle()}>
                                 <li className='top-nav-bar-item'>{topNavItem.title}</li>{' '}
                                 {iconOpen ? (
-                                    <span>{topNavItem.arrowUp}</span>
-                                ) : (
-                                    <span className='top-bar-arrow-down'>
+                                    <span
+                                        style={{
+                                            transition: 'all 0.5s',
+                                        }}
+                                    >
                                         {topNavItem.arrowDown}
+                                    </span>
+                                ) : (
+                                    <span style={{ transition: 'all 0.5s', rotate: '180deg' }}>
+                                        {topNavItem.arrowUp}
                                     </span>
                                 )}
                             </span>
@@ -25,7 +31,7 @@ function TopNavBar({ data, height, backgroundColor, dropNavContent }) {
                                 <li className='top-nav-bar-item'>{topNavItem.title}</li>{' '}
                             </>
                         )}
-                        {topNavItem.title === 'ON' ?  dropNavContent  : null}
+                        {topNavItem.title === 'ON' ? dropNavContent : null}
                     </div>
                 ))}
             </ul>

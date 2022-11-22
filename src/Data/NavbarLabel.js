@@ -88,3 +88,9 @@ export const shopDropdownLabels = [
     { title: 'LTE Hotspots' },
     { title: 'Fido Mastercard' },
 ];
+
+export const billsDropdownLabels = [
+    { title: 'View Bill' },
+    { title: 'View Your Usage' },
+    { title: 'Fido Roam' },
+];

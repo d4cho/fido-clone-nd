@@ -3,7 +3,6 @@ import PlansPage from './Components/Views/PlansPage';
 import { Routes, Route } from 'react-router-dom';
 import BuildAPlanPage from './Components/Views/BuildAPlanPage';
 import PhonesPage from './Components/Views/PhonesPage';
-import Link from './Components/Atoms/Link/Link';
 import React, { useContext } from 'react';
 import NavBarContent from './Components/Organisms/NavBarContent/NavBarContent';
 import LeftNavigationBar from './Components/Molecules/LeftNavigationBar/LeftNavigationBar';
@@ -18,9 +17,12 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
 import { shopDropdownLabels } from './Data/NavbarLabel';
 import { provincesDropdownLabels } from './Data/Provinces';
+import { billsDropdownLabels } from './Data/NavbarLabel';
+import TextField from './Components/Atoms/TextField/TextField';
 
 function App() {
-    const { menuTitle, open, handleShow, iconOpen, matches } = useContext(MainContext);
+    const { menuTitle, open, handleShow, iconOpen, matches, show, closeShow } =
+        useContext(MainContext);
 
     const topNavBarData = [
         {
@@ -79,9 +81,18 @@ function App() {
                         />
                     )
                 }
-                // SlideIn={
-                //     <SlideInSearchBar slideInSearchBar={slideInSearchBar} closeShow={closeShow} />
-                // }
+                searchOpenAndClose={
+                    <NavBarDropdown
+                        backgroundColor='#fff'
+                        dataLabelItems={billsDropdownLabels}
+                        title='Slide'
+                        open={show}
+                        bottom='-135px'
+                        left='1240px'
+                        closeShow={closeShow}
+                        textField={<TextField value={''} placeholder='Search' />}
+                    />
+                }
                 backgroundColor='#fff'
                 alignItems='center'
                 borderBottom='2px solid #ccc'
@@ -110,15 +121,6 @@ function App() {
                         <>
                             {' '}
                             <h1 style={{ textAlign: 'center' }}>Welcome to Fido</h1>
-                            <div
-                                style={{
-                                    flexDirection: 'row',
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                <Link href='/Plans' title='Plans' width='200px' />
-                            </div>
                         </>
                     }
                 />

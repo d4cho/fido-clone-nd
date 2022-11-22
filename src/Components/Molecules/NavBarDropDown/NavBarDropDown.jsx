@@ -1,15 +1,32 @@
 import React from 'react';
 import './NavBarDropDown.css';
 
-function NavBarDropdown({ title, backgroundColor, dataLabelItems, open, bottom, left }) {
+function NavBarDropdown({
+    title,
+    backgroundColor,
+    dataLabelItems,
+    open,
+    bottom,
+    left,
+    closeShow,
+    textField,
+}) {
     return (
         <>
             {open && title ? (
                 <>
                     <div
-                        style={{ backgroundColor: backgroundColor, bottom: bottom, left: left }}
+                        style={{
+                            backgroundColor: backgroundColor,
+                            bottom: bottom,
+                            left: left,
+                            display: textField? 'flex': null,
+                            flexDirection: textField? 'column': null,
+                        }}
                         className='link-drop-down'
+                        onClick={closeShow}
                     >
+                        {textField}
                         <ul className='main-content'>
                             {dataLabelItems.map((navDropItem, idx) => (
                                 <div key={idx}>

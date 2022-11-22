@@ -30,8 +30,8 @@ function ChoiceCard({
                 <div className='price-container'>
                     <p>{priceSign}</p>
                     <h1 style={{ fontSize: '2.2rem', fontWeight: '700' }}>{price}</h1>
-                    <h1 className=' '>{zero}</h1>
-                    <p className=' '>{month}</p>
+                    <p>{zero}</p>
+                    <p>{month}</p>
                 </div>
                 <p className='content'>{content}</p>
                 {Link}

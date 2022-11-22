@@ -6,11 +6,10 @@ import { MainContext } from '../../../Context/MainContext';
 function NavBarContent({
     LeftNavigationBar,
     RightNavigationBar,
-    NavBarDropdownContent,
     MiniCardsContent,
     SideBarDrawer,
     Logo,
-    SlideIn,
+    searchOpenAndClose,
     link,
     backgroundColor,
     alignItems,
@@ -60,7 +59,7 @@ function NavBarContent({
 
                     {Logo}
                 </div>
-                {SlideIn}
+                {searchOpenAndClose}
             </div>
             {MiniCardsContent}
             {SideBarDrawer}
