@@ -10,6 +10,8 @@ function NavBarDropdown({
     left,
     closeShow,
     textField,
+    paddingTop,
+    selectAProvince,
 }) {
     return (
         <>
@@ -20,22 +22,51 @@ function NavBarDropdown({
                             backgroundColor: backgroundColor,
                             bottom: bottom,
                             left: left,
-                            display: textField? 'flex': null,
-                            flexDirection: textField? 'column': null,
+                            display: textField ? 'flex' : null,
+                            flexDirection: textField ? 'column' : null,
+                            paddingTop: paddingTop,
                         }}
                         className='link-drop-down'
                         onClick={closeShow}
                     >
                         {textField}
                         <ul className='main-content'>
+                            {selectAProvince && (
+                                <span
+                                    style={{
+                                        borderBottom: selectAProvince ? '1px solid black' : null,
+                                        paddingBottom: selectAProvince ? '10px' : null,
+                                    }}
+                                >
+                                    {selectAProvince}
+                                </span>
+                            )}
                             {dataLabelItems.map((navDropItem, idx) => (
-                                <div key={idx}>
-                                    <li>
-                                        <a className='nav-drop-item' href={navDropItem.href}>
+                                <span key={idx}>
+                                    <li
+                                        style={{
+                                            backgroundColor:
+                                                navDropItem.title === 'Ontario' ? 'black' : null,
+                                            padding:
+                                                navDropItem.title === 'Ontario'
+                                                    ? '10px 30px 10px 10px'
+                                                    : null,
+                                        }}
+                                        className='nav-drop-item'
+                                    >
+                                        <a
+                                            style={{
+                                                color:
+                                                    navDropItem.title === 'Ontario'
+                                                        ? 'white'
+                                                        : null,
+                                            }}
+                                            href={navDropItem.href}
+                                        >
                                             {navDropItem.title}
                                         </a>
                                     </li>
-                                </div>
+                                </span>
                             ))}
                         </ul>
                     </div>

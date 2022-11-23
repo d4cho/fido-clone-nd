@@ -78,6 +78,8 @@ function LeftNavigationBar({ menuTitle, open, marginLeft, color, NavBarDropdownC
                                 backGroundColor='#ffe600'
                                 borderRadius='50%'
                                 boxShadow='0px 0px 0px 1px rgba(0,0,0,0.9'
+                                height='2rem'
+                                width='2rem'
                             />
                         </li>
                     </ul>

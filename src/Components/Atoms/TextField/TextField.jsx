@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
 import './TextField.css';
 
-function TextField({
-    placeholder,
-    value,
-    handleInputChange,
-    width,
-    type,
-    checked,
-}) {
+function TextField({ placeholder, value, handleInputChange, width, type, checked, searchIcon }) {
     return (
-        <>
+        <div>
             <input
                 style={{
                     width: width,
@@ -22,7 +15,19 @@ function TextField({
                 type={type}
                 checked={checked}
             />
-        </>
+            {searchIcon && (
+                <span
+                    style={{
+                        position: 'absolute',
+                        left: '138.7px',
+                        bottom: '138px',
+                        cursor: 'pointer',
+                    }}
+                >
+                    {searchIcon}
+                </span>
+            )}
+        </div>
     );
 }
 

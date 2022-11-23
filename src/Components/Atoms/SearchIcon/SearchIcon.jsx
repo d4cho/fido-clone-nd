@@ -6,7 +6,9 @@ function SearchIcon({
     isHover,
     backGroundColor,
     borderRadius,
-   boxShadow
+    boxShadow,
+    height,
+    width,
 }) {
     return (
         <>
@@ -17,7 +19,9 @@ function SearchIcon({
                 style={{
                     backgroundColor: isHover ? backGroundColor : null,
                     borderRadius: isHover ? borderRadius : null,
-                    boxShadow: isHover? boxShadow: null
+                    boxShadow: isHover ? boxShadow : null,
+                    height: height ? height : null,
+                    width: width ? width : null,
                 }}
             >
                 <span className='search-icon'></span>

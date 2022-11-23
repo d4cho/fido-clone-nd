@@ -13,14 +13,12 @@ function TopNavBar({ data, height, backgroundColor, dropNavContent }) {
                                 <li className='top-nav-bar-item'>{topNavItem.title}</li>{' '}
                                 {iconOpen ? (
                                     <span
-                                        style={{
-                                            transition: 'all 0.5s',
-                                        }}
+                                      
                                     >
                                         {topNavItem.arrowDown}
                                     </span>
                                 ) : (
-                                    <span style={{ transition: 'all 0.5s', rotate: '180deg' }}>
+                                    <span >
                                         {topNavItem.arrowUp}
                                     </span>
                                 )}

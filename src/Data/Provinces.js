@@ -1,5 +1,4 @@
 export const provincesDropdownLabels = [
-    { title: 'Select a Province' },
     { title: 'Alberta' },
     { title: 'British Columbia' },
     { title: 'Manitoba' },
