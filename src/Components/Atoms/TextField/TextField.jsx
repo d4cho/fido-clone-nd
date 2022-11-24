@@ -1,7 +1,7 @@
 import React from 'react';
 import './TextField.css';
 
-function TextField({ placeholder, value, handleInputChange, width, type, checked, searchIcon }) {
+function TextField({ placeholder, value, onChange, width, type, checked, searchIcon }) {
     return (
         <div style={{ position: 'relative' }}>
             <input
@@ -11,7 +11,7 @@ function TextField({ placeholder, value, handleInputChange, width, type, checked
                 placeholder={placeholder}
                 className='text-field'
                 value={value}
-                onChange={handleInputChange}
+                onChange={onChange}
                 type={type}
                 checked={checked}
             />
