@@ -3,16 +3,11 @@ import ChoiceCard from '../../Molecules/ChoiceCard/ChoiceCard';
 import Title from '../../Atoms/Title/Title';
 import Link from '../../Atoms/Link/Link';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import { MainContext } from '../../../Context/MainContext';
 
 function ChoiceCardContent() {
-    const [matches, setMatches] = useState(window.matchMedia('(min-width: 1020px)').matches);
-
-    useEffect(() => {
-        window
-            .matchMedia('(min-width: 1020px)')
-            .addEventListener('change', (e) => setMatches(e.matches));
-    }, []);
+      const { matches } = useContext(MainContext);
     return (
         <>
             <Title

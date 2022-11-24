@@ -5,7 +5,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     bottom: 30px;
     cursor: pointer;
 }
@@ -21,14 +20,9 @@
     height: 100%;
     background-position: center;
 }
-.search-link:hover {
-    background-color: lightgrey;
-    border-radius: 2px;
-}
+
 .search-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 2rem;
-    height: 2rem;
 }

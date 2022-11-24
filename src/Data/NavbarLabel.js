@@ -1,68 +1,69 @@
-export const leftNavbarLabels = ['SHOP', 'MY ACCOUNT', 'SUPPORT'];
+export const leftNavbarLabels = [
+    { title: 'SHOP' },
+    { title: 'MY ACCOUNT', href: '/Plans' },
+    { title: 'SUPPORT', href: '/Plans' },
+];
 
 export const navInfo = [
     {
         mainLabel: { mainLabelName: 'Sign in' },
     },
     {
+        mainLabel: { mainLabelName: 'Find a Store' },
+    },
+    {
         id: 1,
         mainLabel: {
-            mainLabelName: 'Personal banking',
+            mainLabelName: 'Shop',
             subTitle: [
                 {
-                    name: 'Everyday banking',
                     links: [
-                        'Savings plus Account',
-                        'Joint Savings plus Account',
-                        'TSFA Savings Account',
-                        'US Dollar Account',
+                        'Phones',
+                        'Plans',
+                        'Promotions',
+                        'Home Internet',
+                        'Add-ons',
+                        'Travel',
+                        'Network',
+                        'Prepaid',
+                        'Tablets',
+                        'Home Phone',
+                        'LTE Hotspots',
+                        'Fido Mastercard',
                     ],
-                },
-                {
-                    name: 'Investments',
-                    links: ["GIC's", 'RSP Savings Account', 'TSFA Savings Account'],
-                },
-                {
-                    name: 'Payments',
-                    links: ['International Money Transfers'],
-                },
-                {
-                    name: 'Borrowing',
-                    links: ['Mortgage Marketplace'],
                 },
             ],
         },
     },
     {
-        id: 2,
-        mainLabel: {
-            mainLabelName: 'About us',
-            subTitle: [
-                {
-                    links: ['Our Company', 'Community', 'Careers', 'News'],
-                },
-            ],
-        },
+        mainLabel: { mainLabelName: 'My Account' },
     },
 
     {
-        mainLabel: { mainLabelName: 'Education Centre' },
+        mainLabel: { mainLabelName: 'Support' },
     },
 
     {
         id: 3,
         mainLabel: {
-            mainLabelName: 'Help',
+            mainLabelName: 'Ontario',
             subTitle: [
                 {
-                    links: ['FAQ', 'Contact Us', 'Estates'],
+                    links: [
+                        'Alberta',
+                        'British Columbia',
+                        'Manitoba',
+                        'News Brunswick',
+                        'NewFoundland and Labrador',
+                        'Nova Scotia',
+                        'Ontario',
+                        'Prince Edward Island',
+                        'Quebec',
+                        'Saskatchewan',
+                    ],
                 },
             ],
         },
-    },
-
-    {
-        mainLabel: { mainLabelName: 'Contact us' },
     },
 
     {
@@ -70,19 +71,23 @@ export const navInfo = [
     },
 ];
 
-export const topNavBarData = [
-    {
-        title: 'ON',
+export const shopDropdownLabels = [
+    { title: 'Phones', href: '/Phones' },
+    { title: 'Plans', href: '/Plans' },
+    { title: 'Promotions' },
+    { title: 'Home Internet' },
+    { title: 'Add-ons' },
+    { title: 'Travel' },
+    { title: 'Network' },
+    { title: 'Prepaid' },
+    { title: 'Tablets' },
+    { title: 'Home Phone' },
+    { title: 'LTE Hotspots' },
+    { title: 'Fido Mastercard' },
+];
 
-        isOpen: false,
-    },
-    {
-        title: 'FR',
-    },
-    {
-        title: 'FIND A STORE',
-    },
-    {
-        title: 'SIGN IN ',
-    },
+export const billsDropdownLabels = [
+    { title: 'View Bill' },
+    { title: 'View Your Usage' },
+    { title: 'Fido Roam' },
 ];

@@ -9,6 +9,7 @@
 .join-now-container {
     float: right;
     margin-top: 10px;
+    margin-right: 20px;
 }
 
 @media screen and (max-width: 1020px) {
@@ -62,21 +63,4 @@
     .join-now-container {
         display: none;
     }
-}
-
-.search-bar-wrapper {
-    height: 60px;
-    padding-bottom: 20px;
-    width: 1500px;
-    z-index: 6000;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: white;
-    padding-top: 2px;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-out;
-}
-.search-bar-wrapper.open {
-    transform: translateX(0);
 }

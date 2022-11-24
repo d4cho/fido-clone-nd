@@ -6,20 +6,19 @@ import { MainContext } from '../../../Context/MainContext';
 function NavBarContent({
     LeftNavigationBar,
     RightNavigationBar,
-    NavBarDropdownContent,
     MiniCardsContent,
     SideBarDrawer,
     Logo,
-    SlideIn,
     link,
     backgroundColor,
     alignItems,
     borderBottom,
     topNavBar,
     paddingTop,
-    paddingBottom
+    paddingBottom,
+    hamburgerMenu,
 }) {
-    const { toggle, sideBarToggle, matches } = useContext(MainContext);
+    const { matches } = useContext(MainContext);
 
     return (
         <>
@@ -27,24 +26,19 @@ function NavBarContent({
                 className='parent-container'
                 style={{ backgroundColor: backgroundColor, borderBottom: borderBottom }}
             >
-                {matches? topNavBar:null}
+                {matches ? topNavBar : null}
                 <div
                     className='inner-container'
                     style={{
                         justifyContent: alignItems ? alignItems : 'space-evenly',
                         gap: alignItems ? '120px' : '',
                         paddingTop: matches ? paddingTop : null,
-                        paddingBottom: matches? paddingBottom: null
+                        paddingBottom: matches ? paddingBottom : null,
                     }}
                 >
                     <div className='join-now-container'>
                         {link}
-                        <span
-                            onClick={sideBarToggle}
-                            className={toggle ? 'x-button' : 'menu-button'}
-                        >
-                            <span className='menu-icon' data-parent-container-toggle-icon=''></span>
-                        </span>
+                       {hamburgerMenu}
                     </div>
 
                     <div
@@ -60,9 +54,7 @@ function NavBarContent({
 
                     {Logo}
                 </div>
-                {SlideIn}
             </div>
-            {NavBarDropdownContent}
             {MiniCardsContent}
             {SideBarDrawer}
         </>

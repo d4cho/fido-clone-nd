@@ -3,7 +3,6 @@ import PlansPage from './Components/Views/PlansPage';
 import { Routes, Route } from 'react-router-dom';
 import BuildAPlanPage from './Components/Views/BuildAPlanPage';
 import PhonesPage from './Components/Views/PhonesPage';
-import Link from './Components/Atoms/Link/Link';
 import React, { useContext } from 'react';
 import NavBarContent from './Components/Organisms/NavBarContent/NavBarContent';
 import LeftNavigationBar from './Components/Molecules/LeftNavigationBar/LeftNavigationBar';
@@ -12,44 +11,76 @@ import SideBarDrawer from './Components/Organisms/SideBarDrawer/SideBarDrawer';
 import Logo from './Components/Atoms/Logo/Logo';
 import { MainContext } from './Context/MainContext';
 import TopNavBarContent from './Components/Organisms/TopNavBarContent/TopNavBarContent';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
+import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
+import { shopDropdownLabels } from './Data/NavbarLabel';
+import { provincesDropdownLabels } from './Data/Provinces';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 function App() {
-    const { matches } = useContext(MainContext);
-    const { menuTitle, setMenuTitle, open, setOpen } = useContext(MainContext);
-    const { handleShow } = useContext(MainContext);
+    const { menuTitle, open, handleShow, iconOpen, matches, sideBarToggle, toggle } =
+        useContext(MainContext);
 
-    const leftNavBarSwitchLabel = (menuTitle) => {
-        switch (menuTitle) {
-            case 'SHOP':
-                setMenuTitle('SHOP');
-                setOpen(!open);
-                break;
-            case 'MY ACCOUNT':
-                setMenuTitle('MY ACCOUNT');
-                break;
-            case 'SUPPORT':
-                setMenuTitle('SUPPORT');
-                break;
-            default:
-                setMenuTitle('SHOP');
-        }
-    };
+    const topNavBarData = [
+        {
+            arrowDown: <KeyboardArrowDownOutlinedIcon />,
+            title: 'ON',
+            arrowUp: <KeyboardArrowUpOutlinedIcon />,
+        },
+        {
+            title: 'FR',
+        },
+        {
+            title: 'FIND A STORE',
+            icon: <LocationOnOutlinedIcon />,
+        },
+        {
+            title: 'SIGN IN ',
+            icon: <Person2OutlinedIcon />,
+        },
+    ];
+
     return (
         <>
             <NavBarContent
+                hamburgerMenu={
+                    toggle ? (
+                        <span style={{ cursor: 'pointer' }} onClick={sideBarToggle}>
+                            <CloseIcon />
+                        </span>
+                    ) : (
+                        <span style={{ cursor: 'pointer' }} onClick={sideBarToggle}>
+                            <MenuIcon />
+                        </span>
+                    )
+                }
+                close={<CloseIcon />}
                 openIconColor='black'
                 LeftNavigationBar={
                     <LeftNavigationBar
-                        leftNavBarSwitchLabel={leftNavBarSwitchLabel}
                         menuTitle={menuTitle}
                         handleShow={handleShow}
                         open={open}
                         marginLeft='120px'
                         color='black'
+                        NavBarDropdownContent={
+                            <NavBarDropdown
+                                title='SHOP'
+                                backgroundColor='white'
+                                dataLabelItems={shopDropdownLabels}
+                                open={open}
+                                top='58px'
+                                left='-30px'
+                            />
+                        }
+                        arrowDown={<KeyboardArrowDownOutlinedIcon />}
+                        arrowUp={<KeyboardArrowUpOutlinedIcon />}
                     />
                 }
-                NavBarDropdownContent={<NavBarDropdown />}
-                SideBarDrawer={<SideBarDrawer />}
+                SideBarDrawer={<SideBarDrawer height='1050px' />}
                 Logo={
                     matches ? (
                         <Logo
@@ -65,13 +96,26 @@ function App() {
                         />
                     )
                 }
-                // SlideIn={
-                //     <SlideInSearchBar slideInSearchBar={slideInSearchBar} closeShow={closeShow} />
-                // }
                 backgroundColor='#fff'
                 alignItems='center'
                 borderBottom='2px solid #ccc'
-                topNavBar={<TopNavBarContent />}
+                topNavBar={
+                    <TopNavBarContent
+                        data={topNavBarData}
+                        dropNav={
+                            <NavBarDropdown
+                                backgroundColor='rgb(255, 230, 0)'
+                                dataLabelItems={provincesDropdownLabels}
+                                title='ON'
+                                open={iconOpen}
+                                top='100%'
+                                left='-25px'
+                                paddingTop='10px'
+                                selectAProvince='Select a Province'
+                            />
+                        }
+                    />
+                }
                 paddingTop='20px'
                 paddingBottom='10px'
             />
@@ -82,15 +126,6 @@ function App() {
                         <>
                             {' '}
                             <h1 style={{ textAlign: 'center' }}>Welcome to Fido</h1>
-                            <div
-                                style={{
-                                    flexDirection: 'row',
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                <Link href='/Plans' title='Plans' width='200px' />
-                            </div>
                         </>
                     }
                 />

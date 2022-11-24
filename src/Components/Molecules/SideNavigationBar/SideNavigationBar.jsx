@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import './SideNavigationBar.css';
-import Link from '../../Atoms/Link/Link';
-import SocialButton from '../../Atoms/SocialLink/SocialLink';
-import { navInfo } from '../../../Data/NavbarLabel';
 
-function SideNavigationBar({ socialLink, link }) {
+function SideNavigationBar({
+    socialLink,
+    link,
+    navInfo,
+    color,
+    padding,
+    fontSize,
+    profileIcon,
+    location,
+}) {
     const [clicked, setClicked] = useState('0');
 
     const handleToggle = (index) => {
@@ -18,18 +24,17 @@ function SideNavigationBar({ socialLink, link }) {
         <>
             <div>
                 <nav>
-                    <ul className='nav-list'>
+                    <ul className='nav-list' style={{ fontSize: fontSize }}>
                         {navInfo.map((navItem, idx) => (
                             <div key={idx}>
                                 <div
                                     style={{
-                                        padding: '25px 20px 25px 20px',
-                                        backgroundColor:
-                                            navItem.mainLabel.mainLabelName === 'Contact us' ||
-                                            navItem.mainLabel.mainLabelName === 'Français'
-                                                ? '#fafafa'
-                                                : null,
-                                        borderBottom: '1px solid #ccc',
+                                        padding: padding,
+                                        borderBottom:
+                                            navItem.mainLabel.mainLabelName === 'Ontario' ||
+                                            navItem.mainLabel.mainLabelName === 'Find a Store'
+                                                ? '1px solid black'
+                                                : '1px solid #ccc',
                                     }}
                                 >
                                     <li
@@ -38,20 +43,35 @@ function SideNavigationBar({ socialLink, link }) {
                                         style={{
                                             pointerEvents:
                                                 navItem.mainLabel.mainLabelName === 'Sign in' ||
-                                                navItem.mainLabel.mainLabelName ===
-                                                    'Education Centre' ||
-                                                navItem.mainLabel.mainLabelName === 'Contact us' ||
-                                                navItem.mainLabel.mainLabelName === 'Français'
+                                                navItem.mainLabel.mainLabelName === 'My Account' ||
+                                                navItem.mainLabel.mainLabelName === 'Support' ||
+                                                navItem.mainLabel.mainLabelName === 'Français' ||
+                                                navItem.mainLabel.mainLabelName === 'Find a Store'
                                                     ? 'none'
                                                     : '',
+                                            display: 'flex',
                                         }}
                                     >
-                                        <a href='/'>{navItem.mainLabel.mainLabelName}</a>
+                                        <span
+                                            style={{
+                                                display: 'flex',
+                                                flexDirection: 'row',
+                                                gap: '5px',
+                                               
+                                            }}
+                                        >
+                                            {navItem.mainLabel.mainLabelName === 'Sign in'
+                                                ? profileIcon
+                                                : navItem.mainLabel.mainLabelName === 'Find a Store'
+                                                ? location
+                                                : null}
+                                            {navItem.mainLabel.mainLabelName}{' '}
+                                        </span>
 
                                         {navItem.mainLabel.mainLabelName !== 'Sign in' &&
-                                            navItem.mainLabel.mainLabelName !== 'Contact us' &&
-                                            navItem.mainLabel.mainLabelName !==
-                                                'Education Centre' &&
+                                            navItem.mainLabel.mainLabelName !== 'My Account' &&
+                                            navItem.mainLabel.mainLabelName !== 'Support' &&
+                                            navItem.mainLabel.mainLabelName !== 'Find a Store' &&
                                             navItem.mainLabel.mainLabelName !== 'Français' && (
                                                 <span className='toggle-button'>
                                                     <img
@@ -68,20 +88,16 @@ function SideNavigationBar({ socialLink, link }) {
                                     </li>
                                 </div>
                                 {clicked === idx ? (
-                                    <div style={{ backgroundColor: '#fafafa' }}>
-                                        <ul
-                                            className={
-                                                navItem.mainLabel.mainLabelName ===
-                                                'Personal banking'
-                                                    ? 'secondary-nav-list'
-                                                    : 'secondary-nav-list-no-scroll'
-                                            }
-                                        >
+                                    <div>
+                                        <ul className='secondary-nav-list'>
                                             {navItem.mainLabel.subTitle?.map((name, id) => (
                                                 <li key={id}>
                                                     {name.name}
                                                     {
-                                                        <ul className='inner-sub-list'>
+                                                        <ul
+                                                            style={{ color: color }}
+                                                            className='inner-sub-list'
+                                                        >
                                                             {name.links.map((link, id) => (
                                                                 <div key={id}>
                                                                     <li>{link}</li>
@@ -99,8 +115,8 @@ function SideNavigationBar({ socialLink, link }) {
                     </ul>
                 </nav>
                 <div className='blocker-content'>
-                   {!link?link: null}
-                  {!socialLink?socialLink: null}
+                    {!link ? link : null}
+                    {!socialLink ? socialLink : null}
                 </div>
             </div>
         </>

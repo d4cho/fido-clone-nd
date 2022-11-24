@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './TopNavBar.css';
-import { topNavBarData } from '../../../Data/NavbarLabel';
-
-
-function TopNavBar() {
+import { MainContext } from '../../../Context/MainContext';
+function TopNavBar({ data, height, backgroundColor, dropNavContent }) {
+    const { iconOpen, iconOpenToggle } = useContext(MainContext);
     return (
-        <div style={{ height: '50px', backgroundColor: '#ffe600' }}>
+        <div style={{ height: height, backgroundColor: backgroundColor }}>
             <ul className='top-nav-bar'>
-                {topNavBarData.map((topNavItem, idx) => (
-                    <div key={idx}>
-                        <li className='top-nav-bar-item'>{topNavItem.title}</li>
+                {data.map((topNavItem, idx) => (
+                    <div key={idx} className='icons-container'>
+                        {topNavItem.title === 'ON' ? (
+                            <span className='arrow-icon' onClick={() => iconOpenToggle()}>
+                                <li className='top-nav-bar-item'>{topNavItem.title}</li>{' '}
+                                {iconOpen ? (
+                                    <span>{topNavItem.arrowUp}</span>
+                                ) : (
+                                    <span>
+                                        {topNavItem.arrowDown}
+                                    </span>
+                                )}
+                            </span>
+                        ) : (
+                            <>
+                                <span>{topNavItem.icon}</span>
+                                <li className='top-nav-bar-item'>{topNavItem.title}</li>{' '}
+                            </>
+                        )}
+                        {topNavItem.title === 'ON' ? dropNavContent : null}
                     </div>
                 ))}
             </ul>

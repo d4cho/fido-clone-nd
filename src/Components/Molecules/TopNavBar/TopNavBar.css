@@ -4,12 +4,14 @@
     margin-right: auto;
     margin-left: auto;
     max-width: 1200px;
-    padding-right: 145px;
     justify-content: flex-end;
-    gap: 50px;
+    gap: 40px;
     padding-top: 20px;
     margin-top: 0px;
     list-style: none;
+    position: relative;
+    right: 140px;
+    bottom: 7px;
 }
 
 .top-nav-bar-item {
@@ -21,4 +23,20 @@
 
 .top-nav-bar-item:hover {
     text-decoration: underline;
+}
+
+.arrow-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.icons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    position: relative;
 }

@@ -1,5 +1,4 @@
-
-  .side-bar-drawer {
+.side-bar-drawer {
     box-sizing: border-box;
     width: 100%;
     background-color: white;
@@ -8,18 +7,18 @@
     position: fixed;
     width: 100%;
     z-index: 30000;
-  }
+}
 
-  .side-bar-drawer.open {
+.side-bar-drawer.open {
     transform: translateX(0);
-  }
+}
 
-  @media screen and (min-width: 1020px) {
-    .side-bar-drawer{
-      display: none;
+@media screen and (min-width: 1020px) {
+    .side-bar-drawer {
+        display: none;
     }
 
-    .side-bar-drawer.open{
-      display: none;
+    .side-bar-drawer.open {
+        display: none;
     }
-  }
+}

@@ -5,13 +5,9 @@
     padding: 0;
     width: 100%;
     color: #000;
-    font-family: din-2014, sans-serif;
     font-size: 1.1rem;
-    font-stretch: normal;
-    font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.563rem;
-    padding: 0;
 }
 
 .list-item {
@@ -38,10 +34,6 @@
     padding: 0px 20px;
     position: absolute;
     right: 0px;
-    color: #000;
-    font-family: din-2014, sans-serif;
-    font-weight: 700;
-    text-decoration: underline;
     outline: 0;
     cursor: pointer;
 }
@@ -64,7 +56,6 @@
 .blocker-content {
     display: block;
     padding: 3rem;
-    background-color: #fafafa;
 }
 
 .block-content-join-now {
@@ -82,25 +73,9 @@
 }
 
 .secondary-nav-list {
-    padding-left: 20px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    list-style: none;
-    font-size: 0.9rem;
-    font-weight: 800;
-    max-height: 590px;
-    overflow: scroll;
-    overflow-x: hidden;
-}
-
-.secondary-nav-list-no-scroll {
     padding-left: 2px;
-    padding-top: 30px;
-    padding-bottom: 30px;
     list-style: none;
-    font-size: 0.9rem;
-    font-weight: 800;
-    max-height: 590px;
+    
 }
 
 .inner-sub-list {
@@ -110,13 +85,12 @@
     justify-content: flex-end;
     align-items: stretch;
     gap: 30px;
-    color: #c33991;
-    font-size: 1rem;
+    font-size: 0.8rem;
     padding-top: 20px;
     padding-bottom: 20px;
-    font-size: 0.9rem;
-    font-weight: 800;
+
 }
+
 
 @media screen and (min-width: 1020px) {
     .nav-list {
