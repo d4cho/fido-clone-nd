@@ -9,7 +9,6 @@ function NavBarContent({
     MiniCardsContent,
     SideBarDrawer,
     Logo,
-    searchOpenAndClose,
     link,
     backgroundColor,
     alignItems,
@@ -59,7 +58,6 @@ function NavBarContent({
 
                     {Logo}
                 </div>
-                {searchOpenAndClose}
             </div>
             {MiniCardsContent}
             {SideBarDrawer}

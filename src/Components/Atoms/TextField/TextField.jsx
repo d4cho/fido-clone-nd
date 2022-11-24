@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './TextField.css';
 
 function TextField({ placeholder, value, handleInputChange, width, type, checked, searchIcon }) {
     return (
-        <div>
+        <div style={{ position: 'relative' }}>
             <input
                 style={{
                     width: width,
@@ -19,8 +19,9 @@ function TextField({ placeholder, value, handleInputChange, width, type, checked
                 <span
                     style={{
                         position: 'absolute',
-                        left: '138.7px',
-                        bottom: '138px',
+                        right: '0',
+                        top: '60%',
+                        translate: '0 -52%',
                         cursor: 'pointer',
                     }}
                 >

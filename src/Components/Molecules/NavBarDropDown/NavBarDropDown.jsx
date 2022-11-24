@@ -6,12 +6,14 @@ function NavBarDropdown({
     backgroundColor,
     dataLabelItems,
     open,
-    bottom,
+    top,
     left,
     closeShow,
     textField,
     paddingTop,
     selectAProvince,
+    marginTop,
+    marginBottom,
 }) {
     return (
         <>
@@ -20,7 +22,7 @@ function NavBarDropdown({
                     <div
                         style={{
                             backgroundColor: backgroundColor,
-                            bottom: bottom,
+                            top: top,
                             left: left,
                             display: textField ? 'flex' : null,
                             flexDirection: textField ? 'column' : null,
@@ -30,7 +32,10 @@ function NavBarDropdown({
                         onClick={closeShow}
                     >
                         {textField}
-                        <ul className='main-content'>
+                        <ul
+                            style={{ marginBottom: marginBottom, marginTop: marginTop }}
+                            className='main-content'
+                        >
                             {selectAProvince && (
                                 <span
                                     style={{

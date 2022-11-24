@@ -9,6 +9,7 @@ function SearchIcon({
     boxShadow,
     height,
     width,
+    position,
 }) {
     return (
         <>
@@ -22,6 +23,7 @@ function SearchIcon({
                     boxShadow: isHover ? boxShadow : null,
                     height: height ? height : null,
                     width: width ? width : null,
+                    position: position? position: null
                 }}
             >
                 <span className='search-icon'></span>

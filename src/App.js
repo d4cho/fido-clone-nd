@@ -17,23 +17,9 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
 import { shopDropdownLabels } from './Data/NavbarLabel';
 import { provincesDropdownLabels } from './Data/Provinces';
-import { billsDropdownLabels } from './Data/NavbarLabel';
-import TextField from './Components/Atoms/TextField/TextField';
-import SearchIcon from './Components/Atoms/SearchIcon/SearchIcon';
 
 function App() {
-    const {
-        menuTitle,
-        open,
-        handleShow,
-        iconOpen,
-        matches,
-        show,
-        closeShow,
-        handleMouseEnter,
-        handleMouseLeave,
-        isHover,
-    } = useContext(MainContext);
+    const { menuTitle, open, handleShow, iconOpen, matches } = useContext(MainContext);
 
     const topNavBarData = [
         {
@@ -71,9 +57,12 @@ function App() {
                                 backgroundColor='white'
                                 dataLabelItems={shopDropdownLabels}
                                 open={open}
-                                bottom='-468px'
+                                top='58px'
+                                left='-30px'
                             />
                         }
+                        arrowDown={<KeyboardArrowDownOutlinedIcon />}
+                        arrowUp={<KeyboardArrowUpOutlinedIcon />}
                     />
                 }
                 SideBarDrawer={<SideBarDrawer />}
@@ -92,34 +81,6 @@ function App() {
                         />
                     )
                 }
-                searchOpenAndClose={
-                    <NavBarDropdown
-                        backgroundColor='#fff'
-                        dataLabelItems={billsDropdownLabels}
-                        title='Slide'
-                        open={show}
-                        bottom='-135px'
-                        left='1240px'
-                        closeShow={closeShow}
-                        textField={
-                            <TextField
-                                value={''}
-                                placeholder='Search'
-                                searchIcon={
-                                    <SearchIcon
-                                        handleMouseEnter={handleMouseEnter}
-                                        handleMouseLeave={handleMouseLeave}
-                                        isHover={isHover}
-                                        backGroundColor='#ffe600'
-                                        boxShadow='0px 0px 0px 1px rgba(0,0,0,0.9'
-                                        height='2.57rem'
-                                        width='2.35rem'
-                                    />
-                                }
-                            />
-                        }
-                    />
-                }
                 backgroundColor='#fff'
                 alignItems='center'
                 borderBottom='2px solid #ccc'
@@ -132,9 +93,9 @@ function App() {
                                 dataLabelItems={provincesDropdownLabels}
                                 title='ON'
                                 open={iconOpen}
-                                bottom='-462px'
-                                left='800px'
-                                paddingTop='30px'
+                                top='100%'
+                                left='-25px'
+                                paddingTop='10px'
                                 selectAProvince='Select a Province'
                             />
                         }
