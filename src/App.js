@@ -17,9 +17,12 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
 import { shopDropdownLabels } from './Data/NavbarLabel';
 import { provincesDropdownLabels } from './Data/Provinces';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 function App() {
-    const { menuTitle, open, handleShow, iconOpen, matches } = useContext(MainContext);
+    const { menuTitle, open, handleShow, iconOpen, matches, sideBarToggle, toggle } =
+        useContext(MainContext);
 
     const topNavBarData = [
         {
@@ -43,6 +46,18 @@ function App() {
     return (
         <>
             <NavBarContent
+                hamburgerMenu={
+                    toggle ? (
+                        <span style={{ cursor: 'pointer' }} onClick={sideBarToggle}>
+                            <CloseIcon />
+                        </span>
+                    ) : (
+                        <span style={{ cursor: 'pointer' }} onClick={sideBarToggle}>
+                            <MenuIcon />
+                        </span>
+                    )
+                }
+                close={<CloseIcon />}
                 openIconColor='black'
                 LeftNavigationBar={
                     <LeftNavigationBar
@@ -65,7 +80,7 @@ function App() {
                         arrowUp={<KeyboardArrowUpOutlinedIcon />}
                     />
                 }
-                SideBarDrawer={<SideBarDrawer />}
+                SideBarDrawer={<SideBarDrawer height='1050px' />}
                 Logo={
                     matches ? (
                         <Logo

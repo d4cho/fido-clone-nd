@@ -16,8 +16,9 @@ function NavBarContent({
     topNavBar,
     paddingTop,
     paddingBottom,
+    hamburgerMenu,
 }) {
-    const { toggle, sideBarToggle, matches } = useContext(MainContext);
+    const { matches } = useContext(MainContext);
 
     return (
         <>
@@ -37,12 +38,7 @@ function NavBarContent({
                 >
                     <div className='join-now-container'>
                         {link}
-                        <span
-                            onClick={sideBarToggle}
-                            className={toggle ? 'x-button' : 'menu-button'}
-                        >
-                            <span className='menu-icon' data-parent-container-toggle-icon=''></span>
-                        </span>
+                       {hamburgerMenu}
                     </div>
 
                     <div
