@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './LeftNavigationBar.css';
 import { leftNavbarLabels } from '../../../Data/NavbarLabel';
 import { MainContext } from '../../../Context/MainContext';
@@ -15,9 +15,10 @@ function LeftNavigationBar({
     NavBarDropdownContent,
     arrowDown,
     arrowUp,
+    closeIcon,
 }) {
     const {
-        handleShow,
+        openShow,
         handleMouseEnter,
         handleMouseLeave,
         isHover,
@@ -30,11 +31,15 @@ function LeftNavigationBar({
         closeShow,
     } = useContext(MainContext);
 
+    const [value, setValue] = useState('');
+
+    console.log(show);
+
     return (
         <>
             <div className='left-navbar-container'>
                 <nav>
-                    <ul className='menu-items'>
+                    <ul className='menu-items' style={{ position: 'relative' }}>
                         {leftNavbarLabels.map((leftNavItem, idx) => (
                             <div key={idx}>
                                 <li
@@ -83,7 +88,7 @@ function LeftNavigationBar({
                             </div>
                         ))}
                         <li
-                            onClick={handleShow}
+                            onClick={openShow}
                             className='search-button'
                             style={{
                                 marginLeft: marginLeft ? marginLeft : null,
@@ -100,35 +105,37 @@ function LeftNavigationBar({
                                 height='2rem'
                                 width='2rem'
                             />
-                            <NavBarDropdown
-                                backgroundColor='#fff'
-                                dataLabelItems={billsDropdownLabels}
-                                title='Slide'
-                                open={show}
-                                marginTop='20px'
-                                marginBottom='10px'
-                                top='-1px'
-                                left='0'
-                                closeShow={closeShow}
-                                textField={
-                                    <TextField
-                                        value={''}
-                                        placeholder='Search'
-                                        searchIcon={
-                                            <SearchIcon
-                                                handleMouseEnter={handleMouseEnter}
-                                                handleMouseLeave={handleMouseLeave}
-                                                isHover={isHover}
-                                                backGroundColor='#ffe600'
-                                                boxShadow='0px 0px 0px 1px rgba(0,0,0,0.9'
-                                                height='2.57rem'
-                                                width='2.35rem'
-                                            />
-                                        }
-                                    />
-                                }
-                            />
                         </li>
+                        <NavBarDropdown
+                            backgroundColor='#fff'
+                            dataLabelItems={billsDropdownLabels}
+                            title='Slide'
+                            open={show}
+                            marginTop='20px'
+                            marginBottom='10px'
+                            top='0px'
+                            left='560px'
+                            closeShow={closeShow}
+                            closeIcon={closeIcon}
+                            textField={
+                                <TextField
+                                    value={value}
+                                    placeholder='Search'
+                                    onChange={(e) => setValue(e.target.value)}
+                                    searchIcon={
+                                        <SearchIcon
+                                            handleMouseEnter={handleMouseEnter}
+                                            handleMouseLeave={handleMouseLeave}
+                                            isHover={isHover}
+                                            backGroundColor='#ffe600'
+                                            boxShadow='0px 0px 0px 1px rgba(0,0,0,0.9'
+                                            height='2.57rem'
+                                            width='2.35rem'
+                                        />
+                                    }
+                                />
+                            }
+                        />
                     </ul>
                 </nav>
             </div>

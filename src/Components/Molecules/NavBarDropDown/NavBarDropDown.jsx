@@ -14,6 +14,7 @@ function NavBarDropdown({
     selectAProvince,
     marginTop,
     marginBottom,
+    closeIcon,
 }) {
     return (
         <>
@@ -27,6 +28,7 @@ function NavBarDropdown({
                             display: textField ? 'flex' : null,
                             flexDirection: textField ? 'column' : null,
                             paddingTop: paddingTop,
+                            paddingBottom: '10px',
                         }}
                         className='link-drop-down'
                         onClick={closeShow}
@@ -74,6 +76,17 @@ function NavBarDropdown({
                                 </span>
                             ))}
                         </ul>
+                        <span
+                            className='close-nav-dropdown-icon'
+                            onClick={closeShow}
+                            style={{
+                                position: 'relative',
+                                left: '70px',
+                                paddingLeft: '0',
+                            }}
+                        >
+                            {closeIcon}
+                        </span>
                     </div>
                 </>
             ) : null}

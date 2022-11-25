@@ -29,10 +29,11 @@ function SideBarDrawer({height}) {
                     backgroundColor='#fafafa'
                     color='black'
                     navInfo={navInfo}
-                    padding='20px 10px 10px 40px'
+                    padding='10px 5px 8px'
                     fontSize='0.9rem'
                     profileIcon={<Person2OutlinedIcon />}
                     location={<LocationOnOutlinedIcon />}
+                    height='8px'
                     link={
                         <div className='block-content-join-now'>
                             <Link
@@ -44,6 +45,9 @@ function SideBarDrawer({height}) {
                             />
                         </div>
                     }
+                    paddingLeft='30px'
+                    paddingRight='30px'
+                    paddingTop='20px'
                     socialLink={
                         <div className='blocker-content-apple-google-buttons'>
                             <SocialLink img='https://www.eqbank.ca/images/default-source/svgs/download_on_the_app_store_badge.svg?sfvrsn=fe69bfd3_14' />

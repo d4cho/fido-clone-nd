@@ -10,6 +10,10 @@ function SideNavigationBar({
     fontSize,
     profileIcon,
     location,
+    height,
+    paddingLeft,
+    paddingTop,
+    paddingRight,
 }) {
     const [clicked, setClicked] = useState('0');
 
@@ -22,7 +26,13 @@ function SideNavigationBar({
 
     return (
         <>
-            <div>
+            <div
+                style={{
+                    paddingLeft: paddingLeft,
+                    paddingRight: paddingRight,
+                    paddingTop: paddingTop,
+                }}
+            >
                 <nav>
                     <ul className='nav-list' style={{ fontSize: fontSize }}>
                         {navInfo.map((navItem, idx) => (
@@ -30,10 +40,17 @@ function SideNavigationBar({
                                 <div
                                     style={{
                                         padding: padding,
+                                        marginTop:
+                                            navItem.mainLabel.mainLabelName === 'Shop' ||
+                                            navItem.mainLabel.mainLabelName === 'Ontario'
+                                                ? '10px'
+                                                : null,
                                         borderBottom:
                                             navItem.mainLabel.mainLabelName === 'Ontario' ||
                                             navItem.mainLabel.mainLabelName === 'Find a Store'
                                                 ? '1px solid black'
+                                                : navItem.mainLabel.mainLabelName === 'Français'
+                                                ? null
                                                 : '1px solid #ccc',
                                     }}
                                 >
@@ -57,7 +74,6 @@ function SideNavigationBar({
                                                 display: 'flex',
                                                 flexDirection: 'row',
                                                 gap: '5px',
-                                               
                                             }}
                                         >
                                             {navItem.mainLabel.mainLabelName === 'Sign in'
@@ -80,7 +96,7 @@ function SideNavigationBar({
                                                                 ? 'https://www.eqbank.ca/Sitefinity/WebsiteTemplates/EQ/App_Themes/EQ/static/images/data-uri/chevron-up.svg'
                                                                 : 'https://www.eqbank.ca/Sitefinity/WebsiteTemplates/EQ/App_Themes/EQ/static/images/data-uri/chevron-down.svg'
                                                         }
-                                                        className='toggle-button-arrow '
+                                                        style={{ height: height }}
                                                         alt=''
                                                     />
                                                 </span>

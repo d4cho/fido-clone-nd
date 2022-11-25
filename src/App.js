@@ -76,6 +76,7 @@ function App() {
                                 left='-30px'
                             />
                         }
+                        closeIcon={<CloseIcon />}
                         arrowDown={<KeyboardArrowDownOutlinedIcon />}
                         arrowUp={<KeyboardArrowUpOutlinedIcon />}
                     />

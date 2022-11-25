@@ -76,7 +76,7 @@ function MainContextProvider(props) {
         setToggle(!toggle);
     };
 
-    const handleShow = () => {
+    const openShow = () => {
         setShow(true);
     };
     const closeShow = () => {
@@ -96,7 +96,7 @@ function MainContextProvider(props) {
                 openCloseMenu,
                 openCloseMenuToggler,
                 show,
-                handleShow,
+                openShow,
                 closeShow,
                 toggle,
                 sideBarToggle,

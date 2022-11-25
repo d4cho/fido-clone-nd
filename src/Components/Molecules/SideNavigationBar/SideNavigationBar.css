@@ -33,8 +33,7 @@
 .toggle-button {
     padding: 0px 20px;
     position: absolute;
-    right: 0px;
-    outline: 0;
+    right: 20px;
     cursor: pointer;
 }
 
@@ -75,7 +74,6 @@
 .secondary-nav-list {
     padding-left: 2px;
     list-style: none;
-    
 }
 
 .inner-sub-list {
@@ -88,9 +86,7 @@
     font-size: 0.8rem;
     padding-top: 20px;
     padding-bottom: 20px;
-
 }
-
 
 @media screen and (min-width: 1020px) {
     .nav-list {
