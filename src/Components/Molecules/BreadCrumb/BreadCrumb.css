@@ -1,0 +1,11 @@
+.bread-crumb-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.bread-crumb-item-list::backdrop{
+      content: "/";
+    padding: 0 4px;
+}

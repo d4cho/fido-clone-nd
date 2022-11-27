@@ -1,7 +1,7 @@
-import './ChoiceCard.css';
-import StarIcon from '@mui/icons-material/Star';
+import './Card.css';
 
-function ChoiceCard({
+
+function Card({
     mainTitle,
     subTitle,
     priceContent,
@@ -13,16 +13,16 @@ function ChoiceCard({
     priceSign,
     zero,
     month,
+    starIcon,
+    banner
 }) {
     return (
         <div
             style={{ width: matches ? width : null, margin: !matches ? '20px' : null }}
             className='card-container-outline'
         >
-            <div className='banner' />
-            <StarIcon
-                style={{ position: 'absolute', top: '-2px', right: '-1px', color: 'white' }}
-            />
+            {banner}
+            {starIcon}
             <div className='inner-card-container'>
                 <h1 className='main-title'>{mainTitle}</h1>
                 <h1 className='sub-title'>{subTitle}</h1>
@@ -40,4 +40,4 @@ function ChoiceCard({
     );
 }
 
-export default ChoiceCard;
+export default Card;
