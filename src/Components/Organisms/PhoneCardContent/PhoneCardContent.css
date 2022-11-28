@@ -1,26 +1,63 @@
-/* .phone-card-content{
-    grid-template-columns: repeat(3,225px);
+.phone-card-content {
+    grid-template-columns: repeat(3, 225px);
     display: grid;
     grid-auto-rows: auto;
     grid-gap: 30px;
+    position: relative;
+    bottom: 130px;
     margin-left: 220px;
-   
 }
 
-@media screen and (max-width: 880px) {
+@media (min-width: 700px) and (max-width: 991px) {
     .phone-card-content {
-      grid-template-columns: repeat(2,285px);
+        grid-template-columns: repeat(2, 285px);
+        margin-left: 220px;
     }
 }
 
-@media screen and (max-width: 300px) {
+@media (min-width: 300px) and (max-width: 700px) {
     .phone-card-content {
-      grid-template-columns: repeat(1,385px);
+        grid-template-columns: repeat(1, 585px);
+        margin-left: 0px;
     }
-} */
+}
 
-.phone-banner{
- background-color: #33bfbc;
- padding-top: 10px;
- padding-bottom: 10px;
+.phone-banner {
+    background-color: #33bfbc;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+.discount-price {
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+.discount-price-line-through {
+    padding-right: 10px;
+    font-size: 0.8rem;
+    text-decoration: line-through;
+}
+.calculation-content {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+   align-content: flex-end;
+   font-size: 0.8rem;
+}
+
+.phone-bottom-content{
+    background-color: #fffacc;
+     font-size: 0.8rem;
+     padding-right: 20px;
+     padding-left: 10px;
+     padding-bottom: 10px;
+}
+
+.phone-full-price{
+    font-weight: bold;
+    font-size: 0.8rem;
+
 }

@@ -11,16 +11,18 @@
                     "standard": 0,
                     "zero": ".00",
                     "down": "/down",
-                    "reduced": "$48.88/mo.±Monthly financing after credit$9.58/mo.±(After bill credit)with Fido Payment"
+                    "reducedPrice": "$48.88/mo",
+                    "reducedDiscount": "$9.58/mo.±",
+                    "reduced": "(After bill credit)with Fido Payment Program"
                 }
             },
             "taxes": ["Taxes extra", "24 mos", "0% APR"],
-            "fullPrice": 1173,
+            "fullPrice": "1173.00",
             "content": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
         },
         {
             "banner": "Cyber deal",
-            "name": "Samsung Galaxy A53 5G",
+            "name": "SAMSUNG GALAXY A53 5G",
             "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
             "vendor": "Samsung",
             "properties": {
@@ -29,11 +31,13 @@
                     "standard": 0,
                     "zero": ".00",
                     "down": "/down",
-                    "reduced": "$48.88/mo.±Monthly financing after credit$9.58/mo.±(After bill credit)with Fido Payment"
+                    "reducedPrice": "$27.85/mo",
+                    "reducedDiscount": "$0.00/mo.±",
+                    "reduced": "(After bill credit)with Fido Payment Program"
                 }
             },
             "taxes": ["Taxes extra", "24 mos", "0% APR"],
-            "fullPrice": 1173,
+            "fullPrice": "690.00",
             "content": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
         },
 
@@ -48,51 +52,78 @@
                     "standard": 0,
                     "zero": ".00",
                     "down": "/down",
-                    "reduced": "$48.88/mo.±Monthly financing after credit$9.58/mo.±(After bill credit)with Fido Payment"
+                    "reducedPrice": "$36.41/mo",
+                    "reducedDiscount": "$20.00/mo.±",
+                    "reduced": "(After bill credit)with Fido Payment Program"
                 }
             },
             "taxes": ["Taxes extra", "24 mos", "0% APR"],
-            "fullPrice": 1173.0,
+            "fullPrice": "873.72",
             "content": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
         },
 
         {
-            "banner": "Black Frideals",
-            "name": "Samsung Galaxy S21 FE 5G",
-            "image": "https://images.ctfassets.net/t00ajdlq0g9p/6INHVXkShMMZ6Sozg1UfcE/1a6545abee221a6212a251938cbfff78/samsung-galsxy-s21-5G-graphite-front.png?h=201&w=268&fm=webp&q=100",
-            "vendor": "Samsung",
+            "banner": "cyber deal",
+            "name": "iPhone 13",
+            "image": "https://images.ctfassets.net/t00ajdlq0g9p/4Z8tBMVabYOIssGKLwfBrs/e7a9e3d83388a5a39c5483bd00e591b9/iPhone13-blue-front.png?h=201&w=268&fm=webp&q=100",
+            "vendor": "Apple",
             "properties": {
                 "cost": {
                     "priceSign": "$",
                     "standard": 0,
                     "zero": ".00",
                     "down": "/down",
-                    "reduced": "$48.88/mo.±Monthly financing after credit$9.58/mo.±(After bill credit)with Fido Payment"
+                    "reducedPrice": "$42.80/mo",
+                    "reducedDiscount": "$20.00/mo.±",
+                    "reduced": "(After bill credit)with Fido Payment Program"
                 }
             },
             "taxes": ["Taxes extra", "24 mos", "0% APR"],
-            "fullPrice": 1173.0,
+            "fullPrice": "1027.08",
             "content": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
         },
+
         
-       {
+        {
             "banner": "Black Frideals",
-            "name": "Samsung Galaxy S21 FE 5G",
-            "image": "https://images.ctfassets.net/t00ajdlq0g9p/6INHVXkShMMZ6Sozg1UfcE/1a6545abee221a6212a251938cbfff78/samsung-galsxy-s21-5G-graphite-front.png?h=201&w=268&fm=webp&q=100",
-            "vendor": "Samsung",
+            "name": "iPhone 11",
+            "image": "https://images.ctfassets.net/t00ajdlq0g9p/41glJawhHwf60ewAwFFpTf/d5ff745763ed03c586f326c2e417d1f4/iPhone-11-front-black-lang.png?h=201&w=268&fm=webp&q=100",
+            "vendor": "Apple",
             "properties": {
                 "cost": {
-                    "priceSign":"$",
+                    "priceSign": "$",
                     "standard": 0,
-                    "zero":".00",
-                    "down":"/down",
-                    "reduced": "$48.88/mo.±Monthly financing after credit$9.58/mo.±(After bill credit)with Fido Payment"
+                    "zero": ".00",
+                    "down": "/down",
+                    "reducedPrice": "$29.12/mo",
+                    "reducedDiscount": "$0.00/mo.±",
+                    "reduced": "(After bill credit)with Fido Payment Program"
                 }
             },
             "taxes": ["Taxes extra", "24 mos", "0% APR"],
-            "fullPrice": 1173.0,
+            "fullPrice":"698.76",
+            "content": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
+        },
+
+        {
+            "banner": "",
+            "name": "Google Pixel 6a",
+            "image": "https://images.ctfassets.net/t00ajdlq0g9p/1TnKIuyKDXoYt1JwbXzwfT/bf72dbb2ddb59f74a66f094443bbd261/google-pixel-6a-front-en.png?h=201&w=268&fm=webp&q=100",
+            "vendor": "Google",
+            "properties": {
+                "cost": {
+                    "priceSign": "$",
+                    "standard": 0,
+                    "zero": ".00",
+                    "down": "/down",
+                    "reducedPrice": "$29.25/mo",
+                    "reducedDiscount": "$0.00/mo.±",
+                    "reduced": "(After bill credit)with Fido Payment Program"
+                }
+            },
+            "taxes": ["Taxes extra", "24 mos", "0% APR"],
+            "fullPrice":"702.00",
             "content": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
         }
-        
     ]
 }

@@ -32,6 +32,7 @@ function PhonesPage() {
                     marginLeft='10px'
                     marginTop='50px'
                 />
+                {/* the filter for the cards */}
                 <h3>Filtred By</h3>
                 <ul style={{ border: '2px solid black', width: '150px' }}>
                     <li>Samsung</li>

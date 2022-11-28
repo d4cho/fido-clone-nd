@@ -19,10 +19,16 @@ function Card({
     subTitleFontSize,
     fullPrice,
     height,
+    discountPrice,
+    taxes,
 }) {
     return (
         <div
-            style={{ width: matches ? width : null, margin: !matches ? '20px' : null , height:height}}
+            style={{
+                width: matches ? width : null,
+                margin: !matches ? '20px' : null,
+                height: height,
+            }}
             className='card-container-outline'
         >
             {banner}
@@ -40,6 +46,8 @@ function Card({
                     <p>{zero}</p>
                     <p>{month}</p>
                 </div>
+                {discountPrice}
+                {taxes}
                 {fullPrice}
                 <p className='content'>{content}</p>
                 {Link}
