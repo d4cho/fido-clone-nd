@@ -1,4 +1,4 @@
-import './CardContent.css';
+import './ChoiceCardContent.css';
 import Card from '../../Molecules/Card/Card';
 import Title from '../../Atoms/Title/Title';
 import Link from '../../Atoms/Link/Link';
@@ -7,7 +7,7 @@ import { useContext } from 'react';
 import { MainContext } from '../../../Context/MainContext';
 import StarIcon from '@mui/icons-material/Star';
 
-function CardContent() {
+function ChoiceCardContent() {
     const { matches } = useContext(MainContext);
     return (
         <>
@@ -74,4 +74,4 @@ function CardContent() {
     );
 }
 
-export default CardContent;
+export default ChoiceCardContent;

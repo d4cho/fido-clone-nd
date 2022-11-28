@@ -1,0 +1,26 @@
+/* .phone-card-content{
+    grid-template-columns: repeat(3,225px);
+    display: grid;
+    grid-auto-rows: auto;
+    grid-gap: 30px;
+    margin-left: 220px;
+   
+}
+
+@media screen and (max-width: 880px) {
+    .phone-card-content {
+      grid-template-columns: repeat(2,285px);
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .phone-card-content {
+      grid-template-columns: repeat(1,385px);
+    }
+} */
+
+.phone-banner{
+ background-color: #33bfbc;
+ padding-top: 10px;
+ padding-bottom: 10px;
+}

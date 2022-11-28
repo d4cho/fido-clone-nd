@@ -8,27 +8,30 @@ function BreadCrumb({ data }) {
                     style={{
                         display: 'flex',
                         flexDirection: 'row',
-                        gap: '5px',
+                        gap: '2px',
                         listStyle: 'none',
                         paddingLeft: '40px',
-                        paddingTop: '18px',
-                        paddingBottom: '15px',
+                        paddingTop: '10px',
+                        paddingBottom: '10px',
                     }}
                 >
                     {data.map((breadCrumbItem, idx) => (
-                        <li className='bread-crumb-item-list'>
-                            {' '}
-                            <a
-                                style={{
-                                    color: breadCrumbItem.title !== 'Phones' ? '#035d67' : null,
-                                    fontSize: '0.9rem',
-                                    fontWeight: '600',
-                                }}
-                                href={breadCrumbItem.href}
-                            >
-                                {breadCrumbItem.title}
-                            </a>
-                        </li>
+                        <div key={idx}>
+                            <li className='bread-crumb-item-list'>
+                                {' '}
+                                <a
+                                    style={{
+                                        color: breadCrumbItem.title !== 'Phones' ? '#035d67' : null,
+                                        fontSize: '0.9rem',
+                                        fontWeight: '600',
+                                    }}
+                                    href={breadCrumbItem.href}
+                                >
+                                    {breadCrumbItem.title}
+                                    <span style={{ color: 'black' }}>{breadCrumbItem.slash}</span>
+                                </a>
+                            </li>
+                        </div>
                     ))}
                 </ul>
             </nav>

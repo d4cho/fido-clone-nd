@@ -14,18 +14,25 @@ function Card({
     zero,
     month,
     starIcon,
-    banner
+    banner,
+    image,
+    subTitleFontSize,
+    fullPrice,
+    height,
 }) {
     return (
         <div
-            style={{ width: matches ? width : null, margin: !matches ? '20px' : null }}
+            style={{ width: matches ? width : null, margin: !matches ? '20px' : null , height:height}}
             className='card-container-outline'
         >
             {banner}
             {starIcon}
+            {image}
             <div className='inner-card-container'>
                 <h1 className='main-title'>{mainTitle}</h1>
-                <h1 className='sub-title'>{subTitle}</h1>
+                <h1 style={{ fontSize: subTitleFontSize }} className='sub-title'>
+                    {subTitle}
+                </h1>
                 <p className='price-content'>{priceContent}</p>
                 <div className='price-container'>
                     <p>{priceSign}</p>
@@ -33,6 +40,7 @@ function Card({
                     <p>{zero}</p>
                     <p>{month}</p>
                 </div>
+                {fullPrice}
                 <p className='content'>{content}</p>
                 {Link}
             </div>

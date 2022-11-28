@@ -1,10 +1,10 @@
-import CardContent from '../Organisms/CardContent/CardContent';
+import ChoiceCardContent from '../Organisms/ChoiceCardContent/ChoiceCardContent';
 import React from 'react';
 
 function PlansPage() {
     return (
         <>
-            <CardContent />
+            <ChoiceCardContent />
         </>
     );
 }
