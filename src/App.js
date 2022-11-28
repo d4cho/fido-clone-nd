@@ -15,8 +15,8 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
-import { shopDropdownLabels } from './Data/NavbarLabel';
-import { provincesDropdownLabels } from './Data/Provinces';
+import { shopDropdownLabels } from './Utils/NavbarLabel';
+import { provincesDropdownLabels } from './Utils/Provinces';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 

@@ -4,20 +4,7 @@
             "banner": "Black Frideals",
             "name": "Samsung Galaxy S21 FE 5G",
             "image": "https://images.ctfassets.net/t00ajdlq0g9p/6INHVXkShMMZ6Sozg1UfcE/1a6545abee221a6212a251938cbfff78/samsung-galsxy-s21-5G-graphite-front.png?h=201&w=268&fm=webp&q=100",
-            "properties": {
-                "cost": {
-                    "standard": 0,
-                    "reduced": 9.58
-                }
-            },
-             "taxes": ["Taxes extra", "24 mos", "0% APR"],
-                "fullPrice": 1173.0,
-                "features": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
-        },
-        {
-            "banner": "Black Frideals",
-            "name": "Samsung Galaxy A53 5G",
-            "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
+            "vendor": "Samsung",
             "properties": {
                 "cost": {
                     "standard": 0,
@@ -25,14 +12,14 @@
                 }
             },
             "taxes": ["Taxes extra", "24 mos", "0% APR"],
-            "fullPrice": 690.00,
+            "fullPrice": 1173.0,
             "features": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
         },
-
         {
             "banner": "Black Frideals",
-            "name": "iPhone 12",
+            "name": "Samsung Galaxy A53 5G",
             "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
+            "vendor": "Samsung",
             "properties": {
                 "cost": {
                     "standard": 0,
@@ -43,62 +30,81 @@
             "fullPrice": 690.0,
             "features": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
         },
-         {
-             "banner": "Black Frideals",
-             "name": "iPhone 12",
-             "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
-             "properties": {
-                 "cost": {
-                     "standard": 0.00,
-                     "reduced": 9.58
-                 }
-             },
-             "taxes": ["Taxes extra", "24 mos", "0% APR"],
-             "fullPrice": 690.0,
-             "features": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
-         },
-          {
-              "banner": "Black Frideals",
-              "name": "iPhone 12",
-              "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
-              "properties": {
-                  "cost": {
-                      "standard": 0.00,
-                      "reduced": 9.58
-                  }
-              },
-              "taxes": ["Taxes extra", "24 mos", "0% APR"],
-              "fullPrice": 690.0,
-              "features": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
-          },
-           {
-               "banner": "Black Frideals",
-               "name": "iPhone 12",
-               "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
-               "properties": {
-                   "cost": {
-                       "standard": 0.00,
-                       "reduced": 9.58
-                   }
-               },
-               "taxes": ["Taxes extra", "24 mos", "0% APR"],
-               "fullPrice": 690.0,
-               "features": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
-           },
-            {
-                "banner": "Black Frideals",
-                "name": "iPhone 12",
-                "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
-                "properties": {
-                    "cost": {
-                        "standard": 0,
-                        "reduced": 9.58
-                    }
-                },
-                "taxes": ["Taxes extra", "24 mos", "0% APR"],
-                "fullPrice": 690.0,
-                "features": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
-            } 
-       
+
+        {
+            "banner": "Black Frideals",
+            "name": "iPhone 12",
+            "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
+            "vendor": "Apple",
+            "properties": {
+                "cost": {
+                    "standard": 0,
+                    "reduced": 9.58
+                }
+            },
+            "taxes": ["Taxes extra", "24 mos", "0% APR"],
+            "fullPrice": 690.0,
+            "features": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
+        },
+        {
+            "banner": "Black Frideals",
+            "name": "iPhone 12",
+            "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
+            "vendor": "Apple",
+            "properties": {
+                "cost": {
+                    "standard": 0.0,
+                    "reduced": 9.58
+                }
+            },
+            "taxes": ["Taxes extra", "24 mos", "0% APR"],
+            "fullPrice": 690.0,
+            "features": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
+        },
+        {
+            "banner": "Black Frideals",
+            "name": "iPhone 12",
+            "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
+            "vendor": "Apple",
+            "properties": {
+                "cost": {
+                    "standard": 0.0,
+                    "reduced": 9.58
+                }
+            },
+            "taxes": ["Taxes extra", "24 mos", "0% APR"],
+            "fullPrice": 690.0,
+            "features": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
+        },
+        {
+            "banner": "Black Frideals",
+            "name": "iPhone 12",
+            "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
+            "vendor": "Apple",
+            "properties": {
+                "cost": {
+                    "standard": 0.0,
+                    "reduced": 9.58
+                }
+            },
+            "taxes": ["Taxes extra", "24 mos", "0% APR"],
+            "fullPrice": 690.0,
+            "features": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
+        },
+        {
+            "banner": "Black Frideals",
+            "name": "iPhone 12",
+            "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
+            "vendor": "Apple",
+            "properties": {
+                "cost": {
+                    "standard": 0,
+                    "reduced": 9.58
+                }
+            },
+            "taxes": ["Taxes extra", "24 mos", "0% APR"],
+            "fullPrice": 690.0,
+            "features": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
+        }
     ]
 }

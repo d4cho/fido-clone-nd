@@ -1,7 +1,7 @@
 import Title from '../Atoms/Title/Title';
 import React from 'react';
 import BreadCrumbsContent from '../Organisms/BreadCrumbsContent/BreadCrumbsContent';
-import { breadCrumbsLabels } from '../../Data/NavbarLabel';
+import { breadCrumbsLabels } from '../../Utils/NavbarLabel';
 import Card from '../Molecules/Card/Card';
 
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -11,6 +11,7 @@ import Link from '../Atoms/Link/Link';
 
 function PhonesPage() {
     const { matches } = useContext(MainContext);
+    console.log(matches);
     return (
         <div>
             <BreadCrumbsContent data={breadCrumbsLabels} />
@@ -19,8 +20,8 @@ function PhonesPage() {
                     width: '100%',
                     paddingRight: '24px',
                     paddingLeft: '24px',
-                    marginRight: 'auto',
-                    marginLeft: 'auto',
+                    marginRight: matches? 'auto': null,
+                    marginLeft: matches? 'auto': null,
                     maxWidth: '1100px',
                 }}
             >
@@ -47,11 +48,11 @@ function PhonesPage() {
                 </ul>
                 <div
                     style={{
-                        gridTemplateColumns: 'repeat(3,225px)',
+                        gridTemplateColumns: matches? 'repeat(3,225px)': null,
                         display: 'grid',
                         gridAutoRows: 'auto',
                         gridGap: '30px',
-                        marginLeft: '220px',
+                        marginLeft: matches? '220px': null,
                     }}
                 >
                     <Card
