@@ -42,7 +42,7 @@
         },
 
         {
-            "banner": "cyber deal",
+            "banner": "Clearance",
             "name": "iPhone 12",
             "image": "https://images.ctfassets.net/t00ajdlq0g9p/7FD60LS70ADulmHYrvcAlN/0f3c2388a0f38f59b694ca971919b0cc/iPhone-12-black-01.png?h=201&w=268&fm=webp&q=100",
             "vendor": "Apple",
@@ -83,7 +83,6 @@
             "content": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
         },
 
-        
         {
             "banner": "Black Frideals",
             "name": "iPhone 11",
@@ -101,7 +100,7 @@
                 }
             },
             "taxes": ["Taxes extra", "24 mos", "0% APR"],
-            "fullPrice":"698.76",
+            "fullPrice": "698.76",
             "content": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
         },
 
@@ -122,8 +121,49 @@
                 }
             },
             "taxes": ["Taxes extra", "24 mos", "0% APR"],
-            "fullPrice":"702.00",
+            "fullPrice": "702.00",
             "content": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
+        },
+        {
+            "banner": "",
+            "name": "Samsung Galaxy S22",
+            "image": "https://images.ctfassets.net/t00ajdlq0g9p/1YnXirJxnhhaa8nn7qF4QI/1676b858556c4382f471a98b720ee488/samsung-galaxys22-purple-front.png?h=201&w=268&fm=webp&q=100",
+            "vendor": "Samsung",
+            "properties": {
+                "cost": {
+                    "priceSign": "$",
+                    "standard": 0,
+                    "zero": ".00",
+                    "down": "/down",
+                    "reducedPrice": "$29.25/mo",
+                    "reducedDiscount": "$0.00/mo.±",
+                    "reduced": "(After bill credit)with Fido Payment Program"
+                }
+            },
+            "taxes": ["Taxes extra", "24 mos", "0% APR"],
+            "fullPrice": "915.00",
+            "content": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)",
+            "certifiedPreOwned":"Certified Pre-Owned"
+        },
+        {
+            "banner": "CYBER DEAL. ENDS NOV. 29",
+            "name": "iPhone 14",
+            "image": "https://images.ctfassets.net/t00ajdlq0g9p/3WhfwrE47HJ0oljoL6kqIm/b36af9654a429f5ee9d4f06188a7b307/apple-14-midnight-pos1.png?h=201&w=268&fm=webp&q=100",
+            "vendor": "Apple",
+            "properties": {
+                "cost": {
+                    "priceSign": "$",
+                    "standard": 0,
+                    "zero": ".00",
+                    "down": "/down",
+                    "reducedPrice": "$47.12/mo",
+                    "reducedDiscount": "$35.38/mo.±",
+                    "reduced": "(After bill credit)with Fido Payment Program"
+                }
+            },
+            "taxes": ["Taxes extra", "24 mos", "0% APR"],
+            "fullPrice": "1,130.76",
+            "content": "Includes $11.47/mo. credit (appears on bill under ‘Monthly charges’)"
         }
     ]
 }

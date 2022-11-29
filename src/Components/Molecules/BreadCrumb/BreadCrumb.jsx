@@ -1,20 +1,10 @@
 import React from 'react';
-
+import './BreadCrumb.css';
 function BreadCrumb({ data }) {
     return (
         <>
             <nav>
-                <ul
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        gap: '2px',
-                        listStyle: 'none',
-                        paddingLeft: '40px',
-                        paddingTop: '10px',
-                        paddingBottom: '10px',
-                    }}
-                >
+                <ul className='bread-crumb-container'>
                     {data.map((breadCrumbItem, idx) => (
                         <div key={idx}>
                             <li className='bread-crumb-item-list'>

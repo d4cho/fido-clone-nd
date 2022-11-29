@@ -15,12 +15,11 @@ function PhonesPage() {
             <div
                 style={{
                     width: '100%',
-                    paddingRight:matches? '24px': null,
-                    paddingLeft: matches? '24px': null,
-                    marginRight: matches?'auto': null,
-                    marginLeft: matches?  'auto': null,
+                    paddingRight: matches ? '24px' : null,
+                    paddingLeft: matches ? '24px' : null,
+                    marginRight: matches ? 'auto' : null,
+                    marginLeft: matches ? 'auto' : null,
                     maxWidth: matches ? '1100px' : null,
-                    
                 }}
             >
                 {' '}
@@ -33,7 +32,8 @@ function PhonesPage() {
                     marginTop='50px'
                 />
                 {/* the filter for the cards */}
-                <h3>Filtred By</h3>
+                <h3>Filtred By (0)</h3>
+                <h3>Manufacturer</h3>
                 <ul style={{ border: '2px solid black', width: '150px' }}>
                     <li>Samsung</li>
                     <li>Apple</li>
@@ -45,9 +45,7 @@ function PhonesPage() {
                     <li>TCL</li>
                     <li>Motorola</li>
                 </ul>
-
-                <PhoneCardContent/>
-               
+                <PhoneCardContent />
             </div>
         </div>
     );

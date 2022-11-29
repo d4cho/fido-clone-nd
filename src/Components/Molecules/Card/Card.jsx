@@ -21,6 +21,7 @@ function Card({
     height,
     discountPrice,
     taxes,
+    certifiedPreOwned,
 }) {
     return (
         <div
@@ -50,6 +51,7 @@ function Card({
                 {taxes}
                 {fullPrice}
                 <p className='content'>{content}</p>
+                {certifiedPreOwned}
                 {Link}
             </div>
         </div>

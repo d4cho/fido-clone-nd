@@ -19,7 +19,9 @@ function PhoneCardContent() {
                                 phone.banner.length > 0 ? (
                                     <div className='phone-banner'>{phone.banner.toUpperCase()}</div>
                                 ) : (
-                                    <div style={{marginTop:'30px'}}>{phone.banner.toUpperCase()}</div>
+                                    <div style={{ marginTop: '30px' }}>
+                                        {phone.banner.toUpperCase()}
+                                    </div>
                                 )
                             }
                             subTitle={phone.name}
@@ -42,15 +44,17 @@ function PhoneCardContent() {
                                 </>
                             }
                             subTitleFontSize='1.0rem'
-                            image={<img src={phone.image} alt='' />}
+                            image={
+                                <div className='phone-image-container'>
+                                    <img className='phone-image' src={phone.image} alt='' />
+                                </div>
+                            }
                             price={phone.properties.cost.standard}
                             priceSign={phone.properties.cost.priceSign}
                             zero={phone.properties.cost.zero}
                             month={phone.properties.cost.down}
                             fullPrice={
-                                <p className='phone-full-price'>
-                                    Full Price: ${phone.fullPrice}
-                                </p>
+                                <p className='phone-full-price'>Full Price: ${phone.fullPrice}</p>
                             }
                             taxes={
                                 <div className='calculation-content'>
@@ -59,11 +63,14 @@ function PhoneCardContent() {
                                     ))}
                                 </div>
                             }
+                            certifiedPreOwned={
+                                <p className='certified-pre-owned'>{phone.certifiedPreOwned}</p>
+                            }
                             content={<p className='phone-bottom-content'>{phone.content}</p>}
                             Link={
                                 <Link href='/' title='VIEW DETAILS' icon={<ChevronRightIcon />} />
                             }
-                            width=' 230px'
+                            width=' 245px'
                             matches={matches}
                             height='100%'
                         />
