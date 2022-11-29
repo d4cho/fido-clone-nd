@@ -27,7 +27,12 @@ function ChoiceCardContent() {
                     priceSign='$'
                     zero='.00'
                     month='/mo.'
-                    content='We’ve also got you covered with value-packed plans that give you all the data, talk and text you need!'
+                    content={
+                        <p className='content'>
+                            We’ve also got you covered with value-packed plans that give you all the
+                            data, talk and text you need!
+                        </p>
+                    }
                     Link={
                         <Link href='/Build-A-Plan' title='View Plans' icon={<ChevronRightIcon />} />
                     }
@@ -53,7 +58,12 @@ function ChoiceCardContent() {
                     priceSign='$'
                     zero='.00'
                     month='/down.'
-                    content='Finance a new phone with Fido Payment Program4 then choose one of our plan options to match!'
+                    content={
+                        <p className='content'>
+                            Finance a new phone with Fido Payment Program4 then choose one of our
+                            plan options to match!
+                        </p>
+                    }
                     Link={<Link href='/Phones' title='View Phones' icon={<ChevronRightIcon />} />}
                     width=' 330px'
                     matches={matches}

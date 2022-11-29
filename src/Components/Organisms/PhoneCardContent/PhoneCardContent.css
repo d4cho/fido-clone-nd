@@ -1,25 +1,26 @@
 .phone-card-content {
-    grid-template-columns: repeat(3, 224px);
+    grid-template-columns: repeat(3, 1fr);
     display: grid;
     grid-auto-rows: auto;
     grid-gap: 40px;
     position: relative;
-    bottom: 130px;
+    bottom: 600px;
     margin-left: 220px;
 }
 
 @media (min-width: 700px) and (max-width: 991px) {
     .phone-card-content {
-        grid-template-columns: repeat(2, 385px);
+        grid-template-columns: repeat(2, 1fr);
         margin-left: 220px;
+        margin-right: 20px;
     }
 }
 
 @media (min-width: 300px) and (max-width: 700px) {
     .phone-card-content {
-        grid-template-columns: repeat(1, 585px);
+        grid-template-columns: repeat(1, 1fr);
         margin-left: 0px;
-        margin-right: 0px;
+        margin-right: 20px;
         position: relative;
         bottom: 5px;
     }
@@ -57,6 +58,12 @@
     padding-right: 20px;
     padding-left: 10px;
     padding-bottom: 10px;
+    line-height: 1.5;
+    margin-bottom: 1.6rem;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
 }
 
 .phone-full-price {
@@ -76,7 +83,7 @@
     }
 }
 
-.certified-pre-owned{
+.certified-pre-owned {
     font-weight: bold;
     padding-left: 5px;
 }

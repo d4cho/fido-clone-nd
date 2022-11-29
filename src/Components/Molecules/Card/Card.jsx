@@ -1,6 +1,5 @@
 import './Card.css';
 
-
 function Card({
     mainTitle,
     subTitle,
@@ -50,7 +49,7 @@ function Card({
                 {discountPrice}
                 {taxes}
                 {fullPrice}
-                <p className='content'>{content}</p>
+                {content}
                 {certifiedPreOwned}
                 {Link}
             </div>

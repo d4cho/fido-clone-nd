@@ -5,6 +5,8 @@ import { breadCrumbsLabels } from '../../Utils/NavbarLabel';
 import PhoneCardContent from '../Organisms/PhoneCardContent/PhoneCardContent';
 import { MainContext } from '../../Context/MainContext';
 import { useContext } from 'react';
+import { filterLabels } from '../../Utils/Filter';
+import FilterContent from '../Organisms/FilterContent/FilterContent';
 
 function PhonesPage() {
     const { matches } = useContext(MainContext);
@@ -28,23 +30,10 @@ function PhonesPage() {
                     fontSize='2.4rem'
                     fontWeight='900'
                     textTransform='uppercase'
-                    marginLeft='10px'
                     marginTop='50px'
                 />
                 {/* the filter for the cards */}
-                <h3>Filtred By (0)</h3>
-                <h3>Manufacturer</h3>
-                <ul style={{ border: '2px solid black', width: '150px' }}>
-                    <li>Samsung</li>
-                    <li>Apple</li>
-                    <li>Google</li>
-                    <li>TCL</li>
-                    <li>Motorola</li>
-                    <li>Apple</li>
-                    <li>Google</li>
-                    <li>TCL</li>
-                    <li>Motorola</li>
-                </ul>
+                <FilterContent filters={filterLabels} />
                 <PhoneCardContent />
             </div>
         </div>

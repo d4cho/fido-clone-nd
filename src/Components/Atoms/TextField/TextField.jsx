@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './TextField.css';
 
-function TextField({ placeholder, value, onChange, width, type, checked, searchIcon }) {
+function TextField({
+    placeholder,
+    value,
+    handleInputChange,
+    width,
+    type,
+    checked,
+}) {
     return (
-        <div style={{ position: 'relative' }}>
+        <>
             <input
                 style={{
                     width: width,
@@ -11,24 +18,11 @@ function TextField({ placeholder, value, onChange, width, type, checked, searchI
                 placeholder={placeholder}
                 className='text-field'
                 value={value}
-                onChange={onChange}
+                onChange={handleInputChange}
                 type={type}
                 checked={checked}
             />
-            {searchIcon && (
-                <span
-                    style={{
-                        position: 'absolute',
-                        right: '0',
-                        top: '60%',
-                        translate: '0 -52%',
-                        cursor: 'pointer',
-                    }}
-                >
-                    {searchIcon}
-                </span>
-            )}
-        </div>
+        </>
     );
 }
 

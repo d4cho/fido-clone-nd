@@ -70,7 +70,6 @@ function PhoneCardContent() {
                             Link={
                                 <Link href='/' title='VIEW DETAILS' icon={<ChevronRightIcon />} />
                             }
-                            width=' 245px'
                             matches={matches}
                             height='100%'
                         />
