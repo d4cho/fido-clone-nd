@@ -1,4 +1,4 @@
-function Title({ title, textAlign, fontSize, fontWeight, textTransform }) {
+function Title({ title, textAlign, fontSize, fontWeight, textTransform, marginLeft, marginTop }) {
     return (
         <>
             <p
@@ -7,6 +7,8 @@ function Title({ title, textAlign, fontSize, fontWeight, textTransform }) {
                     fontSize: fontSize,
                     fontWeight: fontWeight,
                     textTransform: textTransform,
+                    marginLeft: marginLeft,
+                    marginTop: marginTop
                 }}
             >
                 {title}

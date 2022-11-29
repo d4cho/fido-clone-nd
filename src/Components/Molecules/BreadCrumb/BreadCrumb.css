@@ -1,0 +1,16 @@
+.bread-crumb-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.bread-crumb-container{
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    list-style: none;
+    padding-left: 40px ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

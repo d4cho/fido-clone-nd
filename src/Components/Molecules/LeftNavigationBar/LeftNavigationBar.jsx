@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
 import './LeftNavigationBar.css';
-import { leftNavbarLabels } from '../../../Data/NavbarLabel';
+import { leftNavbarLabels } from '../../../Utils/NavbarLabel';
 import { MainContext } from '../../../Context/MainContext';
 import SearchIcon from '../../Atoms/SearchIcon/SearchIcon';
 import NavBarDropdown from '../NavBarDropDown/NavBarDropDown';
 import TextField from '../../Atoms/TextField/TextField';
-import { billsDropdownLabels } from '../../../Data/NavbarLabel';
+import { billsDropdownLabels } from '../../../Utils/NavbarLabel';
 
 function LeftNavigationBar({
     menuTitle,

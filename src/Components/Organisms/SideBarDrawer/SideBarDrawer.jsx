@@ -5,11 +5,11 @@ import SideNavigationBar from '../../Molecules/SideNavigationBar/SideNavigationB
 import Backdrop from '../Backdrop/Backdrop';
 import SocialLink from '../../Atoms/SocialLink/SocialLink';
 import Link from '../../Atoms/Link/Link';
-import { navInfo } from '../../../Data/NavbarLabel';
+import { navInfo } from '../../../Utils/NavbarLabel';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
-function SideBarDrawer({height}) {
+function SideBarDrawer({ height }) {
     const { toggle, setToggle } = useContext(MainContext);
 
     const backdropHandler = () => {

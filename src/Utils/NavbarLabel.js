@@ -91,3 +91,10 @@ export const billsDropdownLabels = [
     { title: 'View Your Usage' },
     { title: 'Fido Roam' },
 ];
+
+
+export const breadCrumbsLabels = [
+    { title: 'Home', href: '/', slash:'/' },
+    { title: 'Wireless', href: '/', slash:'/' },
+    { title: 'Phones' },
+];
