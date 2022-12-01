@@ -4,7 +4,13 @@ import { Fragment } from 'react';
 import Label from '../../Atoms/Label/Label';
 import CheckBox from '../../Atoms/CheckBox/CheckBox';
 
-function Filter({ filters }) {
+function Filter({
+    filters,
+    data,
+    filteredPhones,
+    setFilteredPhones,
+    onChange
+}) {
     return (
         <>
             {filters.map((filter, idx) => (
@@ -12,7 +18,10 @@ function Filter({ filters }) {
                     <p className='filter-type'>{filter.type}</p>
                     {filter.filter?.map((filterItem, idx) => (
                         <div className='filter-container' key={idx}>
-                            <CheckBox />
+                            <CheckBox
+                                Label={filterItem}
+                                onChange={onChange}
+                            />
                             <Label Label={filterItem} fontSize='0.92rem' fontWeight='600' />
                         </div>
                     ))}

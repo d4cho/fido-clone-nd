@@ -2,10 +2,13 @@ import React from 'react';
 import './FilterContent.css';
 import Filter from '../../Molecules/Filter/Filter';
 
-function FilterContent({ filters }) {
+function FilterContent({ filters,onChange}) {
     return (
         <div className='filter-parent-container'>
-            <Filter filters={filters} />
+            <Filter
+                filters={filters}
+                onChange={onChange}
+            />
         </div>
     );
 }
