@@ -1,6 +1,6 @@
 import './CheckBox.css';
 import DoneIcon from '@mui/icons-material/Done';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function CheckBox({ Label, onChange, increase, decrease }) {
     const [isChecked, setIsChecked] = useState(false);
