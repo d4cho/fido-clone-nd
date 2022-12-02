@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Card from '../../Molecules/Card/Card';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useContext } from 'react';
 import { MainContext } from '../../../Context/MainContext';
 import Link from '../../Atoms/Link/Link';
-import data from '../../../Data/phone-data.json';
 import './PhoneCardContent.css';
 
-function PhoneCardContent() {
+
+function PhoneCardContent({ data, filteredPhones }) {
     const { matches } = useContext(MainContext);
+    console.log(filteredPhones);
     return (
         <>
             <div className='phone-card-content'>
-                {data.data?.map((phone, idx) => (
+                {filteredPhones?.map((phone, idx) => (
                     <div key={idx}>
                         <Card
                             banner={
@@ -58,8 +59,10 @@ function PhoneCardContent() {
                             }
                             taxes={
                                 <div className='calculation-content'>
-                                    {phone.taxes.map((data) => (
-                                        <p>{data} |</p>
+                                    {phone.taxes.map((data, idx) => (
+                                        <Fragment key={idx}>
+                                            <p>{data} |</p>
+                                        </Fragment>
                                     ))}
                                 </div>
                             }

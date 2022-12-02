@@ -1,0 +1,27 @@
+
+input[type='checkbox'] {
+    display: none;
+}
+
+.checkbox {
+    height: 22px;
+    display: inline-block;
+    width: 23px;
+    background-color: white;
+    border: 1px black solid;
+}
+
+.checkbox:hover {
+    outline: 1px solid black;
+    cursor: pointer;
+}
+
+.checkbox--active {
+    outline: 1px solid black;
+    cursor: pointer;
+    height: 22px;
+    display: inline-block;
+    width: 23px;
+    background-color: white;
+    border: 1px black solid;
+}

@@ -2,17 +2,34 @@ import React from 'react';
 import './Filter.css';
 import { Fragment } from 'react';
 import Label from '../../Atoms/Label/Label';
+import CheckBox from '../../Atoms/CheckBox/CheckBox';
 
-function Filter({ filters }) {
+function Filter({ filters, onChange, increase, decrease, filterCounter }) {
     return (
         <>
             {filters.map((filter, idx) => (
                 <Fragment key={idx}>
-                    <h3 className='filter-type'>{filter.type}</h3>
+                    <p className='filter-type'>
+                        {filter.type}
+                        {filter.type === 'FILTER BY' ? (
+                            <Fragment> ({filterCounter})</Fragment>
+                        ) : null}
+                    </p>
                     {filter.filter?.map((filterItem, idx) => (
                         <div className='filter-container' key={idx}>
-                            <input type='checkbox' name='' id='' />
-                            <Label Label={filterItem} fontSize='1rem' fontWeight='600' />
+                            <CheckBox
+                                Label={filterItem}
+                                onChange={onChange}
+                                increase={increase}
+                                decrease={decrease}
+                                filterCounter={filterCounter}
+                            />
+                            <Label
+                                Label={filterItem}
+                                fontSize='0.92rem'
+                                fontWeight='600'
+                                filterCounter={filterCounter}
+                            />
                         </div>
                     ))}
                 </Fragment>
