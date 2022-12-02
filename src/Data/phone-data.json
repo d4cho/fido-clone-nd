@@ -1,8 +1,10 @@
 {
     "data": [
         {
-            "banner": "Black Frideals",
+            "banner": "Cyber deal",
             "name": "Samsung Galaxy S21 FE 5G",
+            "smartPhone": "Smartphone",
+            "new":"New",
             "image": "https://images.ctfassets.net/t00ajdlq0g9p/6INHVXkShMMZ6Sozg1UfcE/1a6545abee221a6212a251938cbfff78/samsung-galsxy-s21-5G-graphite-front.png?h=201&w=268&fm=webp&q=100",
             "vendor": "Samsung",
             "properties": {
@@ -12,7 +14,7 @@
                     "zero": ".00",
                     "down": "/down",
                     "reducedPrice": "$48.88/mo",
-                    "reducedDiscount": "$9.58/mo.±",
+                    "reducedDiscount": "$14.58/mo.±",
                     "reduced": "(After bill credit)with Fido Payment Program"
                 }
             },
@@ -23,6 +25,8 @@
         {
             "banner": "Cyber deal",
             "name": "SAMSUNG GALAXY A53 5G",
+            "smartPhone": "Smartphone",
+            "new": "New",
             "image": "https://images.ctfassets.net/t00ajdlq0g9p/7gINZkPs3PAxh7oZg6ki0f/5a84bd4e50f35a3da26f2100ad000977/galaxy-a53-5G-front__1_.png?h=201&w=268&fm=webp&q=100",
             "vendor": "Samsung",
             "properties": {
@@ -31,19 +35,21 @@
                     "standard": 0,
                     "zero": ".00",
                     "down": "/down",
-                    "reducedPrice": "$27.85/mo",
-                    "reducedDiscount": "$0.00/mo.±",
+                    "reducedPrice": "$28.85/mo",
+                    "reducedDiscount": "$10.00/mo.±",
                     "reduced": "(After bill credit)with Fido Payment Program"
                 }
             },
             "taxes": ["Taxes extra", "24 mos", "0% APR"],
             "fullPrice": "690.00",
-            "content": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)"
+            "content": "Includes $18.75/mo. credit (appears on bill under ‘Monthly charges’)"
         },
 
         {
             "banner": "Clearance",
             "name": "iPhone 12",
+            "smartPhone": "Smartphone",
+            "new": "New",
             "image": "https://images.ctfassets.net/t00ajdlq0g9p/7FD60LS70ADulmHYrvcAlN/0f3c2388a0f38f59b694ca971919b0cc/iPhone-12-black-01.png?h=201&w=268&fm=webp&q=100",
             "vendor": "Apple",
             "properties": {
@@ -65,6 +71,8 @@
         {
             "banner": "cyber deal",
             "name": "iPhone 13",
+            "smartPhone": "Smartphone",
+            "new": "New",
             "image": "https://images.ctfassets.net/t00ajdlq0g9p/4Z8tBMVabYOIssGKLwfBrs/e7a9e3d83388a5a39c5483bd00e591b9/iPhone13-blue-front.png?h=201&w=268&fm=webp&q=100",
             "vendor": "Apple",
             "properties": {
@@ -86,6 +94,8 @@
         {
             "banner": "Black Frideals",
             "name": "iPhone 11",
+            "smartPhone": "Smartphone",
+            "new": "New",
             "image": "https://images.ctfassets.net/t00ajdlq0g9p/41glJawhHwf60ewAwFFpTf/d5ff745763ed03c586f326c2e417d1f4/iPhone-11-front-black-lang.png?h=201&w=268&fm=webp&q=100",
             "vendor": "Apple",
             "properties": {
@@ -107,6 +117,8 @@
         {
             "banner": "",
             "name": "Google Pixel 6a",
+            "new": "New",
+            "smartPhone": "Smartphone",
             "image": "https://images.ctfassets.net/t00ajdlq0g9p/1TnKIuyKDXoYt1JwbXzwfT/bf72dbb2ddb59f74a66f094443bbd261/google-pixel-6a-front-en.png?h=201&w=268&fm=webp&q=100",
             "vendor": "Google",
             "properties": {
@@ -127,6 +139,8 @@
         {
             "banner": "",
             "name": "Samsung Galaxy S22",
+            "smartPhone": "Smartphone",
+            "new": "New",
             "image": "https://images.ctfassets.net/t00ajdlq0g9p/1YnXirJxnhhaa8nn7qF4QI/1676b858556c4382f471a98b720ee488/samsung-galaxys22-purple-front.png?h=201&w=268&fm=webp&q=100",
             "vendor": "Samsung",
             "properties": {
@@ -135,19 +149,21 @@
                     "standard": 0,
                     "zero": ".00",
                     "down": "/down",
-                    "reducedPrice": "$29.25/mo",
-                    "reducedDiscount": "$0.00/mo.±",
+                    "reducedPrice": "$56.59/mo",
+                    "reducedDiscount": "$25.084/mo.±",
                     "reduced": "(After bill credit)with Fido Payment Program"
                 }
             },
             "taxes": ["Taxes extra", "24 mos", "0% APR"],
-            "fullPrice": "915.00",
-            "content": "Includes $39.30/mo. credit (appears on bill under ‘Monthly charges’)",
-            "certifiedPreOwned":"Certified Pre-Owned"
+            "fullPrice": "1,358.00",
+            "content": "Includes $30.75/mo. credit (appears on bill under ‘Monthly charges’)",
+            "certifiedPreOwned": "Certified Pre-Owned"
         },
         {
-            "banner": "CYBER DEAL. ENDS NOV. 29",
+            "banner": "",
             "name": "iPhone 14",
+            "smartPhone": "Smartphone",
+            "new": "New",
             "image": "https://images.ctfassets.net/t00ajdlq0g9p/3WhfwrE47HJ0oljoL6kqIm/b36af9654a429f5ee9d4f06188a7b307/apple-14-midnight-pos1.png?h=201&w=268&fm=webp&q=100",
             "vendor": "Apple",
             "properties": {
@@ -164,6 +180,113 @@
             "taxes": ["Taxes extra", "24 mos", "0% APR"],
             "fullPrice": "1,130.76",
             "content": "Includes $11.47/mo. credit (appears on bill under ‘Monthly charges’)"
-        }
+        },
+
+         {
+             "banner": "Clearance",
+             "name": "iPhone 11 Pro",
+             "smartPhone": "Smartphone",
+             "new": "New",
+             "image": "https://images.ctfassets.net/t00ajdlq0g9p/6lscByYdL0pHYUUuxIIQ97/7c030291ede7134089639326e261e452/iPhone-11-front-Pro-midnight-green-lang.png?h=201&w=268&fm=webp&q=100",
+             "vendor": "Apple",
+             "properties": {
+                 "cost": {
+                     "priceSign": "$",
+                     "standard": 0,
+                     "zero": ".00",
+                     "down": "/down",
+                     "reducedPrice": "$54.38/mo",
+                     "reducedDiscount": "$30.87/mo.±",
+                     "reduced": "(After bill credit)with Fido Payment Program"
+                 }
+             },
+             "taxes": ["Taxes extra", "24 mos", "0% APR"],
+             "fullPrice": "1,305.00",
+             "content": "Includes $23.51/mo. credit (appears on bill under ‘Monthly charges’)"
+         },
+         {
+             "banner": "",
+             "name": "motorola edge (2021)",
+             "smartPhone": "Smartphone",
+             "image": "https://images.ctfassets.net/t00ajdlq0g9p/5RdyAotdBWMZi3KtYh0kb7/f54242cf0758e7010f5564a49130509c/motoEdge-front.png?h=201&w=268&fm=webp&q=100",
+             "vendor": "Motorola",
+             "properties": {
+                 "cost": {
+                     "priceSign": "$",
+                     "standard": 0,
+                     "zero": ".00",
+                     "down": "/down",
+                     "reducedPrice": "$43.34/mo",
+                     "reducedDiscount": "$6.50/mo.±",
+                     "reduced": "(After bill credit)with Fido Payment Program"
+                 }
+             },
+             "taxes": ["Taxes extra", "24 mos", "0% APR"],
+             "fullPrice": "1,040.00",
+             "content": "Includes $36.84/mo. credit (appears on bill under ‘Monthly charges’)"
+         },
+         {
+             "banner": "",
+             "name": "TCL 30 XE 5G",
+             "smartPhone": "Smartphone",
+             "image": "https://images.ctfassets.net/t00ajdlq0g9p/6AM5BFZneYmGFouKqhgWYy/a8a73fd8a79115bbaf1532be27b8b396/TCL-XE-5G-front.png?h=201&w=268&fm=webp&q=100",
+             "vendor": "TCL",
+             "properties": {
+                 "cost": {
+                     "priceSign": "$",
+                     "standard": 0,
+                     "zero": ".00",
+                     "down": "/down",
+                     "reducedPrice": "$14.38/mo",
+                     "reducedDiscount": "$9.54/mo.±",
+                     "reduced": "(After bill credit)with Fido Payment Program"
+                 }
+             },
+             "taxes": ["Taxes extra", "24 mos", "0% APR"],
+             "fullPrice": "245.00",
+             "content": "Includes $4.84/mo. credit (appears on bill under ‘Monthly charges’)"
+         },
+         {
+             "banner": "",
+             "name": "Alcatel 1B",
+             "smartPhone": "Smartphone",
+             "image": "https://images.ctfassets.net/t00ajdlq0g9p/xNeHx8zbqFcqzIHnGFL5l/a9608ab96c100a80087fe8367071c780/alcatel-1B-front.png?h=201&w=268&fm=webp&q=100",
+             "vendor": "Alcatel",
+             "properties": {
+                 "cost": {
+                     "priceSign": "",
+                     "standard": null,
+                     "zero": "",
+                     "down": "",
+                     "reducedPrice": "",
+                     "reducedDiscount": "$4.88/mo.± with Fido Payment",
+                     "reduced": ""
+                 }
+             },
+             "taxes": ["Taxes extra", "24 mos", "0% APR"],
+             "fullPrice": "117.00",
+             "content": ""
+         },
+            {
+                "banner": "",
+                "name": "TCL Flip",
+                "basicPhones": "Basic Phones",
+                "image": "https://images.ctfassets.net/t00ajdlq0g9p/7UWgXQ9ErUmvWP9sDJR3R/acc51d6f9a6d9ba6c9c353d91535caaf/TCL-Flip-front.png?h=201&w=268&fm=webp&q=100",
+                "vendor": "TCL",
+                "properties": {
+                    "cost": {
+                        "priceSign": "$",
+                        "standard": 0,
+                        "zero": ".00",
+                        "down": "/down",
+                        "reducedPrice": "$4.63/mo",
+                        "reducedDiscount": "$4.13/mo.±",
+                        "reduced": "(After bill credit)with Fido Payment Program"
+                    }
+                },
+                "taxes": ["Taxes extra", "24 mos", "0% APR"],
+                "fullPrice": "111.00",
+                "content": "Includes $0.50/mo. credit (appears on bill under ‘Monthly charges’)"
+            }
     ]
 }

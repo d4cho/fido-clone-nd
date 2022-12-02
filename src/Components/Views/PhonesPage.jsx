@@ -11,25 +11,44 @@ import data from '../../Data/phone-data.json';
 
 function PhonesPage() {
     const { matches } = useContext(MainContext);
-    const [filterNames, setFilterNames]= useState([])
+    const [filterNames, setFilterNames] = useState([]);
+    const [filterCounter, setFilterCounter] = useState(0);
+
+    //increase counter
+    const increase = () => {
+        setFilterCounter((count) => count + 1);
+    };
+
+    //decrease counter
+    const decrease = () => {
+        setFilterCounter((count) => count - 1);
+    };
 
     const handleFilterChange = (label) => {
         if (filterNames.includes(label)) {
-          setFilterNames(prev => prev.filter((filter) => filter !== label ))  
+            setFilterNames((prev) => prev.filter((filter) => filter !== label));
+        } else {
+            setFilterNames((prev) => [...prev, label]);
         }
-        else {
-            setFilterNames(prev => [...prev, label])
-        }
-    }
+    };
 
-    const filteredPhones =  filterNames.length > 0 ? data.data.filter((phone) => {
-        if (filterNames.includes(phone.vendor) || filterNames.includes(phone.certifiedPreOwned)) {
-            return true;
-        }
-        return false;
-    })
-        : data.data
-    
+    const filteredPhones =
+        filterNames.length > 0
+            ? data.data.filter((phone) => {
+                  if (
+                      filterNames.includes(phone.vendor) ||
+                      filterNames.includes(phone.certifiedPreOwned) ||
+                      filterNames.includes(phone.banner) ||
+                      filterNames.includes(phone.smartPhone) ||
+                      filterNames.includes(phone.basicPhones) ||
+                      filterNames.includes(phone.new)
+                  ) {
+                      return true;
+                  }
+                  return false;
+              })
+            : data.data;
+
     console.log(filterNames);
     return (
         <div>
@@ -56,6 +75,9 @@ function PhonesPage() {
                 <FilterContent
                     filters={filterLabels}
                     onChange={handleFilterChange}
+                    increase={increase}
+                    decrease={decrease}
+                    filterCounter={filterCounter}
                 />
                 <PhoneCardContent filteredPhones={filteredPhones} />
             </div>

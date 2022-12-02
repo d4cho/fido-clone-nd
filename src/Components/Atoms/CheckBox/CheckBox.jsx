@@ -2,33 +2,20 @@ import './CheckBox.css';
 import DoneIcon from '@mui/icons-material/Done';
 import { useState, useEffect } from 'react';
 
-function CheckBox({ Label, onChange }) {
+function CheckBox({ Label, onChange, increase, decrease }) {
     const [isChecked, setIsChecked] = useState(false);
 
     const handleChange = (e) => {
         if (e.target.checked) {
             setIsChecked(true);
+            increase()
         } else {
             setIsChecked(false);
+            decrease()
         }
         onChange(Label)
     };
-    // const handleChange = (e) => {
-    //     if (e.target.checked) {
-    //         const filteredData = data.data?.filter(
-    //             (item) => item.vendor === Label
-    //         );
-    //         console.log(filteredData);
-    //         setFilteredPhones(filteredData);
-    //     } else if (!e.target.checked) {
-    //         setFilteredPhones(data.data);
-    //     }
-    //     setIsChecked(!isChecked);
-    // };
 
-    // useEffect(() => {
-    //     setFilteredPhones(data.data);
-    // }, [setFilteredPhones, data.data]);
 
     return (
         <>
