@@ -7,14 +7,12 @@ import CheckBox from '../../Atoms/CheckBox/CheckBox';
 function Filter({
     filters,
     onChange,
-    increase,
-    decrease,
     filterCounter,
     filterNames,
     showLengthEachLabel,
     onCheckedFilters,
     filterCount,
-    width
+    width,
 }) {
     return (
         <>
@@ -27,12 +25,11 @@ function Filter({
                         ) : null}
                     </p>
                     {filter.filter?.map((filterItem, idx) => (
-                        <div className='filter-container' style={{width: width}} key={idx}>
+                        <div className='filter-container' style={{ width: width }} key={idx}>
                             <CheckBox
                                 Label={filterItem}
                                 onChange={onChange}
-                                increase={increase}
-                                decrease={decrease}
+                                checked={filterNames.includes(filterItem)}
                             />
                             <Label
                                 Label={filterItem}

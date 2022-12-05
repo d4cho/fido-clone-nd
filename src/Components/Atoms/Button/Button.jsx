@@ -1,10 +1,24 @@
 import './Button.css';
 
-function Button({ filterCounter, title, onClick, matches, filterIcon }) {
+function Button({
+    filterCounter,
+    title,
+    onClick,
+    matches,
+    filterIcon,
+    width,
+    position,
+    top,
+    border,
+}) {
     return (
         <>
             {!matches ? (
-                <button onClick={onClick} className='fido-button'>
+                <button
+                    style={{ width: width, position: position, top: top , border: border}}
+                    onClick={onClick}
+                    className='fido-button'
+                >
                     <span
                         style={{
                             display: 'flex',
