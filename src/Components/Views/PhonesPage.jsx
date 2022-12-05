@@ -11,6 +11,7 @@ import data from '../../Data/phone-data.json';
 import SideBarDrawer from '../Organisms/SideBarDrawer/SideBarDrawer';
 import Button from '../Atoms/Button/Button';
 import FilterListIcon from '@mui/icons-material/FilterList';
+import HighlightOffOutlinedIcon from '@mui/icons-material/HighlightOffOutlined';
 
 function PhonesPage() {
     const { matches, filterToggleChange } = useContext(MainContext);
@@ -161,10 +162,13 @@ function PhonesPage() {
                         bottom='140px'
                         left='10px'
                         paddingRight='30px'
-                        // onCheckedFilters={onCheckedFilters}
                     />
                 }
-                buttonFilter={<button onClick={filterToggleChange}>hello world</button>}
+                buttonFilter={
+                    <span style={{cursor:'pointer', position:'absolute',top:'-130px', right:'0px'}}>
+                        <HighlightOffOutlinedIcon onClick={filterToggleChange} />
+                    </span>
+                }
             />
             <div
                 style={{
@@ -184,7 +188,6 @@ function PhonesPage() {
                     textTransform='uppercase'
                     marginTop='50px'
                 />
-                {/* <button onClick={filterToggleChange}>hello world</button> */}
                 <Button
                     onClick={filterToggleChange}
                     title='Filters'
@@ -204,13 +207,13 @@ function PhonesPage() {
                         showLengthEachLabel={showLengthEachLabel}
                         filterCount={filterCount}
                         width='210px'
-                        // onCheckedFilters={onCheckedFilters}
                     />
                 )}
                 <PhoneCardContent
                     filteredPhones={filteredPhones}
                     position='relative'
                     bottom='680px'
+                    marginLeft='220px'
                 />
             </div>
         </div>
