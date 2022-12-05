@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './Label.css';
 
-function Label({ Label, fontSize, fontWeight, paddingTop }) {
+function Label({
+    Label,
+    fontSize,
+    fontWeight,
+    paddingTop,
+    showLengthEachLabel,
+    filterCount
+
+}) {
     return (
         <>
             <label style={{ fontSize: fontSize, fontWeight: fontWeight, paddingTop: paddingTop }}>
-                {Label}
+                {Label} {showLengthEachLabel ? <span>({filterCount || 0})</span> : null}
             </label>
         </>
     );

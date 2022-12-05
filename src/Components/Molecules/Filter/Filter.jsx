@@ -4,7 +4,18 @@ import { Fragment } from 'react';
 import Label from '../../Atoms/Label/Label';
 import CheckBox from '../../Atoms/CheckBox/CheckBox';
 
-function Filter({ filters, onChange, increase, decrease, filterCounter }) {
+function Filter({
+    filters,
+    onChange,
+    increase,
+    decrease,
+    filterCounter,
+    filterNames,
+    showLengthEachLabel,
+    onCheckedFilters,
+    filterCount,
+    width
+}) {
     return (
         <>
             {filters.map((filter, idx) => (
@@ -16,19 +27,22 @@ function Filter({ filters, onChange, increase, decrease, filterCounter }) {
                         ) : null}
                     </p>
                     {filter.filter?.map((filterItem, idx) => (
-                        <div className='filter-container' key={idx}>
+                        <div className='filter-container' style={{width: width}} key={idx}>
                             <CheckBox
                                 Label={filterItem}
                                 onChange={onChange}
                                 increase={increase}
                                 decrease={decrease}
-                                filterCounter={filterCounter}
                             />
                             <Label
                                 Label={filterItem}
                                 fontSize='0.92rem'
                                 fontWeight='600'
                                 filterCounter={filterCounter}
+                                filterNames={filterNames}
+                                showLengthEachLabel={showLengthEachLabel}
+                                onCheckedFilters={onCheckedFilters}
+                                filterCount={filterCount[filterItem]}
                             />
                         </div>
                     ))}

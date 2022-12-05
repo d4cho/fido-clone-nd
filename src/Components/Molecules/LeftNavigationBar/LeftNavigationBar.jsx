@@ -32,8 +32,7 @@ function LeftNavigationBar({
     } = useContext(MainContext);
 
     const [value, setValue] = useState('');
-
-    console.log(show);
+    console.log(value)
 
     return (
         <>
@@ -121,7 +120,7 @@ function LeftNavigationBar({
                                 <TextField
                                     value={value}
                                     placeholder='Search'
-                                    onChange={(e) => setValue(e.target.value)}
+                                    handleInputChange={(e) => setValue(e.target.value)}
                                     searchIcon={
                                         <SearchIcon
                                             handleMouseEnter={handleMouseEnter}
@@ -129,8 +128,8 @@ function LeftNavigationBar({
                                             isHover={isHover}
                                             backGroundColor='#ffe600'
                                             boxShadow='0px 0px 0px 1px rgba(0,0,0,0.9'
-                                            height='2.57rem'
-                                            width='2.35rem'
+                                            height='2.51rem'
+                                            width='2.32rem'
                                         />
                                     }
                                 />

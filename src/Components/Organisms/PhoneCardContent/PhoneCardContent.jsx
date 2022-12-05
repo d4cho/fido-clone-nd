@@ -7,12 +7,11 @@ import Link from '../../Atoms/Link/Link';
 import './PhoneCardContent.css';
 
 
-function PhoneCardContent({ data, filteredPhones }) {
+function PhoneCardContent({filteredPhones, position, bottom, marginLeft }) {
     const { matches } = useContext(MainContext);
-    console.log(filteredPhones);
     return (
         <>
-            <div className='phone-card-content'>
+            <div className='phone-card-content' style={{position: matches? position: null, bottom: matches? bottom : null, marginLeft: matches? marginLeft: null}}>
                 {filteredPhones?.map((phone, idx) => (
                     <div key={idx}>
                         <Card
@@ -69,7 +68,7 @@ function PhoneCardContent({ data, filteredPhones }) {
                             certifiedPreOwned={
                                 <p className='certified-pre-owned'>{phone.certifiedPreOwned}</p>
                             }
-                            content={<p className='phone-bottom-content'>{phone.content}</p>}
+                            content={ phone.content.length > 0 ?<p className='phone-bottom-content'>{phone.content}</p>: null}
                             Link={
                                 <Link href='/' title='VIEW DETAILS' icon={<ChevronRightIcon />} />
                             }

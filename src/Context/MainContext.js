@@ -14,6 +14,8 @@ function MainContextProvider(props) {
     const [navItemLabelHover, setNavItemLabelHover] = useState(false);
     const [navItems, setNavItems] = useState('SHOP');
 
+    const [filterToggle, setFilterToggle] = useState(false);
+
     useEffect(() => {
         window
             .matchMedia('(min-width: 1020px)')
@@ -83,6 +85,10 @@ function MainContextProvider(props) {
         setShow(false);
     };
 
+    const filterToggleChange = () => {
+        setFilterToggle(!filterToggle);
+    };
+
     const openCloseMenuToggler = () => {
         setOpenCloseMenu(!openCloseMenu);
     };
@@ -112,6 +118,8 @@ function MainContextProvider(props) {
                 handleNavItemMouseLeave,
                 navItems,
                 leftNavBarSwitchLabel,
+                filterToggleChange,
+                filterToggle,
             }}
         >
             {props.children}

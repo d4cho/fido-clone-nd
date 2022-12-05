@@ -19,6 +19,12 @@ import { shopDropdownLabels } from './Utils/NavbarLabel';
 import { provincesDropdownLabels } from './Utils/Provinces';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import SideNavigationBar from './Components/Molecules/SideNavigationBar/SideNavigationBar';
+import SocialLink from './Components/Atoms/SocialLink/SocialLink';
+import Link from './Components/Atoms/Link/Link';
+import { navInfo } from './Utils/NavbarLabel';
+
+
 
 function App() {
     const { menuTitle, open, handleShow, iconOpen, matches, sideBarToggle, toggle } =
@@ -46,6 +52,8 @@ function App() {
     return (
         <>
             <NavBarContent
+                top='0'
+                position='sticky'
                 hamburgerMenu={
                     toggle ? (
                         <span style={{ cursor: 'pointer' }} onClick={sideBarToggle}>
@@ -81,7 +89,44 @@ function App() {
                         arrowUp={<KeyboardArrowUpOutlinedIcon />}
                     />
                 }
-                SideBarDrawer={<SideBarDrawer height='1050px' />}
+                SideBarDrawer={
+                    <SideBarDrawer
+                        top='0'
+                        height='1050px'
+                        sideBar={
+                            <SideNavigationBar
+                                backgroundColor='#fafafa'
+                                color='black'
+                                navInfo={navInfo}
+                                padding='10px 5px 8px'
+                                fontSize='0.9rem'
+                                profileIcon={<Person2OutlinedIcon />}
+                                location={<LocationOnOutlinedIcon />}
+                                height='8px'
+                                link={
+                                    <div className='block-content-join-now'>
+                                        <Link
+                                            width='11.25rem'
+                                            paddingTop='13px'
+                                            paddingBottom='13px'
+                                            Label='Join now'
+                                            href='/'
+                                        />
+                                    </div>
+                                }
+                                paddingLeft='30px'
+                                paddingRight='30px'
+                                paddingTop='20px'
+                                socialLink={
+                                    <div className='blocker-content-apple-google-buttons'>
+                                        <SocialLink img='https://www.eqbank.ca/images/default-source/svgs/download_on_the_app_store_badge.svg?sfvrsn=fe69bfd3_14' />
+                                        <SocialLink img='https://www.eqbank.ca/images/default-source/svgs/get_it_on_google_play.svg?sfvrsn=fb69bfd3_30' />
+                                    </div>
+                                }
+                            />
+                        }
+                    />
+                }
                 Logo={
                     matches ? (
                         <Logo

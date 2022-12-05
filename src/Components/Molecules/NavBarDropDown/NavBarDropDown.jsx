@@ -31,7 +31,6 @@ function NavBarDropdown({
                             paddingBottom: '10px',
                         }}
                         className='link-drop-down'
-                        onClick={closeShow}
                     >
                         {textField}
                         <ul
