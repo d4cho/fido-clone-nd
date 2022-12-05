@@ -3,8 +3,6 @@
     display: grid;
     grid-auto-rows: auto;
     grid-gap: 40px;
-    position: relative;
-    bottom: 680px;
     margin-left: 220px;
 }
 

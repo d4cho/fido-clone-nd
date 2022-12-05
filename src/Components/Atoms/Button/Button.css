@@ -1,0 +1,29 @@
+.fido-button {
+    background-color: #fff;
+    border-color: #000;
+    color: #000;
+    height: 48px;
+    border: 2px solid black;
+    padding: 0 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 270px;
+}
+
+.fido-button:hover {
+    background-color: grey;
+    border-color: #000;
+    color: white;
+    height: 48px;
+    border: 2px solid black;
+    padding: 0 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+     width: 270px;
+}

@@ -7,11 +7,11 @@ import Link from '../../Atoms/Link/Link';
 import './PhoneCardContent.css';
 
 
-function PhoneCardContent({filteredPhones }) {
+function PhoneCardContent({filteredPhones, position, bottom }) {
     const { matches } = useContext(MainContext);
     return (
         <>
-            <div className='phone-card-content'>
+            <div className='phone-card-content' style={{position: matches? position: null, bottom: matches? bottom : null}}>
                 {filteredPhones?.map((phone, idx) => (
                     <div key={idx}>
                         <Card

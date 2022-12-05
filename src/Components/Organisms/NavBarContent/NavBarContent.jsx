@@ -17,14 +17,21 @@ function NavBarContent({
     paddingTop,
     paddingBottom,
     hamburgerMenu,
+    top,
+    position,
 }) {
-    const { matches } = useContext(MainContext);
+    const { matches, toggle } = useContext(MainContext);
 
     return (
         <>
             <div
                 className='parent-container'
-                style={{ backgroundColor: backgroundColor, borderBottom: borderBottom }}
+                style={{
+                    backgroundColor: backgroundColor,
+                    borderBottom: borderBottom,
+                    position: matches || toggle ? position : null,
+                    top: matches || toggle ? top : null,
+                }}
             >
                 {matches ? topNavBar : null}
                 <div
@@ -38,7 +45,7 @@ function NavBarContent({
                 >
                     <div className='join-now-container'>
                         {link}
-                       {hamburgerMenu}
+                        {hamburgerMenu}
                     </div>
 
                     <div

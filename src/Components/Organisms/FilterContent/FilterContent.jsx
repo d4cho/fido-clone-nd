@@ -11,11 +11,15 @@ function FilterContent({
     filterNames,
     showLengthEachLabel,
     onCheckedFilters,
-    filterCount
-
+    filterCount,
+    position,
+    bottom,
+    left,
+    width,
+    paddingRight,
 }) {
     return (
-        <div className='filter-parent-container'>
+        <div style={{ position: position, bottom: bottom, left: left, paddingRight: paddingRight }}>
             <Filter
                 filters={filters}
                 onChange={onChange}
@@ -26,6 +30,7 @@ function FilterContent({
                 showLengthEachLabel={showLengthEachLabel}
                 onCheckedFilters={onCheckedFilters}
                 filterCount={filterCount}
+                width={width}
             />
         </div>
     );

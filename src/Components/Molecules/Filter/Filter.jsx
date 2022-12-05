@@ -13,7 +13,8 @@ function Filter({
     filterNames,
     showLengthEachLabel,
     onCheckedFilters,
-    filterCount
+    filterCount,
+    width
 }) {
     return (
         <>
@@ -26,7 +27,7 @@ function Filter({
                         ) : null}
                     </p>
                     {filter.filter?.map((filterItem, idx) => (
-                        <div className='filter-container' key={idx}>
+                        <div className='filter-container' style={{width: width}} key={idx}>
                             <CheckBox
                                 Label={filterItem}
                                 onChange={onChange}

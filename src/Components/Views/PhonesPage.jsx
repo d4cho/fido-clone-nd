@@ -8,9 +8,12 @@ import { useContext, useState } from 'react';
 import { filterLabels } from '../../Utils/Filter';
 import FilterContent from '../Organisms/FilterContent/FilterContent';
 import data from '../../Data/phone-data.json';
+import SideBarDrawer from '../Organisms/SideBarDrawer/SideBarDrawer';
+import Button from '../Atoms/Button/Button';
+import FilterListIcon from '@mui/icons-material/FilterList';
 
 function PhonesPage() {
-    const { matches } = useContext(MainContext);
+    const { matches, filterToggleChange } = useContext(MainContext);
     const [filterNames, setFilterNames] = useState([]);
     const [filterCounter, setFilterCounter] = useState(0);
 
@@ -79,14 +82,18 @@ function PhonesPage() {
             if (phone.basicPhones === 'Basic Phones') {
                 acc['Basic Phones'] += 1;
             }
-              if (phone.new === 'New') {
-                  acc.new += 1;
-              }
+            if (phone.new === 'New') {
+                acc['New'] += 1;
+            }
+
+            if (phone.certifiedPreOwned === 'Certified Pre-Owned') {
+                acc['Certified Pre-Owned'] += 1;
+            }
             return acc;
         },
         {
-            new: 0,
-            certifiedPreOwned: 0,
+            New: 0,
+            'Certified Pre-Owned': 0,
             Samsung: 0,
             Apple: 0,
             Google: 0,
@@ -139,6 +146,26 @@ function PhonesPage() {
     return (
         <div>
             <BreadCrumbsContent data={breadCrumbsLabels} />
+            <SideBarDrawer
+                filterContentContainer={
+                    <FilterContent
+                        filters={filterLabels}
+                        onChange={handleFilterChange}
+                        increase={increase}
+                        decrease={decrease}
+                        filterCounter={filterCounter}
+                        filterNames={filterNames}
+                        showLengthEachLabel={showLengthEachLabel}
+                        filterCount={filterCount}
+                        position='relative'
+                        bottom='140px'
+                        left='10px'
+                        paddingRight='30px'
+                        // onCheckedFilters={onCheckedFilters}
+                    />
+                }
+                buttonFilter={<button onClick={filterToggleChange}>hello world</button>}
+            />
             <div
                 style={{
                     width: '100%',
@@ -157,19 +184,34 @@ function PhonesPage() {
                     textTransform='uppercase'
                     marginTop='50px'
                 />
-                {/* the filter for the cards */}
-                <FilterContent
-                    filters={filterLabels}
-                    onChange={handleFilterChange}
-                    increase={increase}
-                    decrease={decrease}
+                {/* <button onClick={filterToggleChange}>hello world</button> */}
+                <Button
+                    onClick={filterToggleChange}
+                    title='Filters'
                     filterCounter={filterCounter}
-                    filterNames={filterNames}
-                    showLengthEachLabel={showLengthEachLabel}
-                    filterCount={filterCount}
-                    // onCheckedFilters={onCheckedFilters}
+                    matches={matches}
+                    filterIcon={<FilterListIcon />}
                 />
-                <PhoneCardContent filteredPhones={filteredPhones} />
+                {/* the filter for the cards */}
+                {matches && (
+                    <FilterContent
+                        filters={filterLabels}
+                        onChange={handleFilterChange}
+                        increase={increase}
+                        decrease={decrease}
+                        filterCounter={filterCounter}
+                        filterNames={filterNames}
+                        showLengthEachLabel={showLengthEachLabel}
+                        filterCount={filterCount}
+                        width='210px'
+                        // onCheckedFilters={onCheckedFilters}
+                    />
+                )}
+                <PhoneCardContent
+                    filteredPhones={filteredPhones}
+                    position='relative'
+                    bottom='680px'
+                />
             </div>
         </div>
     );
