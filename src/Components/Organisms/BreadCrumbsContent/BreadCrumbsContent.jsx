@@ -1,5 +1,6 @@
 import React from 'react';
 import BreadCrumb from '../../Molecules/BreadCrumb/BreadCrumb';
+import './BreadCrumbsContent.css';
 
 function BreadCrumbsContent({ data }) {
     return (
@@ -7,7 +8,9 @@ function BreadCrumbsContent({ data }) {
             className='bread-crumb-container'
             style={{ backgroundColor: '#fff', borderBottom: '1px solid #ccc' }}
         >
-            <BreadCrumb data={data} />
+            <div className='container'>
+                <BreadCrumb data={data} />
+            </div>
         </div>
     );
 }

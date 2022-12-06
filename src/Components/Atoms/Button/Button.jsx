@@ -10,12 +10,29 @@ function Button({
     position,
     top,
     border,
+    textAlign,
+    display,
+    flexDirection,
+    justifyContent,
+    alignItems,
+    marginLeft,
 }) {
     return (
         <>
             {!matches ? (
                 <button
-                    style={{ width: width, position: position, top: top , border: border}}
+                    style={{
+                        width: width,
+                        position: position,
+                        top: top,
+                        border: border,
+                        textAlign: textAlign,
+                        display: display,
+                        flexDirection: flexDirection,
+                        justifyContent: justifyContent,
+                        alignItems: alignItems,
+                        marginLeft: marginLeft
+                    }}
                     onClick={onClick}
                     className='fido-button'
                 >

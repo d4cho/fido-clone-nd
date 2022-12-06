@@ -4,7 +4,7 @@ import BreadCrumbsContent from '../Organisms/BreadCrumbsContent/BreadCrumbsConte
 import { breadCrumbsLabels } from '../../Utils/NavbarLabel';
 import PhoneCardContent from '../Organisms/PhoneCardContent/PhoneCardContent';
 import { MainContext } from '../../Context/MainContext';
-import { useContext} from 'react';
+import { useContext } from 'react';
 import { filterLabels } from '../../Utils/Filter';
 import FilterContent from '../Organisms/FilterContent/FilterContent';
 import data from '../../Data/phone-data.json';
@@ -16,7 +16,8 @@ import { FilterContext } from '../../Context/FilterContext';
 
 function PhonesPage() {
     const { matches, filterToggleChange } = useContext(MainContext);
-    const {setIsChecked, filterNames, setFilterNames } = useContext(FilterContext);
+    const { setIsChecked, filterNames, setFilterNames } = useContext(FilterContext);
+
     const handleFilterChange = (label) => {
         if (filterNames.includes(label)) {
             setFilterNames((prev) => prev.filter((filter) => filter !== label));
@@ -133,9 +134,9 @@ function PhonesPage() {
                         filterCounter={filterNames.length}
                         filterNames={filterNames}
                         showLengthEachLabel={showLengthEachLabel}
-                         filterCount={filterCount}
+                        filterCount={filterCount}
                         position='relative'
-                        bottom='140px'
+                        bottom='120px'
                         left='10px'
                         paddingRight='30px'
                         resetFilters={resetFilters}
@@ -146,8 +147,8 @@ function PhonesPage() {
                         style={{
                             cursor: 'pointer',
                             position: 'absolute',
-                            top: '-130px',
-                            right: '0px',
+                            top: '-90px',
+                            right: '2px',
                         }}
                     >
                         <HighlightOffOutlinedIcon onClick={filterToggleChange} />
@@ -171,6 +172,7 @@ function PhonesPage() {
                     fontWeight='900'
                     textTransform='uppercase'
                     marginTop='50px'
+                    marginLeft={!matches ? '20px' : null}
                 />
                 <Button
                     onClick={filterToggleChange}
@@ -179,6 +181,7 @@ function PhonesPage() {
                     matches={matches}
                     filterIcon={<FilterListIcon />}
                     width='210px'
+                    marginLeft='20px'
                 />
                 {/* the filter for the cards */}
                 {matches && (
@@ -188,7 +191,7 @@ function PhonesPage() {
                         filterCounter={filterNames.length}
                         filterNames={filterNames}
                         showLengthEachLabel={showLengthEachLabel}
-                         filterCount={filterCount}
+                        filterCount={filterCount}
                         width='210px'
                         resetFilters={resetFilters}
                     />
