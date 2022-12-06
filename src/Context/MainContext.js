@@ -13,7 +13,6 @@ function MainContextProvider(props) {
     const [isHover, setIsHover] = useState(false);
     const [navItemLabelHover, setNavItemLabelHover] = useState(false);
     const [navItems, setNavItems] = useState('SHOP');
-
     const [filterToggle, setFilterToggle] = useState(false);
 
     useEffect(() => {

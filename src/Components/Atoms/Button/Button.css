@@ -10,7 +10,6 @@
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
-    width: 270px;
 }
 
 .fido-button:hover {
@@ -25,5 +24,4 @@
     font-weight: 700;
     text-transform: uppercase;
     cursor: pointer;
-     width: 270px;
 }

@@ -24,8 +24,6 @@ import SocialLink from './Components/Atoms/SocialLink/SocialLink';
 import Link from './Components/Atoms/Link/Link';
 import { navInfo } from './Utils/NavbarLabel';
 
-
-
 function App() {
     const { menuTitle, open, handleShow, iconOpen, matches, sideBarToggle, toggle } =
         useContext(MainContext);
@@ -133,6 +131,8 @@ function App() {
                             height='49px'
                             width='150px'
                             src='https://images.ctfassets.net/t00ajdlq0g9p/52DEnZejQKnqbYx2UM6tHZ/9ca317ef2e1ef23772adb4ab0f0f9c4f/Fido_EN_D.png'
+                            position={matches ? 'relative' : null}
+                            right={matches ? '90px' : null}
                         />
                     ) : (
                         <Logo
