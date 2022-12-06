@@ -1,7 +1,7 @@
 import Title from '../Atoms/Title/Title';
 import React from 'react';
 import BreadCrumbsContent from '../Organisms/BreadCrumbsContent/BreadCrumbsContent';
-import { breadCrumbsLabels } from '../../Utils/NavbarLabel';
+import { breadCrumbsLabelsForPhones } from '../../Utils/NavbarLabel';
 import PhoneCardContent from '../Organisms/PhoneCardContent/PhoneCardContent';
 import { MainContext } from '../../Context/MainContext';
 import { useContext } from 'react';
@@ -125,7 +125,7 @@ function PhonesPage() {
 
     return (
         <div>
-            <BreadCrumbsContent data={breadCrumbsLabels} />
+            <BreadCrumbsContent data={breadCrumbsLabelsForPhones} />
             <SideBarDrawer
                 filterContentContainer={
                     <FilterContent
