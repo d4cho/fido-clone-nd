@@ -3,8 +3,6 @@ import './Tabs.css';
 import Tab from '../../Atoms/Tab/Tab';
 
 function Tabs({ tabSwitcherLabels, selectedView, setSelectedView }) {
-    console.log(tabSwitcherLabels)
-    console.log(selectedView)
     useEffect(() => {
         switch (selectedView) {
             case 'Data,Talk & Text':
@@ -15,6 +13,15 @@ function Tabs({ tabSwitcherLabels, selectedView, setSelectedView }) {
                 break;
             case 'Basic':
                 setSelectedView('Basic');
+                break;
+            case 'Device Protection':
+                setSelectedView('Device Protection');
+                break;
+            case 'Voicemail':
+                setSelectedView('Voicemail');
+                break;
+            case 'Long Distance':
+                setSelectedView('Long Distance');
                 break;
             default:
                 setSelectedView('Data,Talk & Text');
@@ -38,7 +45,13 @@ function Tabs({ tabSwitcherLabels, selectedView, setSelectedView }) {
                             onClick={() => setSelectedView(tab)}
                             styleTab={
                                 selectedView === tab ? (
-                                    <div style={{ backgroundColor: 'black', height: '2px', marginTop:'10px' }} />
+                                    <div
+                                        style={{
+                                            backgroundColor: 'black',
+                                            height: '2px',
+                                            marginTop: '10px',
+                                        }}
+                                    />
                                 ) : null
                             }
                         />

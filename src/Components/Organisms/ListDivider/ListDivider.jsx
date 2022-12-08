@@ -11,11 +11,15 @@ function ListDivider({
     height,
     title,
     shoppingIcon,
+    onClick,
+    openCheckout,
+    CheckoutInfo,
 }) {
     return (
         <div style={{ minWidth: minWidth, height: height }} className='list-divider-container'>
             {title && (
                 <p
+                    onClick={onClick}
                     className='list-divider-item'
                     style={{
                         borderBottom: '1px solid #ccc',
@@ -32,8 +36,10 @@ function ListDivider({
                             className='list-divider-item'
                             style={{
                                 borderBottom:
-                                    (label.subTitle === 'Select DATA Option' && open === true) ||
-                                    label.title === 'Addons'
+                                    (label.subTitle === 'Select DATA Option' && open) ||
+                                    label.subTitle === 'Addons' ||
+                                    (label.title === 'Monthly Fees' && openCheckout) ||
+                                    label.title === 'One-time fees'
                                         ? null
                                         : '1px solid #ccc',
                             }}
@@ -62,6 +68,7 @@ function ListDivider({
                     </Fragment>
                 );
             })}
+            {CheckoutInfo}
         </div>
     );
 }

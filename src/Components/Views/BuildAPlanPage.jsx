@@ -10,13 +10,20 @@ import Button from '../Atoms/Button/Button';
 import { tabSwitcherLabels } from '../../Utils/DividerLabels';
 import data from '../../Data/phone-data-options.json';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { tabSwitcherLabelsAddOns } from '../../Utils/DividerLabels';
+import CheckoutInfo from '../Molecules/CheckoutInfo/CheckoutInfo';
+import { checkOutInfo } from '../../Utils/DividerLabels';
 
 function BuildAPlanPage() {
     const { matches } = useContext(MainContext);
     const [activeStep, setActiveStep] = useState(0);
     const [open, setOpen] = useState(true);
+    const [openCheckout, setOpenCheckout] = useState(false);
     const [selectedView, setSelectedView] = useState('Data,Talk & Text');
 
+    const setCheckoutOpenAndClose = () => {
+        setOpenCheckout(!openCheckout);
+    };
     const nextStep = () => {
         if (activeStep < 2) {
             setActiveStep((currentStep) => currentStep + 2);
@@ -102,7 +109,7 @@ function BuildAPlanPage() {
                             {idx + 1}. {subTitle}
                         </p>
                         <Tabs
-                            tabSwitcherLabels={tabSwitcherLabels}
+                            tabSwitcherLabels={tabSwitcherLabelsAddOns}
                             selectedView={selectedView}
                             setSelectedView={setSelectedView}
                         />
@@ -113,6 +120,45 @@ function BuildAPlanPage() {
                         />
                     </div>
                 ) : null;
+            case 'Total':
+                return (
+                    openCheckout && (
+                        <div className='list-divider-subtitle'>
+                            <div className='align-cart-labels'>
+                                <p style={{ fontWeight: '600' }}>{subTitle}</p>
+                                <p
+                                    style={{
+                                        fontWeight: '600',
+                                        position: 'absolute',
+                                        left: '380px',
+                                    }}
+                                >
+                                    0.00
+                                </p>
+                            </div>
+                        </div>
+                    )
+                );
+            case 'Cost':
+                return (
+                    openCheckout && (
+                        <div className='list-divider-subtitle'>
+                            <p style={{ fontWeight: '600' }}>{subTitle}</p>
+                            <div className='align-cart-labels'>
+                                <p
+                                    style={{
+                                        fontWeight: '600',
+                                        position: 'absolute',
+                                        left: '380px',
+                                        bottom: '10px',
+                                    }}
+                                >
+                                    0.00
+                                </p>
+                            </div>
+                        </div>
+                    )
+                );
             default:
                 return null;
         }
@@ -143,12 +189,15 @@ function BuildAPlanPage() {
                         display: 'flex',
                         flexDirection: matches ? 'row' : 'column',
                         gap: '30px',
-                        marginLeft: '20px',
-                        marginRight: '20px',
+                        paddingRight: '20px',
+                        paddingLeft: '20px',
+                        maxWidth: matches ? '1200px' : null,
+                        marginRight: 'auto',
+                        marginLeft: 'auto',
                     }}
                 >
                     <ListDivider
-                        minWidth='750px'
+                        minWidth={matches ? '650px' : '450px'}
                         listItems={dividerLabelItems}
                         activeStep={activeStep}
                         open={open}
@@ -156,10 +205,23 @@ function BuildAPlanPage() {
                     />
                     <ListDivider
                         minWidth='450px'
-                        height='500px'
+                        height={openCheckout ? '665px' : '482px'}
                         title='Cart Summary'
-                        listItems={[{ title: 'Monthly Fees' }, { title: 'One-time fees' }]}
+                        listItems={[
+                            { title: 'Monthly Fees', subTitle: 'Total' },
+                            { title: 'One-time fees', subTitle: 'Cost' },
+                        ]}
                         shoppingIcon={<ShoppingCartOutlinedIcon />}
+                        showDropDown={showDropDown}
+                        onClick={setCheckoutOpenAndClose}
+                        openCheckout={openCheckout}
+                        CheckoutInfo={
+                            <CheckoutInfo
+                                checkOutInfo={checkOutInfo}
+                                mainTitle='Your Purchase Includes:'
+                                content='Discounts will be reflected in full during order review'
+                            />
+                        }
                     />
                 </div>
             </div>
