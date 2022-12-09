@@ -15,3 +15,8 @@ export const checkOutInfo = [
         title: 'Satisfaction Guarantee - Your online purchase is worry free with our 30-day return policy',
     },
 ];
+
+export const checkoutLabels = [
+    { title: 'Monthly Fees', subTitle: 'Total' },
+    { title: 'One-time fees', subTitle: 'Cost' },
+];

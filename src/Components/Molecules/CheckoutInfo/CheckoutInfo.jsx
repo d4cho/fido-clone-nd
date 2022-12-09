@@ -9,7 +9,8 @@ function CheckoutInfo({ checkOutInfo, mainTitle, content }) {
                     height: '268px',
                     borderTop: '1px solid rgb(204, 204, 204)',
                     backgroundColor: '#f5f5f5',
-                    paddingLeft: '10px',
+                    paddingLeft: '15px',
+                    paddingRight: '15px',
                 }}
             >
                 <h2 style={{ marginLeft: '15px' }}>{mainTitle}</h2>
@@ -17,13 +18,15 @@ function CheckoutInfo({ checkOutInfo, mainTitle, content }) {
                     {checkOutInfo.map((item, idx) => {
                         return (
                             <Fragment key={idx}>
-                                <li style={{ marginTop: '10px' }}>{item.title}</li>
+                                <li style={{ marginTop: '10px', fontSize: '0.9rem' }}>
+                                    {item.title}
+                                </li>
                             </Fragment>
                         );
                     })}
                 </ul>
                 <br />
-                <p>{content}</p>
+                <p className='content-cart'>{content}</p>
             </div>{' '}
         </>
     );

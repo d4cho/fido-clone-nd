@@ -13,22 +13,48 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { tabSwitcherLabelsAddOns } from '../../Utils/DividerLabels';
 import CheckoutInfo from '../Molecules/CheckoutInfo/CheckoutInfo';
 import { checkOutInfo } from '../../Utils/DividerLabels';
+import { checkoutLabels } from '../../Utils/DividerLabels';
+import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 
 function BuildAPlanPage() {
     const { matches } = useContext(MainContext);
     const [activeStep, setActiveStep] = useState(0);
     const [open, setOpen] = useState(true);
+    const [openAddons, setOpenAddons] = useState(false);
     const [openCheckout, setOpenCheckout] = useState(false);
     const [selectedView, setSelectedView] = useState('Data,Talk & Text');
+    const [selected, setSelected] = useState(3);
+    const [cartItems, setCartItems] = useState([]);
 
+    // data
+    const dataOptions = data.data;
+
+    // move the stepper and open and close dropdown is the list divider
+    const nextStep = () => {
+        if (activeStep === 0) {
+            setOpen(false);
+            setOpenAddons(true);
+            const findItem = dataOptions.filter((x) => x.id === selected);
+            if (findItem) {
+                setCartItems([...findItem]);
+            }
+        } else if (activeStep === 1) {
+            setOpenAddons(false);
+        }
+        if (activeStep < 2) {
+            setActiveStep((currentStep) => currentStep + 1);
+        }
+    };
+
+    // open and close the checkout dropdowns same time
     const setCheckoutOpenAndClose = () => {
         setOpenCheckout(!openCheckout);
     };
-    const nextStep = () => {
-        if (activeStep < 2) {
-            setActiveStep((currentStep) => currentStep + 2);
-        }
-        setOpen(false);
+
+    // selecting each card and adding border based on click
+    const handleClick = (id) => {
+        setSelected(id !== selected ? id : '');
     };
 
     /// to show cards based on selecting a data option
@@ -37,8 +63,12 @@ function BuildAPlanPage() {
             case 'Data,Talk & Text':
                 const dataAndTalkText = data.data
                     ?.filter((phoneItem) => phoneItem.title === view)
-                    .map((item) => (
-                        <div className={view ? 'tab-card' : null}>
+                    .map((item, i) => (
+                        <div
+                            key={i}
+                            onClick={() => handleClick(i)}
+                            className={`${selected === i ? 'tab-card-selected' : ''} tab-card`}
+                        >
                             <p>{item.dataAmount}</p>
                             <p>{item.dataPlanType}</p>
                             <p>{item.dataPlanTypeCost}</p>
@@ -49,8 +79,12 @@ function BuildAPlanPage() {
             case 'Talk & Text':
                 const talkAndText = data.data
                     ?.filter((phoneItem) => phoneItem.title === view)
-                    .map((item) => (
-                        <div className={view ? 'tab-card' : null}>
+                    .map((item, i) => (
+                        <div
+                            key={i}
+                            onClick={() => handleClick(i)}
+                            className={`${selected === i ? 'tab-card-selected' : ''} tab-card`}
+                        >
                             <p>{item.dataAmount}</p>
                             <p>{item.dataPlanType}</p>
                             <p>{item.dataPlanTypeCost}</p>
@@ -61,8 +95,12 @@ function BuildAPlanPage() {
             case 'Basic':
                 const basicPlan = data.data
                     ?.filter((phoneItem) => phoneItem.title === view)
-                    .map((item) => (
-                        <div className={view ? 'tab-card' : null}>
+                    .map((item, i) => (
+                        <div
+                            key={i}
+                            onClick={() => handleClick(i)}
+                            className={`${selected === i ? 'tab-card-selected' : ''} tab-card`}
+                        >
                             <p>{item.dataAmount}</p>
                             <p>{item.dataPlanType}</p>
                             <p>{item.dataPlanTypeCost}</p>
@@ -81,101 +119,96 @@ function BuildAPlanPage() {
 
     /// to show the dropdown in the lis item
     const showDropDown = (subTitle, idx) => {
-        switch (subTitle) {
-            case 'Select DATA Option':
-                return open ? (
-                    <div className='list-divider-subtitle'>
-                        <p style={{ fontWeight: '600' }}>
-                            {idx + 1}. {subTitle}
-                        </p>
-                        <Tabs
-                            tabSwitcherLabels={tabSwitcherLabels}
-                            selectedView={selectedView}
-                            setSelectedView={setSelectedView}
-                        />
-                        {renderSelectedView(selectedView)}
-                        <Button
-                            title='Continue'
-                            backgroundColor='rgb(255, 230, 0)'
-                            border='1px solid black'
-                            onClick={nextStep}
-                        />
+        if (subTitle === 'Select DATA Option') {
+            const selectDataOption = open && (
+                <div className='list-divider-subtitle'>
+                    {' '}
+                    <p style={{ fontWeight: '600' }}>
+                        {idx + 1}. {subTitle}
+                    </p>
+                    <Tabs
+                        tabSwitcherLabels={tabSwitcherLabels}
+                        selectedView={selectedView}
+                        setSelectedView={setSelectedView}
+                    />
+                    {renderSelectedView(selectedView)}
+                    <Button
+                        title='Continue'
+                        backgroundColor='rgb(255, 230, 0)'
+                        border='1px solid black'
+                        onClick={nextStep}
+                    />
+                </div>
+            );
+            return selectDataOption;
+        } else if (subTitle === 'Addons') {
+            const selectAddons = openAddons && (
+                <div className='list-divider-subtitle'>
+                    <p style={{ fontWeight: '600' }}>
+                        {idx + 1}. {subTitle}
+                    </p>
+                    <Tabs
+                        tabSwitcherLabels={tabSwitcherLabelsAddOns}
+                        selectedView={selectedView}
+                        setSelectedView={setSelectedView}
+                    />
+                    <Button
+                        title='Continue'
+                        backgroundColor='rgb(255, 230, 0)'
+                        border='1px solid black'
+                        onClick={nextStep}
+                    />
+                </div>
+            );
+            return selectAddons;
+        } else if (subTitle === 'Total') {
+            const total = openCheckout && (
+                <div className='list-divider-subtitle'>
+                    <div className='align-cart-labels'>
+                        <p style={{ fontWeight: '600' }}>{subTitle}</p>
+                        <p className='build-plan-align-items'>0.00</p>
                     </div>
-                ) : null;
-            case 'Addons':
-                return !open ? (
-                    <div className='list-divider-subtitle'>
-                        <p style={{ fontWeight: '600' }}>
-                            {idx + 1}. {subTitle}
-                        </p>
-                        <Tabs
-                            tabSwitcherLabels={tabSwitcherLabelsAddOns}
-                            selectedView={selectedView}
-                            setSelectedView={setSelectedView}
-                        />
-                        <Button
-                            title='Continue'
-                            backgroundColor='rgb(255, 230, 0)'
-                            border='1px solid black'
-                        />
-                    </div>
-                ) : null;
-            case 'Total':
-                return (
-                    openCheckout && (
-                        <div className='list-divider-subtitle'>
-                            <div className='align-cart-labels'>
-                                <p style={{ fontWeight: '600' }}>{subTitle}</p>
-                                <p
+                </div>
+            );
+            return total;
+        } else if (subTitle === 'Cost') {
+            const cost = openCheckout && (
+                <div className='list-divider-subtitle'>
+                    <div className='align-cart-labels'>
+                        <div style={{ width: '100%' }}>
+                            <p
+                                style={{
+                                    borderBottom: '1px solid #ccc',
+                                    paddingBottom: '10px',
+                                    gap: '240px',
+                                    display: 'flex',
+                                }}
+                            >
+                                Set Up Service Fee (Waived)
+                                <span
                                     style={{
-                                        fontWeight: '600',
-                                        position: 'absolute',
-                                        left: '380px',
+                                        textDecoration: 'line-through',
                                     }}
                                 >
-                                    0.00
-                                </p>
-                            </div>
+                                    50.00 0.00
+                                </span>
+                            </p>
+                            <p style={{ borderBottom: '1px solid #ccc', paddingBottom: '10px' }}>
+                                Free Sim Card
+                            </p>
+                            <p>Total </p>
                         </div>
-                    )
-                );
-            case 'Cost':
-                return (
-                    openCheckout && (
-                        <div className='list-divider-subtitle'>
-                            <p style={{ fontWeight: '600' }}>{subTitle}</p>
-                            <div className='align-cart-labels'>
-                                <p
-                                    style={{
-                                        fontWeight: '600',
-                                        position: 'absolute',
-                                        left: '380px',
-                                        bottom: '10px',
-                                    }}
-                                >
-                                    0.00
-                                </p>
-                            </div>
-                        </div>
-                    )
-                );
-            default:
-                return null;
+                    </div>
+                </div>
+            );
+            return cost;
         }
     };
+
     return (
         <>
             <BreadCrumbsContent data={breadCrumbsLabelsForPlans} />
-            <div
-                style={{
-                    width: '100%',
-                    paddingRight: matches ? '24px' : null,
-                    paddingLeft: matches ? '24px' : null,
-                    marginRight: matches ? 'auto' : null,
-                    marginLeft: matches ? 'auto' : null,
-                    maxWidth: matches ? '1100px' : null,
-                }}
-            >
+            <div className='build-plan-container'>
                 <Title
                     title='BUILD YOUR PLAN'
                     fontSize='2.4rem'
@@ -185,15 +218,10 @@ function BuildAPlanPage() {
                     marginLeft={!matches ? '20px' : null}
                 />
                 <div
+                    className='parent-divider-container'
                     style={{
-                        display: 'flex',
                         flexDirection: matches ? 'row' : 'column',
-                        gap: '30px',
-                        paddingRight: '20px',
-                        paddingLeft: '20px',
                         maxWidth: matches ? '1200px' : null,
-                        marginRight: 'auto',
-                        marginLeft: 'auto',
                     }}
                 >
                     <ListDivider
@@ -205,16 +233,19 @@ function BuildAPlanPage() {
                     />
                     <ListDivider
                         minWidth='450px'
-                        height={openCheckout ? '665px' : '482px'}
+                        height={openCheckout ? '715px' : '470px'}
                         title='Cart Summary'
-                        listItems={[
-                            { title: 'Monthly Fees', subTitle: 'Total' },
-                            { title: 'One-time fees', subTitle: 'Cost' },
-                        ]}
-                        shoppingIcon={<ShoppingCartOutlinedIcon />}
+                        listItems={checkoutLabels}
+                        shoppingIcon={
+                            <span style={{ color: 'teal' }}>
+                                <ShoppingCartOutlinedIcon />
+                            </span>
+                        }
                         showDropDown={showDropDown}
                         onClick={setCheckoutOpenAndClose}
                         openCheckout={openCheckout}
+                        arrowUp={<KeyboardArrowUpOutlinedIcon />}
+                        arrowDown={<KeyboardArrowDownOutlinedIcon />}
                         CheckoutInfo={
                             <CheckoutInfo
                                 checkOutInfo={checkOutInfo}

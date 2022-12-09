@@ -14,6 +14,8 @@ function ListDivider({
     onClick,
     openCheckout,
     CheckoutInfo,
+    arrowUp,
+    arrowDown,
 }) {
     return (
         <div style={{ minWidth: minWidth, height: height }} className='list-divider-container'>
@@ -23,10 +25,14 @@ function ListDivider({
                     className='list-divider-item'
                     style={{
                         borderBottom: '1px solid #ccc',
+                        cursor: 'pointer',
+                        fontWeight: '700',
+                        fontSize: '1.1rem',
                     }}
                 >
                     {shoppingIcon}
                     {title}
+                    <span className='icon-open-close'> {openCheckout ? arrowUp : arrowDown}</span>
                 </p>
             )}
             {listItems.map((label, idx) => {
@@ -64,7 +70,7 @@ function ListDivider({
                                 </>
                             )}
                         </p>
-                        {showDropDown && showDropDown(label.subTitle, idx)}
+                        {showDropDown(label.subTitle, idx)}
                     </Fragment>
                 );
             })}
