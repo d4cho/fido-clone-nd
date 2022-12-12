@@ -11,14 +11,14 @@ function BreadCrumb({ data }) {
                                 {' '}
                                 <a
                                     style={{
-                                        color: breadCrumbItem.title !== 'Phones' ? '#035d67' : null,
+                                        color: breadCrumbItem.color,
                                         fontSize: '0.9rem',
                                         fontWeight: '600',
                                     }}
                                     href={breadCrumbItem.href}
                                 >
                                     {breadCrumbItem.title}
-                                    <span style={{ color: 'black' }}>{breadCrumbItem.slash}</span>
+                                    <span style={{ color: 'black', paddingLeft:'5px' }}>{breadCrumbItem.slash}</span>
                                 </a>
                             </li>
                         </div>

@@ -92,9 +92,15 @@ export const billsDropdownLabels = [
     { title: 'Fido Roam' },
 ];
 
-
-export const breadCrumbsLabels = [
-    { title: 'Home', href: '/', slash:'/' },
-    { title: 'Wireless', href: '/', slash:'/' },
+export const breadCrumbsLabelsForPhones = [
+    { title: 'Home', href: '/', slash: '/', color: '#035d67' },
+    { title: 'Wireless', href: '/', slash: '/', color: '#035d67' },
     { title: 'Phones' },
+];
+
+
+export const breadCrumbsLabelsForPlans = [
+    { title: 'Plans', href: '/', slash: '/', color: '#035d67' },
+    { title: 'Bring Your Own Phone', href: '/', slash: '/', color: '#035d67' },
+    { title: 'Build Plan', color: 'black' },
 ];
