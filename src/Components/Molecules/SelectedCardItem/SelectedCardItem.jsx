@@ -14,7 +14,7 @@ function SelectedCardItem({ data, selected, onClick, view }) {
                     >
                         <p>{item.dataAmount}</p>
                         <p>{item.dataPlanType}</p>
-                        <p>{item.dataPlanTypeCost}</p>
+                        <p>${item.dataPlanTypeCost}/mo</p>
                     </div>
                 ))}
         </>
