@@ -17,7 +17,8 @@ import { checkoutLabels } from '../../Utils/DividerLabels';
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import { oneTimeFeesLabels } from '../../Utils/DividerLabels';
-import SelectedCardItem from '../Molecules/SelectedCardItem/SelectedCardItem';
+import DataPlanCard from '../Molecules/DataPlanCard/DataPlanCard';
+import dataAddons from '../../Data/Phone-data-addons.json';
 
 function BuildAPlanPage() {
     const { matches } = useContext(MainContext);
@@ -32,8 +33,7 @@ function BuildAPlanPage() {
 
     // data
     const dataOptions = data.data;
-
-    console.log(selected);
+    const dataForAddons = dataAddons.data;
 
     // select a plan and add to shopping cart
     const selectPlan = () => {
@@ -50,12 +50,20 @@ function BuildAPlanPage() {
             setOpenAddons(true);
             selectPlan();
             setShowTalkOptions(true);
+            setSelectedView('Device Protection');
         } else if (activeStep === 1) {
             setOpenAddons(false);
         }
         if (activeStep < 2) {
             setActiveStep((currentStep) => currentStep + 1);
         }
+    };
+
+    const openHandler = () => {
+        setOpen(true);
+        setActiveStep(0);
+        setSelectedView('Data,Talk & Text');
+        setOpenAddons(false);
     };
 
     // open and close the checkout dropdowns same time
@@ -68,12 +76,22 @@ function BuildAPlanPage() {
         setSelected(id !== selected ? id : '');
     };
 
+    // sum up the total after taxes
+    const sumUpAfterTaxes = cartItems.reduce((prev, current) => {
+        return (
+            prev +
+            current.dataPlanTypeCost +
+            0.05 * current.dataPlanTypeCost +
+            0.08 * current.dataPlanTypeCost
+        );
+    }, 0);
+
     /// to show cards based on selecting a data option
     const renderSelectedView = (view) => {
         switch (view) {
             case 'Data,Talk & Text':
                 return (
-                    <SelectedCardItem
+                    <DataPlanCard
                         data={data.data}
                         onClick={handleClick}
                         selected={selected}
@@ -83,7 +101,7 @@ function BuildAPlanPage() {
 
             case 'Talk & Text':
                 return (
-                    <SelectedCardItem
+                    <DataPlanCard
                         data={data.data}
                         onClick={handleClick}
                         selected={selected}
@@ -93,7 +111,7 @@ function BuildAPlanPage() {
 
             case 'Basic':
                 return (
-                    <SelectedCardItem
+                    <DataPlanCard
                         data={data.data}
                         onClick={handleClick}
                         selected={selected}
@@ -103,8 +121,8 @@ function BuildAPlanPage() {
 
             case 'Device Protection':
                 return (
-                    <SelectedCardItem
-                        data={data.data}
+                    <DataPlanCard
+                        data={dataForAddons}
                         onClick={handleClick}
                         selected={selected}
                         view={view}
@@ -113,7 +131,7 @@ function BuildAPlanPage() {
 
             default:
                 return (
-                    <SelectedCardItem
+                    <DataPlanCard
                         data={data.data}
                         onClick={handleClick}
                         selected={selected}
@@ -158,6 +176,7 @@ function BuildAPlanPage() {
                         selectedView={selectedView}
                         setSelectedView={setSelectedView}
                     />
+                    {renderSelectedView(selectedView)}
                     <Button
                         title='Continue'
                         backgroundColor='rgb(255, 230, 0)'
@@ -185,20 +204,18 @@ function BuildAPlanPage() {
                                         <span>{item.title}</span>
                                         <span>{item.dataPlanType}</span>
                                         <span>{item.dataAmount}</span>
+                                        <span>${item.dataPlanTypeCost}/mo</span>
                                     </Fragment>
                                 );
                             })}
                         </p>
                     </div>
                     <p>
-                        Total
-                        {cartItems.map((item, id) => {
-                            return (
-                                <Fragment key={id}>
-                                    <span>{item.dataPlanTypeCost}</span>
-                                </Fragment>
-                            );
-                        })}{' '}
+                        Total: after taxes
+                        <span style={{ fontWeight: '600', fontSize: '1.5rem' }}>
+                            {' '}
+                            ${sumUpAfterTaxes}/mon.
+                        </span>
                     </p>
                 </div>
             );
@@ -215,11 +232,23 @@ function BuildAPlanPage() {
                                             style={{
                                                 borderBottom: '1px solid #ccc',
                                                 paddingBottom: '10px',
-                                                display: 'flex',
-                                                gap: '240px',
                                             }}
                                         >
-                                            {item.title}
+                                            {item.title}{' '}
+                                            {item.subTitle ? (
+                                                <span
+                                                    style={{
+                                                        position: 'absolute',
+                                                        right: '0px',
+                                                        textDecoration:
+                                                            item.subTitle === '50.00'
+                                                                ? 'line-through'
+                                                                : null,
+                                                    }}
+                                                >
+                                                    {item.subTitle}
+                                                </span>
+                                            ) : null}
                                         </p>
                                     </Fragment>
                                 );
@@ -259,6 +288,18 @@ function BuildAPlanPage() {
                         showDropDown={showDropDown}
                         showTalkOptions={showTalkOptions}
                         cartItems={cartItems}
+                        openHandler={
+                            <Button
+                                onClick={openHandler}
+                                title='Edit'
+                                backgroundColor='white'
+                                border='1px solid #035d67'
+                                color='#035d67'
+                                position='absolute'
+                                right='8px'
+                                top='0px'
+                            />
+                        }
                     />
                     <ListDivider
                         minWidth='450px'

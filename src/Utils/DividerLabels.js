@@ -22,7 +22,7 @@ export const checkoutLabels = [
 ];
 
 export const oneTimeFeesLabels = [
-    { title: 'Set Up Service Fee (Waived)'},
-    { title: 'Free Sim Card' },
-    { title: 'Total' },
+    { title: 'Set Up Service Fee (Waived)', subTitle:'50.00'},
+    { title: 'Free Sim Card', subTitle:'free' },
+    { title: 'Total', subTitle: '0.00' }
 ];

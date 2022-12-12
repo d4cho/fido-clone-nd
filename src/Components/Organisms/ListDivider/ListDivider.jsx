@@ -17,6 +17,7 @@ function ListDivider({
     arrowUp,
     arrowDown,
     showTalkOptions,
+    openHandler,
 }) {
     return (
         <div style={{ minWidth: minWidth, height: height }} className='list-divider-container'>
@@ -56,7 +57,8 @@ function ListDivider({
                                     <span style={{ color: 'green' }}>
                                         <CheckCircleOutlineOutlinedIcon />
                                     </span>
-                                    {label.title}
+                                    {label.title}{' '}
+                                    {!open && label.title === 'Select Talk Options' && openHandler}
                                 </>
                             ) : (
                                 <>

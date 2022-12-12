@@ -5,21 +5,21 @@
             "title": "Data,Talk & Text",
             "dataPlanType": "8GB,Talk & Text-BYOP",
             "dataAmount": "Data 8 GB",
-            "dataPlanTypeCost": "$55.00/mo"
+            "dataPlanTypeCost": 55.00
         },
         {
             "id": 1,
             "title": "Data,Talk & Text",
             "dataPlanType": "10GB,Talk & Text-BYOP",
             "dataAmount": "Data 10 GB",
-            "dataPlanTypeCost": "$60.00/mo"
+            "dataPlanTypeCost": 60.00
         },
         {
             "id": 2,
             "title": "Data,Talk & Text",
             "dataPlanType": "20GB,Talk & Text-BYOP",
             "dataAmount": "Data 10 GB",
-            "dataPlanTypeCost": "$65.00/mo"
+            "dataPlanTypeCost": 65.00
         },
 
         {
@@ -27,21 +27,21 @@
             "title": "Data,Talk & Text",
             "dataPlanType": "8GB,Talk & Text-BYOP",
             "dataAmount": "Data 8 GB",
-            "dataPlanTypeCost": "$37.50/mo"
+            "dataPlanTypeCost": 37.50
         },
         {
             "id": 4,
             "title": "Data,Talk & Text",
             "dataPlanType": "10GB,Talk & Text-BYOP",
             "dataAmount": "Data 10 GB",
-            "dataPlanTypeCost": "$41.25/mo"
+            "dataPlanTypeCost": 41.25
         },
         {
             "id": 5,
             "title": "Data,Talk & Text",
             "dataPlanType": "20GB,Talk & Text-BYOP",
             "dataAmount": "Data 10 GB",
-            "dataPlanTypeCost": "$45.00/mo"
+            "dataPlanTypeCost": 45.00
         },
 
         {
@@ -49,7 +49,7 @@
             "title": "Talk & Text",
             "dataPlanType": "Talk & Text Plan (No Data)",
             "dataAmount": "Data 10 GB",
-            "dataPlanTypeCost": "$32.00/mo"
+            "dataPlanTypeCost": 32.00
         },
 
         {
@@ -57,21 +57,20 @@
             "title": "Basic",
             "dataPlanType": "250MB,Basic Plan -BYOP",
             "dataAmount": " Data 250 MB of data at 3G speed. 100 Canada-wide outgoing call minutes (additional minutes 0.45/min), unlimited incoming calls. No data available after 250 MB limit",
-            "dataPlanTypeCost": "$15.00/mo"
+            "dataPlanTypeCost": 15.00
         },
         {
             "id": 8,
             "title": "Basic",
             "dataPlanType": "3GB Basic Plan -BYOP",
             "dataAmount": " Data 3 GB of data at 3G speed. Data 3 GB of data at 3G speed. Additional data: $10/100 MB",
-            "dataPlanTypeCost": "$35.00/mo"
+            "dataPlanTypeCost": 35.00
         },
         {
-            "id": 9,
+            "id": 8,
             "title": "Device Protection",
-            "dataPlanType": "3GB Basic Plan -BYOP",
-            "dataAmount": " Data 3 GB of data at 3G speed. Data 3 GB of data at 3G speed. Additional data: $10/100 MB",
-            "dataPlanTypeCost": "$35.00/mo"
+            "dataPlanType": "No Device Protection",
+            "dataPlanTypeCost": 0.00
         }
     ]
 }
