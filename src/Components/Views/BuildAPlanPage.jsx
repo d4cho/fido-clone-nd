@@ -237,7 +237,7 @@ function BuildAPlanPage() {
                                         >
                                             {item.title}{' '}
                                             {item.subTitle ? (
-                                                <span style={{ position: 'absolute', right: '0px' }}>
+                                                <span style={{ position: 'absolute', right: '0px', textDecoration: item.subTitle === '50.00'? 'line-through' : null }}>
                                                     {item.subTitle}
                                                 </span>
                                             ) : null}
