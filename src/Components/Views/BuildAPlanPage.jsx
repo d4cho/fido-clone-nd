@@ -17,7 +17,7 @@ import { checkoutLabels } from '../../Utils/DividerLabels';
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 import { oneTimeFeesLabels } from '../../Utils/DividerLabels';
-import SelectedCardItem from '../Molecules/SelectedCardItem/SelectedCardItem';
+import DataPlanCard from '../Molecules/DataPlanCard/DataPlanCard';
 import dataAddons from '../../Data/Phone-data-addons.json';
 
 function BuildAPlanPage() {
@@ -91,7 +91,7 @@ function BuildAPlanPage() {
         switch (view) {
             case 'Data,Talk & Text':
                 return (
-                    <SelectedCardItem
+                    <DataPlanCard
                         data={data.data}
                         onClick={handleClick}
                         selected={selected}
@@ -101,7 +101,7 @@ function BuildAPlanPage() {
 
             case 'Talk & Text':
                 return (
-                    <SelectedCardItem
+                    <DataPlanCard
                         data={data.data}
                         onClick={handleClick}
                         selected={selected}
@@ -111,7 +111,7 @@ function BuildAPlanPage() {
 
             case 'Basic':
                 return (
-                    <SelectedCardItem
+                    <DataPlanCard
                         data={data.data}
                         onClick={handleClick}
                         selected={selected}
@@ -121,7 +121,7 @@ function BuildAPlanPage() {
 
             case 'Device Protection':
                 return (
-                    <SelectedCardItem
+                    <DataPlanCard
                         data={dataForAddons}
                         onClick={handleClick}
                         selected={selected}
@@ -131,7 +131,7 @@ function BuildAPlanPage() {
 
             default:
                 return (
-                    <SelectedCardItem
+                    <DataPlanCard
                         data={data.data}
                         onClick={handleClick}
                         selected={selected}
@@ -204,13 +204,14 @@ function BuildAPlanPage() {
                                         <span>{item.title}</span>
                                         <span>{item.dataPlanType}</span>
                                         <span>{item.dataAmount}</span>
+                                        <span>${item.dataPlanTypeCost}/mo</span>
                                     </Fragment>
                                 );
                             })}
                         </p>
                     </div>
                     <p>
-                        Total:
+                        Total: after taxes
                         <span style={{ fontWeight: '600', fontSize: '1.5rem' }}>
                             {' '}
                             ${sumUpAfterTaxes}/mon.
@@ -231,13 +232,20 @@ function BuildAPlanPage() {
                                             style={{
                                                 borderBottom: '1px solid #ccc',
                                                 paddingBottom: '10px',
-                                                
-                                               
                                             }}
                                         >
                                             {item.title}{' '}
                                             {item.subTitle ? (
-                                                <span style={{ position: 'absolute', right: '0px', textDecoration: item.subTitle === '50.00'? 'line-through' : null }}>
+                                                <span
+                                                    style={{
+                                                        position: 'absolute',
+                                                        right: '0px',
+                                                        textDecoration:
+                                                            item.subTitle === '50.00'
+                                                                ? 'line-through'
+                                                                : null,
+                                                    }}
+                                                >
                                                     {item.subTitle}
                                                 </span>
                                             ) : null}
