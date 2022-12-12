@@ -1,7 +1,7 @@
 import Title from '../Atoms/Title/Title';
 import BreadCrumbsContent from '../Organisms/BreadCrumbsContent/BreadCrumbsContent';
 import { MainContext } from '../../Context/MainContext';
-import { useContext, useState } from 'react';
+import { Fragment, useContext, useState } from 'react';
 import { breadCrumbsLabelsForPlans } from '../../Utils/NavbarLabel';
 import ListDivider from '../Organisms/ListDivider/ListDivider';
 import { dividerLabelItems } from '../../Utils/DividerLabels';
@@ -16,6 +16,8 @@ import { checkOutInfo } from '../../Utils/DividerLabels';
 import { checkoutLabels } from '../../Utils/DividerLabels';
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
 import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
+import { oneTimeFeesLabels } from '../../Utils/DividerLabels';
+import SelectedCardItem from '../Molecules/SelectedCardItem/SelectedCardItem';
 
 function BuildAPlanPage() {
     const { matches } = useContext(MainContext);
@@ -26,19 +28,28 @@ function BuildAPlanPage() {
     const [selectedView, setSelectedView] = useState('Data,Talk & Text');
     const [selected, setSelected] = useState(3);
     const [cartItems, setCartItems] = useState([]);
+    const [showTalkOptions, setShowTalkOptions] = useState(false);
 
     // data
     const dataOptions = data.data;
 
-    // move the stepper and open and close dropdown is the list divider
+    console.log(selected);
+
+    // select a plan and add to shopping cart
+    const selectPlan = () => {
+        const findItem = dataOptions.filter((x) => x.id === selected);
+        if (findItem) {
+            setCartItems([...findItem]);
+        }
+    };
+
+    // stepper to move divider
     const nextStep = () => {
         if (activeStep === 0) {
             setOpen(false);
             setOpenAddons(true);
-            const findItem = dataOptions.filter((x) => x.id === selected);
-            if (findItem) {
-                setCartItems([...findItem]);
-            }
+            selectPlan();
+            setShowTalkOptions(true);
         } else if (activeStep === 1) {
             setOpenAddons(false);
         }
@@ -61,58 +72,53 @@ function BuildAPlanPage() {
     const renderSelectedView = (view) => {
         switch (view) {
             case 'Data,Talk & Text':
-                const dataAndTalkText = data.data
-                    ?.filter((phoneItem) => phoneItem.title === view)
-                    .map((item, i) => (
-                        <div
-                            key={i}
-                            onClick={() => handleClick(i)}
-                            className={`${selected === i ? 'tab-card-selected' : ''} tab-card`}
-                        >
-                            <p>{item.dataAmount}</p>
-                            <p>{item.dataPlanType}</p>
-                            <p>{item.dataPlanTypeCost}</p>
-                        </div>
-                    ));
-                return dataAndTalkText;
+                return (
+                    <SelectedCardItem
+                        data={data.data}
+                        onClick={handleClick}
+                        selected={selected}
+                        view={view}
+                    />
+                );
 
             case 'Talk & Text':
-                const talkAndText = data.data
-                    ?.filter((phoneItem) => phoneItem.title === view)
-                    .map((item, i) => (
-                        <div
-                            key={i}
-                            onClick={() => handleClick(i)}
-                            className={`${selected === i ? 'tab-card-selected' : ''} tab-card`}
-                        >
-                            <p>{item.dataAmount}</p>
-                            <p>{item.dataPlanType}</p>
-                            <p>{item.dataPlanTypeCost}</p>
-                        </div>
-                    ));
-                return talkAndText;
+                return (
+                    <SelectedCardItem
+                        data={data.data}
+                        onClick={handleClick}
+                        selected={selected}
+                        view={view}
+                    />
+                );
 
             case 'Basic':
-                const basicPlan = data.data
-                    ?.filter((phoneItem) => phoneItem.title === view)
-                    .map((item, i) => (
-                        <div
-                            key={i}
-                            onClick={() => handleClick(i)}
-                            className={`${selected === i ? 'tab-card-selected' : ''} tab-card`}
-                        >
-                            <p>{item.dataAmount}</p>
-                            <p>{item.dataPlanType}</p>
-                            <p>{item.dataPlanTypeCost}</p>
-                        </div>
-                    ));
-                return basicPlan;
+                return (
+                    <SelectedCardItem
+                        data={data.data}
+                        onClick={handleClick}
+                        selected={selected}
+                        view={view}
+                    />
+                );
+
+            case 'Device Protection':
+                return (
+                    <SelectedCardItem
+                        data={data.data}
+                        onClick={handleClick}
+                        selected={selected}
+                        view={view}
+                    />
+                );
 
             default:
                 return (
-                    <div className={view ? 'tab-card' : null}>
-                        <p>Data,Talk & Text</p>
-                    </div>
+                    <SelectedCardItem
+                        data={data.data}
+                        onClick={handleClick}
+                        selected={selected}
+                        view={view}
+                    />
                 );
         }
     };
@@ -165,9 +171,35 @@ function BuildAPlanPage() {
             const total = openCheckout && (
                 <div className='list-divider-subtitle'>
                     <div className='align-cart-labels'>
-                        <p style={{ fontWeight: '600' }}>{subTitle}</p>
-                        <p className='build-plan-align-items'>0.00</p>
+                        <p
+                            style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: '10px',
+                                fontWeight: '600',
+                            }}
+                        >
+                            {cartItems.map((item, id) => {
+                                return (
+                                    <Fragment key={id}>
+                                        <span>{item.title}</span>
+                                        <span>{item.dataPlanType}</span>
+                                        <span>{item.dataAmount}</span>
+                                    </Fragment>
+                                );
+                            })}
+                        </p>
                     </div>
+                    <p>
+                        Total
+                        {cartItems.map((item, id) => {
+                            return (
+                                <Fragment key={id}>
+                                    <span>{item.dataPlanTypeCost}</span>
+                                </Fragment>
+                            );
+                        })}{' '}
+                    </p>
                 </div>
             );
             return total;
@@ -176,27 +208,22 @@ function BuildAPlanPage() {
                 <div className='list-divider-subtitle'>
                     <div className='align-cart-labels'>
                         <div style={{ width: '100%' }}>
-                            <p
-                                style={{
-                                    borderBottom: '1px solid #ccc',
-                                    paddingBottom: '10px',
-                                    gap: '240px',
-                                    display: 'flex',
-                                }}
-                            >
-                                Set Up Service Fee (Waived)
-                                <span
-                                    style={{
-                                        textDecoration: 'line-through',
-                                    }}
-                                >
-                                    50.00 0.00
-                                </span>
-                            </p>
-                            <p style={{ borderBottom: '1px solid #ccc', paddingBottom: '10px' }}>
-                                Free Sim Card
-                            </p>
-                            <p>Total </p>
+                            {oneTimeFeesLabels.map((item, id) => {
+                                return (
+                                    <Fragment key={id}>
+                                        <p
+                                            style={{
+                                                borderBottom: '1px solid #ccc',
+                                                paddingBottom: '10px',
+                                                display: 'flex',
+                                                gap: '240px',
+                                            }}
+                                        >
+                                            {item.title}
+                                        </p>
+                                    </Fragment>
+                                );
+                            })}{' '}
                         </div>
                     </div>
                 </div>
@@ -230,6 +257,8 @@ function BuildAPlanPage() {
                         activeStep={activeStep}
                         open={open}
                         showDropDown={showDropDown}
+                        showTalkOptions={showTalkOptions}
+                        cartItems={cartItems}
                     />
                     <ListDivider
                         minWidth='450px'

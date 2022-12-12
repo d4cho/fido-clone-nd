@@ -16,6 +16,7 @@ function ListDivider({
     CheckoutInfo,
     arrowUp,
     arrowDown,
+    showTalkOptions,
 }) {
     return (
         <div style={{ minWidth: minWidth, height: height }} className='list-divider-container'>
@@ -62,10 +63,29 @@ function ListDivider({
                                     <span
                                         style={{
                                             fontWeight: '400',
-                                            color: activeStep === label.id ? 'black' : 'grey',
+                                            color:
+                                                activeStep === label.id || showTalkOptions
+                                                    ? 'black'
+                                                    : 'grey',
                                         }}
                                     >
-                                        {label.id ? <span>{label.id}.</span> : null} {label.title}
+                                        {(label.id === 3 && showTalkOptions) ||
+                                        label.title === 'Monthly Fees' ||
+                                        label.title === 'One-time fees' ? null : (
+                                            <span>{label.id}.</span>
+                                        )}
+
+                                        {showTalkOptions && label.title === 'Addons' ? (
+                                            <Fragment>
+                                                <span style={{ color: 'green' }}>
+                                                    <CheckCircleOutlineOutlinedIcon />
+                                                </span>
+                                                Talk Options + $0.00/mo. UNLIMITED CANADA WIDE
+                                                MINUTES
+                                            </Fragment>
+                                        ) : (
+                                            label.title
+                                        )}
                                     </span>
                                 </>
                             )}
