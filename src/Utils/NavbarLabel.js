@@ -105,6 +105,4 @@ export const breadCrumbsLabelsForPlans = [
     { title: 'Build Plan', color: 'black' },
 ];
 
-export const breadCrumbsLabelsForAccount = [
-    { title: 'MyAccount',},
-];
+export const breadCrumbsLabelsForAccount = [{ title: 'Account Overview' }];

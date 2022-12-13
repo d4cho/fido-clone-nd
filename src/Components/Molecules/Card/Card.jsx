@@ -20,6 +20,7 @@ function Card({
     backgroundColor,
     marginTop,
     marginLeft,
+    mainContent,
 }) {
     return (
         <div
@@ -29,7 +30,6 @@ function Card({
                 backgroundColor: backgroundColor,
                 marginTop: !matches ? marginTop : null,
                 marginLeft: !matches ? marginLeft : null,
-                
             }}
             className='card-container-outline'
         >
@@ -37,6 +37,7 @@ function Card({
             {starIcon}
             {image}
             <div className='inner-card-container'>
+                {mainContent}
                 {mainTitle}
                 {subTitle}
                 {textContent}
