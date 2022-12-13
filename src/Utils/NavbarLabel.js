@@ -1,6 +1,6 @@
 export const leftNavbarLabels = [
     { title: 'SHOP' },
-    { title: 'MY ACCOUNT', href: '/Plans' },
+    { title: 'MY ACCOUNT', href: '/MyAccount' },
     { title: 'SUPPORT', href: '/Plans' },
 ];
 
@@ -104,3 +104,7 @@ export const breadCrumbsLabelsForPlans = [
     { title: 'Bring Your Own Phone', href: '/', slash: '/', color: '#035d67' },
     { title: 'Build Plan', color: 'black' },
 ];
+
+export const breadCrumbsLabelsForAccount = [{ title: 'Account Overview' }];
+
+export const breadCrumbsLabelsForBillAndPayment = [{ title: 'Billing & Payment' }];

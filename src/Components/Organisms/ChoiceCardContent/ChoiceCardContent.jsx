@@ -20,13 +20,21 @@ function ChoiceCardContent() {
             />
             <div className='card-container'>
                 <Card
-                    mainTitle='ALREADY HAVE A PHONE?'
-                    subTitle='PLAN ONLY'
-                    priceContent='Talk & Text plans starting at'
-                    price='20'
-                    priceSign='$'
-                    zero='.00'
-                    month='/mo.'
+                    mainTitle={
+                        <h1 style={{ textAlign: 'center' }} className='main-title'>
+                            ALREADY HAVE A PHONE?
+                        </h1>
+                    }
+                    subTitle={<h1 className='sub-title'>Plan Only?</h1>}
+                    textContent={<p className='price-content'>Talk & Text plans starting at</p>}
+                    priceContent={
+                        <div className='price-container'>
+                            <p>$</p>
+                            <p style={{ fontSize: '2.2rem', fontWeight: '700' }}>20</p>
+                            <p>.00</p>
+                            <p>/mo.</p>
+                        </div>
+                    }
                     content={
                         <p className='content'>
                             We’ve also got you covered with value-packed plans that give you all the
@@ -51,16 +59,24 @@ function ChoiceCardContent() {
                     banner={<div className='banner' />}
                 />
                 <Card
-                    mainTitle='NEED A NEW PHONE?'
-                    subTitle='PLAN + PHONE'
-                    priceContent='Phones starting at'
-                    price='0'
-                    priceSign='$'
-                    zero='.00'
-                    month='/down.'
+                    mainTitle={
+                        <h1 style={{ textAlign: 'center' }} className='main-title'>
+                            NEED A PHONE?
+                        </h1>
+                    }
+                    subTitle={<h1 className='sub-title'>PlAN + PHONE?</h1>}
+                    textContent={<p className='price-content'>Phones starting at</p>}
+                    priceContent={
+                        <div className='price-container'>
+                            <p>$</p>
+                            <p style={{ fontSize: '2.2rem', fontWeight: '700' }}>0</p>
+                            <p>.00</p>
+                            <p>/mo.</p>
+                        </div>
+                    }
                     content={
                         <p className='content'>
-                            Finance a new phone with Fido Payment Program4 then choose one of our
+                            Finance a new phone with Fido Payment Program4 then choose one of our //
                             plan options to match!
                         </p>
                     }
