@@ -56,6 +56,8 @@ function MyAccountContent({ accountOverviewLabel }) {
                                     icon={<ChevronRightIcon />}
                                     width='250px'
                                     matches={matches}
+                                    href='/Bill-And-Payment'
+                                    cursor='pointer'
                                 />
                                 <Link
                                     title='MAKE A PAYMENT'

@@ -106,3 +106,5 @@ export const breadCrumbsLabelsForPlans = [
 ];
 
 export const breadCrumbsLabelsForAccount = [{ title: 'Account Overview' }];
+
+export const breadCrumbsLabelsForBillAndPayment = [{ title: 'Billing & Payment' }];

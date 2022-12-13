@@ -24,6 +24,7 @@ import SocialLink from './Components/Atoms/SocialLink/SocialLink';
 import Link from './Components/Atoms/Link/Link';
 import { navInfo } from './Utils/NavbarLabel';
 import AccountPage from './Components/Views/AccountPage';
+import BillAndPaymentPage from './Components/Views/Bill&PaymentPage';
 
 function App() {
     const { menuTitle, open, handleShow, iconOpen, matches, sideBarToggle, toggle } =
@@ -180,6 +181,7 @@ function App() {
                 <Route path='/Phones' element={<PhonesPage />} />
                 <Route path='/Build-A-Plan' element={<BuildAPlanPage />} />
                 <Route path='/MyAccount' element={<AccountPage />} />
+                <Route path='/Bill-And-Payment' element={<BillAndPaymentPage />} />
             </Routes>
         </>
     );
