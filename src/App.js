@@ -23,6 +23,7 @@ import SideNavigationBar from './Components/Molecules/SideNavigationBar/SideNavi
 import SocialLink from './Components/Atoms/SocialLink/SocialLink';
 import Link from './Components/Atoms/Link/Link';
 import { navInfo } from './Utils/NavbarLabel';
+import AccountPage from './Components/Views/AccountPage';
 
 function App() {
     const { menuTitle, open, handleShow, iconOpen, matches, sideBarToggle, toggle } =
@@ -178,6 +179,7 @@ function App() {
                 <Route path='/Plans' element={<PlansPage />} />
                 <Route path='/Phones' element={<PhonesPage />} />
                 <Route path='/Build-A-Plan' element={<BuildAPlanPage />} />
+                <Route path='/MyAccount' element={<AccountPage />} />
             </Routes>
         </>
     );

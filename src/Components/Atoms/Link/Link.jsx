@@ -1,8 +1,8 @@
 import './Link.css';
 
-function Link({ href, title, icon, width }) {
+function Link({ href, title, icon, width, backgroundColor }) {
     return (
-        <div style={{width:width}} className='Link-Container'>
+        <div style={{ width: width , backgroundColor: backgroundColor}} className='Link-Container'>
             <a className='Link' href={href}>
                 {title} {icon}
             </a>

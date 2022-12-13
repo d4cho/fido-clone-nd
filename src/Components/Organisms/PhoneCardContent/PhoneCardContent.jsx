@@ -11,7 +11,14 @@ function PhoneCardContent({filteredPhones, position, bottom, marginLeft }) {
     const { matches } = useContext(MainContext);
     return (
         <>
-            <div className='phone-card-content' style={{position: matches? position: null, bottom: matches? bottom : null, marginLeft: matches? marginLeft: null}}>
+            <div
+                className='phone-card-content'
+                style={{
+                    position: matches ? position : null,
+                    bottom: matches ? bottom : null,
+                    marginLeft: matches ? marginLeft : null,
+                }}
+            >
                 {filteredPhones?.map((phone, idx) => (
                     <div key={idx}>
                         <Card
@@ -24,7 +31,11 @@ function PhoneCardContent({filteredPhones, position, bottom, marginLeft }) {
                                     </div>
                                 )
                             }
-                            subTitle={phone.name}
+                            subTitle={
+                                <h1 className='sub-title' style={{ fontSize: '1.0rem' }}>
+                                    {phone.name}
+                                </h1>
+                            }
                             discountPrice={
                                 <>
                                     <span className='discount-price-line-through'>
@@ -68,12 +79,18 @@ function PhoneCardContent({filteredPhones, position, bottom, marginLeft }) {
                             certifiedPreOwned={
                                 <p className='certified-pre-owned'>{phone.certifiedPreOwned}</p>
                             }
-                            content={ phone.content.length > 0 ?<p className='phone-bottom-content'>{phone.content}</p>: null}
+                            content={
+                                phone.content.length > 0 ? (
+                                    <p className='phone-bottom-content'>{phone.content}</p>
+                                ) : null
+                            }
                             Link={
                                 <Link href='/' title='VIEW DETAILS' icon={<ChevronRightIcon />} />
                             }
                             matches={matches}
                             height='100%'
+                            marginTop='30px'
+                            marginLeft='20px'
                         />
                     </div>
                 ))}
