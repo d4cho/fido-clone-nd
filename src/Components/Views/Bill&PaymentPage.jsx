@@ -4,7 +4,8 @@ import BreadCrumbsContent from '../Organisms/BreadCrumbsContent/BreadCrumbsConte
 import { useContext } from 'react';
 import { MainContext } from '../../Context/MainContext';
 import { breadCrumbsLabelsForBillAndPayment } from '../../Utils/NavbarLabel';
-
+import BillAndPaymentContent from '../Organisms/Bill&PaymentContent/Bill&PaymentContent';
+import { accountOverviewLabels } from '../../Utils/AccountOverviewLabels';
 
 function BillAndPaymentPage() {
     const { matches } = useContext(MainContext);
@@ -14,14 +15,16 @@ function BillAndPaymentPage() {
             <div className='build-plan-container'>
                 <Title
                     title='YOUR BILL AND ACCOUNT BALANCE'
-                    fontSize='1.2rem'
+                    subTitle='Account: 886898097'
+                    fontSize='2.2rem'
                     fontWeight='700'
                     marginTop='50px'
                     marginLeft={!matches ? '20px' : null}
                 />
+                <BillAndPaymentContent accountOverviewLabel={accountOverviewLabels} />
             </div>
         </div>
     );
 }
 
-export default  BillAndPaymentPage
+export default BillAndPaymentPage;
