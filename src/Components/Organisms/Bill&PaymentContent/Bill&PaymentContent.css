@@ -1,0 +1,25 @@
+.bill-payment-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 497px) {
+    .position-buttons-bills-page {
+        position: relative !important;
+        bottom: 2px !important;
+    }
+
+    .bill-payment-button-container {
+        justify-content: center !important;
+        margin-top: 30px;
+    }
+}
+.position-buttons-bills-page {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 80px;
+}

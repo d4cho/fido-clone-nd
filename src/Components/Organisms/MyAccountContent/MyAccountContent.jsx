@@ -9,6 +9,11 @@ import { MainContext } from '../../../Context/MainContext';
 
 function MyAccountContent({ accountOverviewLabel }) {
     const { matches } = useContext(MainContext);
+
+    // check for each one add bold
+    const hasBalanceOrZero = (type) => {
+        return ['TOTAL BALANCE', '$0.00'].includes(type);
+    };
     return (
         <>
             <Card
@@ -34,13 +39,7 @@ function MyAccountContent({ accountOverviewLabel }) {
                                 {accountOverviewLabel.map((item, idx) => {
                                     return (
                                         <Fragment key={idx}>
-                                            <span>
-                                                {item === 'TOTAL BALANCE' || item === '$0.00' ? (
-                                                    <b>{item}</b>
-                                                ) : (
-                                                    item
-                                                )}
-                                            </span>
+                                            <span>{hasBalanceOrZero(item) ? <b>{item}</b> : item}</span>
                                         </Fragment>
                                     );
                                 })}

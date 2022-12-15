@@ -17,7 +17,9 @@ function Button({
     alignItems,
     marginLeft,
     backgroundColor,
-    right
+    right,
+    marginTop,
+    color
 }) {
     return (
         <>
@@ -35,7 +37,9 @@ function Button({
                         alignItems: alignItems,
                         marginLeft: marginLeft,
                         backgroundColor: backgroundColor,
-                        right: right
+                        right: right,
+                        marginTop: marginTop,
+                        color:color
                     }}
                     onClick={onClick}
                     className='fido-button'

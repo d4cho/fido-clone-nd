@@ -21,6 +21,7 @@ function Card({
     marginTop,
     marginLeft,
     mainContent,
+    paddingTop,
 }) {
     return (
         <div
@@ -30,6 +31,7 @@ function Card({
                 backgroundColor: backgroundColor,
                 marginTop: !matches ? marginTop : null,
                 marginLeft: !matches ? marginLeft : null,
+                paddingTop: paddingTop,
             }}
             className='card-container-outline'
         >
