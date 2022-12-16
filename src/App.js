@@ -25,6 +25,7 @@ import Link from './Components/Atoms/Link/Link';
 import { navInfo } from './Utils/NavbarLabel';
 import AccountPage from './Components/Views/AccountPage';
 import BillAndPaymentPage from './Components/Views/Bill&PaymentPage';
+import MobileDashboardPage from './Components/Views/MobileDashboardPage';
 
 function App() {
     const { menuTitle, open, handleShow, iconOpen, matches, sideBarToggle, toggle } =
@@ -182,6 +183,7 @@ function App() {
                 <Route path='/Build-A-Plan' element={<BuildAPlanPage />} />
                 <Route path='/MyAccount' element={<AccountPage />} />
                 <Route path='/Bill-And-Payment' element={<BillAndPaymentPage />} />
+                <Route path='/MobileDashboard' element={<MobileDashboardPage />} />
             </Routes>
         </>
     );

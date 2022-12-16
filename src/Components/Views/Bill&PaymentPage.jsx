@@ -46,12 +46,12 @@ function BillAndPaymentPage() {
             <div className='build-plan-container'>
                 <Title
                     title='YOUR BILL AND ACCOUNT BALANCE'
-                    subTitle='Account: 886898097'
                     fontSize='2.2rem'
                     fontWeight='700'
                     marginTop='50px'
                     marginLeft={!matches ? '20px' : null}
                 />
+                <p style={{ marginLeft: !matches ? '20px' : null }}>Account: 883344556</p>
                 <BillAndPaymentContent accountOverviewLabel={accountOverviewLabels} />
                 <Button
                     title='View Bill'

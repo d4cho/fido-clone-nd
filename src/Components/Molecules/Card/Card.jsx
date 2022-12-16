@@ -22,6 +22,13 @@ function Card({
     marginLeft,
     mainContent,
     paddingTop,
+    paddingBottom,
+    paddingLeft,
+    display,
+    justifyContent,
+    border,
+    borderRadius,
+    maxHeight,
 }) {
     return (
         <div
@@ -29,9 +36,16 @@ function Card({
                 width: matches ? width : null,
                 height: height,
                 backgroundColor: backgroundColor,
-                marginTop: !matches ? marginTop : null,
+                marginTop: !matches ? marginTop : marginTop,
                 marginLeft: !matches ? marginLeft : null,
                 paddingTop: paddingTop,
+                paddingBottom: paddingBottom,
+                paddingLeft: paddingLeft,
+                justifyContent: justifyContent,
+                flexDirection: display,
+                borderRadius: borderRadius,
+                border: border,
+                maxHeight: maxHeight,
             }}
             className='card-container-outline'
         >

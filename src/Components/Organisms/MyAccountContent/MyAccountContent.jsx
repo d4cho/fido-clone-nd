@@ -39,7 +39,9 @@ function MyAccountContent({ accountOverviewLabel }) {
                                 {accountOverviewLabel.map((item, idx) => {
                                     return (
                                         <Fragment key={idx}>
-                                            <span>{hasBalanceOrZero(item) ? <b>{item}</b> : item}</span>
+                                            <span>
+                                                {hasBalanceOrZero(item) ? <b>{item}</b> : item}
+                                            </span>
                                         </Fragment>
                                     );
                                 })}
@@ -92,7 +94,7 @@ function MyAccountContent({ accountOverviewLabel }) {
                                     icon={<ChevronRightIcon />}
                                     width={matches ? '220px' : '310px'}
                                     matches={matches}
-                                    href='/'
+                                    href='/MobileDashboard'
                                     cursor='pointer'
                                     backgroundColor='white'
                                     border='none'
