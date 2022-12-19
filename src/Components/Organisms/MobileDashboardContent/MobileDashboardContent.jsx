@@ -186,14 +186,7 @@ function MobileDashboardContent() {
                                         Samsung Galaxy A20 32GB Black
                                     </span>
 
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            position: 'absolute',
-                                            right: '5px',
-                                        }}
-                                    >
+                                    <div className='device-balance-zero-dollars'>
                                         <span>$ 0.00 /mo.</span>
                                         <span>Device Balance</span>
                                     </div>

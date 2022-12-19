@@ -9,6 +9,8 @@ import { accountOverviewLabels } from '../../Utils/AccountOverviewLabels';
 import PictureAsPdfOutlinedIcon from '@mui/icons-material/PictureAsPdfOutlined';
 import Button from '../Atoms/Button/Button';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5';
+import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+import 'react-pdf/dist/esm/Page/TextLayer.css';
 
 
 function BillAndPaymentPage() {
@@ -64,8 +66,8 @@ function BillAndPaymentPage() {
                 />
                 {show && matches ? (
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <Document file='Fido-2022.pdf' onLoadSuccess={onDocumentLoadSuccess}>
-                            <Page height={600} pageNumber={pageNumber} />
+                        <Document file='Fido-2022.pdf' onLoadSuccess={onDocumentLoadSuccess} style={{height:'600px'}}>
+                            <Page pageNumber={pageNumber} />
                         </Document>
                     </div>
                 ) : null}
