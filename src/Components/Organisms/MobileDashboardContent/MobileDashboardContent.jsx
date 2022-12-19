@@ -6,7 +6,6 @@ import { MainContext } from '../../../Context/MainContext';
 import Title from '../../Atoms/Title/Title';
 import Link from '../../Atoms/Link/Link';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { padding } from '@mui/system';
 
 function MobileDashboardContent() {
     const { matches } = useContext(MainContext);
