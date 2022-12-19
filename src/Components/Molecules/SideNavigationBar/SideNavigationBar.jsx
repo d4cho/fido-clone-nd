@@ -52,20 +52,21 @@ function SideNavigationBar({
                                                 : navItem.mainLabel.mainLabelName === 'Français'
                                                 ? null
                                                 : '1px solid #ccc',
+                                        cursor:
+                                            navItem.mainLabel.mainLabelName === 'Shop' ||
+                                            navItem.mainLabel.mainLabelName === 'Ontario'
+                                                ? 'pointer'
+                                                : null,
                                     }}
                                 >
                                     <li
                                         onClick={() => handleToggle(idx)}
-                                        className='list-item'
                                         style={{
                                             pointerEvents:
-                                                navItem.mainLabel.mainLabelName === 'Sign in' ||
-                                                navItem.mainLabel.mainLabelName === 'My Account' ||
-                                                navItem.mainLabel.mainLabelName === 'Support' ||
-                                                navItem.mainLabel.mainLabelName === 'Français' ||
-                                                navItem.mainLabel.mainLabelName === 'Find a Store'
-                                                    ? 'none'
-                                                    : '',
+                                                navItem.mainLabel.mainLabelName !== 'Shop' ||
+                                                navItem.mainLabel.mainLabelName !== 'Ontario'
+                                                    ? null
+                                                    : 'pointer',
                                             display: 'flex',
                                         }}
                                     >
@@ -84,23 +85,20 @@ function SideNavigationBar({
                                             {navItem.mainLabel.mainLabelName}{' '}
                                         </span>
 
-                                        {navItem.mainLabel.mainLabelName !== 'Sign in' &&
-                                            navItem.mainLabel.mainLabelName !== 'My Account' &&
-                                            navItem.mainLabel.mainLabelName !== 'Support' &&
-                                            navItem.mainLabel.mainLabelName !== 'Find a Store' &&
-                                            navItem.mainLabel.mainLabelName !== 'Français' && (
-                                                <span className='toggle-button'>
-                                                    <img
-                                                        src={
-                                                            clicked === idx
-                                                                ? 'https://www.eqbank.ca/Sitefinity/WebsiteTemplates/EQ/App_Themes/EQ/static/images/data-uri/chevron-up.svg'
-                                                                : 'https://www.eqbank.ca/Sitefinity/WebsiteTemplates/EQ/App_Themes/EQ/static/images/data-uri/chevron-down.svg'
-                                                        }
-                                                        style={{ height: height }}
-                                                        alt=''
-                                                    />
-                                                </span>
-                                            )}
+                                        {navItem.mainLabel.mainLabelName === 'Shop' ||
+                                        navItem.mainLabel.mainLabelName === 'Ontario' ? (
+                                            <span className='toggle-button'>
+                                                <img
+                                                    src={
+                                                        clicked === idx
+                                                            ? 'https://www.eqbank.ca/Sitefinity/WebsiteTemplates/EQ/App_Themes/EQ/static/images/data-uri/chevron-up.svg'
+                                                            : 'https://www.eqbank.ca/Sitefinity/WebsiteTemplates/EQ/App_Themes/EQ/static/images/data-uri/chevron-down.svg'
+                                                    }
+                                                    style={{ height: height }}
+                                                    alt=''
+                                                />
+                                            </span>
+                                        ) : null}
                                     </li>
                                 </div>
                                 {clicked === idx ? (

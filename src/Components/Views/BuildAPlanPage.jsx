@@ -90,54 +90,74 @@ function BuildAPlanPage() {
     const renderSelectedView = (view) => {
         switch (view) {
             case 'Data,Talk & Text':
-                return (
-                    <DataPlanCard
-                        data={data.data}
-                        onClick={handleClick}
-                        selected={selected}
-                        view={view}
-                    />
-                );
+                return dataOptions.filter((phoneItem) => phoneItem.title === view)
+                    .map((item, i) => (
+                        <DataPlanCard
+                            key={i}
+                            item={item.id}
+                            dataPlanType={item.dataPlanType}
+                            dataAmount={item.dataAmount}
+                            dataPlanTypeCost={item.dataPlanTypeCost}
+                            onClick={handleClick}
+                            selected={selected}
+                        />
+                    ));
 
             case 'Talk & Text':
-                return (
-                    <DataPlanCard
-                        data={data.data}
-                        onClick={handleClick}
-                        selected={selected}
-                        view={view}
-                    />
-                );
+                return dataOptions.filter((phoneItem) => phoneItem.title === view)
+                    .map((item, i) => (
+                        <DataPlanCard
+                            key={i}
+                            item={item.id}
+                            dataPlanType={item.dataPlanType}
+                            dataAmount={item.dataAmount}
+                            dataPlanTypeCost={item.dataPlanTypeCost}
+                            onClick={handleClick}
+                            selected={selected}
+                        />
+                    ));
 
             case 'Basic':
-                return (
-                    <DataPlanCard
-                        data={data.data}
-                        onClick={handleClick}
-                        selected={selected}
-                        view={view}
-                    />
-                );
+                return dataOptions.filter((phoneItem) => phoneItem.title === view)
+                    .map((item, i) => (
+                        <DataPlanCard
+                            key={i}
+                            item={item.id}
+                            dataPlanType={item.dataPlanType}
+                            dataAmount={item.dataAmount}
+                            dataPlanTypeCost={item.dataPlanTypeCost}
+                            onClick={handleClick}
+                            selected={selected}
+                        />
+                    ));
 
             case 'Device Protection':
-                return (
-                    <DataPlanCard
-                        data={dataForAddons}
-                        onClick={handleClick}
-                        selected={selected}
-                        view={view}
-                    />
-                );
+                return dataOptions.filter((phoneItem) => phoneItem.title === view)
+                    .map((item, i) => (
+                        <DataPlanCard
+                            key={i}
+                            item={item.id}
+                            dataPlanType={item.dataPlanType}
+                            dataAmount={item.dataAmount}
+                            dataPlanTypeCost={item.dataPlanTypeCost}
+                            onClick={handleClick}
+                            selected={selected}
+                        />
+                    ));
 
             default:
-                return (
-                    <DataPlanCard
-                        data={data.data}
-                        onClick={handleClick}
-                        selected={selected}
-                        view={view}
-                    />
-                );
+                return dataForAddons.filter((phoneItem) => phoneItem.title === view)
+                    .map((item, i) => (
+                        <DataPlanCard
+                            key={i}
+                            item={item.id}
+                            dataPlanType={item.dataPlanType}
+                            dataAmount={item.dataAmount}
+                            dataPlanTypeCost={item.dataPlanTypeCost}
+                            onClick={handleClick}
+                            selected={selected}
+                        />
+                    ));
         }
     };
 
